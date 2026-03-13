@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +7,10 @@
 <title>Gamerlog SMP</title>
 
 <style>
+
+html{
+scroll-behavior:smooth;
+}
 
 *{
 margin:0;
@@ -18,7 +22,6 @@ font-family:Segoe UI, Arial;
 body{
 background:radial-gradient(circle at top,#1b0033,#000);
 color:white;
-overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -47,7 +50,7 @@ nav ul li a{
 color:#aaa;
 text-decoration:none;
 font-weight:600;
-transition:0.3s;
+transition:.3s;
 }
 
 nav ul li a:hover{
@@ -73,23 +76,17 @@ text-align:center;
 padding:40px;
 }
 
-/* LOGO */
-
 .logoBox img{
 width:450px;
 max-width:90%;
-animation:float 4s ease-in-out infinite;
+animation:float 4s infinite ease-in-out;
 }
-
-/* ANIMATION */
 
 @keyframes float{
 0%{transform:translateY(0)}
 50%{transform:translateY(-15px)}
 100%{transform:translateY(0)}
 }
-
-/* TEXT */
 
 .season{
 margin-top:30px;
@@ -105,11 +102,8 @@ font-weight:bold;
 margin-top:10px;
 }
 
-/* SERVER BOX */
-
 .serverBox{
 display:flex;
-justify-content:center;
 gap:30px;
 flex-wrap:wrap;
 margin-top:50px;
@@ -120,8 +114,8 @@ background:#0a0f18;
 padding:35px 45px;
 border-radius:14px;
 border:1px solid #142235;
-transition:0.3s;
 font-size:22px;
+transition:.3s;
 }
 
 .box b{
@@ -144,17 +138,10 @@ background:#00eaff;
 color:black;
 cursor:pointer;
 font-weight:bold;
-font-size:16px;
-transition:0.3s;
-}
-
-.copyBtn:hover{
-transform:scale(1.1);
 }
 
 .copied{
 background:#00ff9d !important;
-box-shadow:0 0 15px #00ff9d;
 }
 
 /* CROSSPLAY */
@@ -163,8 +150,6 @@ box-shadow:0 0 15px #00ff9d;
 border:2px solid #ffd000;
 padding:12px 30px;
 border-radius:25px;
-display:inline-block;
-color:#ffd000;
 margin-top:30px;
 font-weight:bold;
 font-size:20px;
@@ -182,12 +167,55 @@ font-weight:bold;
 text-decoration:none;
 color:white;
 font-size:18px;
-transition:0.3s;
 }
 
-.discord:hover{
-transform:scale(1.1);
+/* STAFF SECTION */
+
+.staffSection{
+padding:120px 20px;
+background:#000;
+text-align:center;
 }
+
+.staffTitle{
+font-size:50px;
+color:#6dd5ff;
+margin-bottom:60px;
+}
+
+.staff{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+}
+
+.card{
+background:#111;
+padding:20px;
+border-radius:15px;
+width:220px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px #00eaff;
+}
+
+.card img{
+width:120px;
+border-radius:10px;
+}
+
+.name{
+font-size:20px;
+margin-top:10px;
+}
+
+.owner{color:gold;}
+.head{color:#ff5c5c;}
+.dev{color:#4cc9f0;}
 
 </style>
 </head>
@@ -199,8 +227,8 @@ transform:scale(1.1);
 <div class="logoText">GAMERLOG SMP</div>
 
 <ul>
-<li><a href="index.html">HOME</a></li>
-<li><a href="staff.html">STAFF</a></li>
+<li><a href="#">HOME</a></li>
+<li><a href="#staff">STAFF</a></li>
 <li>CREATORS</li>
 <li>PARTNER</li>
 <li>SUPPORT</li>
@@ -245,6 +273,38 @@ Join Discord
 
 </section>
 
+
+<!-- STAFF SECTION -->
+
+<section id="staff" class="staffSection">
+
+<h1 class="staffTitle">THE LEGENDS BEHIND SMP</h1>
+
+<div class="staff">
+
+<div class="card">
+<img src="aadi.png">
+<div class="name">Aadi</div>
+<div class="owner">Owner</div>
+</div>
+
+<div class="card">
+<img src="rushi.png">
+<div class="name">Rushi</div>
+<div class="head">Head Mod</div>
+</div>
+
+<div class="card">
+<img src="ashish.png">
+<div class="name">Ashish</div>
+<div class="dev">Developer</div>
+</div>
+
+</div>
+
+</section>
+
+
 <script>
 
 function copyJava(btn){
@@ -279,112 +339,4 @@ btn.classList.remove("copied");
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Gamerlog SMP Staff</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-background:linear-gradient(120deg,#020024,#090979,#000);
-color:white;
-text-align:center;
-}
-
-.title{
-font-size:40px;
-margin-top:60px;
-color:#6dd5ff;
-}
-
-.staff{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
-padding:50px;
-}
-
-.card{
-background:#111;
-padding:20px;
-border-radius:15px;
-width:220px;
-box-shadow:0 0 15px rgba(0,0,0,0.6);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card img{
-width:120px;
-height:120px;
-object-fit:cover;
-border-radius:10px;
-}
-
-.name{
-font-size:20px;
-margin-top:10px;
-}
-
-.rank{
-font-size:14px;
-color:#00bfff;
-}
-
-.owner{color:gold;}
-.head{color:#ff5c5c;}
-.dev{color:#4cc9f0;}
-
-</style>
-</head>
-
-<body>
-
-<h1 class="title">THE LEGENDS BEHIND SMP</h1>
-
-<div class="staff">
-
-<div class="card">
-<img src="aadi.png">
-<div class="name">Aadi</div>
-<div class="rank owner">Owner</div>
-</div>
-
-<div class="card">
-<img src="rushi.png">
-<div class="name">Rushi</div>
-<div class="rank head">Head Mod</div>
-</div>
-
-<div class="card">
-<img src="ashish.png">
-<div class="name">Ashish</div>
-<div class="rank dev">Developer</div>
-</div>
-
-</div>
-
-</body>
-</html>
+```
