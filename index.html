@@ -11,13 +11,12 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Segoe UI, Arial;
 }
 
 body{
-background: radial-gradient(circle at center,#0a0015,#000);
+background:radial-gradient(circle at top,#1a0033,#000);
 color:white;
-overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -26,21 +25,28 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 40px;
+padding:18px 60px;
 background:#000;
 border-bottom:1px solid #111;
 }
 
+.logoText{
+font-size:20px;
+font-weight:bold;
+color:#fff;
+}
+
 nav ul{
 display:flex;
-list-style:none;
 gap:30px;
+list-style:none;
 }
 
 nav ul li{
-color:#ccc;
 cursor:pointer;
-font-weight:bold;
+color:#aaa;
+font-weight:600;
+transition:0.3s;
 }
 
 nav ul li:hover{
@@ -48,71 +54,58 @@ color:#00eaff;
 }
 
 .login{
-background:linear-gradient(90deg,#5b6cff,#9b59ff);
-padding:8px 18px;
+background:linear-gradient(90deg,#5f6fff,#a259ff);
+padding:8px 20px;
 border-radius:8px;
+font-weight:bold;
 }
 
 /* HERO */
 
 .hero{
 text-align:center;
-margin-top:60px;
-position:relative;
+padding:100px 20px;
 }
 
-/* LOGO BOX */
-
-.logoBox{
-width:340px;
-height:340px;
-margin:auto;
-background:#000;
-border-radius:6px;
-box-shadow:0 0 40px #a000ff;
-display:flex;
-align-items:center;
-justify-content:center;
+.hero img{
+width:420px;
+max-width:90%;
+margin-bottom:30px;
 }
-
-.logoBox img{
-width:90%;
-}
-
-/* SEASON */
 
 .season{
-margin-top:40px;
+color:#ffd000;
 font-size:34px;
-color:#ffd900;
 letter-spacing:5px;
-font-weight:bold;
+margin-bottom:10px;
 }
-
-/* COMING SOON */
 
 .coming{
-font-size:48px;
-color:#7ef9ff;
-margin-top:15px;
+font-size:50px;
+color:#6ff9ff;
 font-weight:bold;
+margin-bottom:30px;
 }
 
-/* SERVER BOX */
+/* SERVER INFO */
 
 .serverBox{
 display:flex;
 justify-content:center;
 gap:20px;
-margin-top:30px;
 flex-wrap:wrap;
+margin-bottom:20px;
 }
 
 .box{
-background:#06141a;
-padding:18px 30px;
+background:#0a0f18;
+padding:18px 28px;
 border-radius:10px;
-border:1px solid #0f2a35;
+border:1px solid #142235;
+}
+
+.box b{
+font-size:18px;
 }
 
 .copy{
@@ -120,32 +113,64 @@ margin-left:10px;
 cursor:pointer;
 }
 
-/* CROSS */
-
 .cross{
-margin-top:20px;
-border:2px solid #ffc400;
-display:inline-block;
-padding:10px 25px;
+border:2px solid #ffd000;
+padding:10px 24px;
 border-radius:20px;
-color:#ffc400;
+display:inline-block;
+color:#ffd000;
+margin-top:15px;
 font-weight:bold;
 }
 
-/* PLAYER SKINS */
+/* FEATURES */
 
-.skin{
-position:absolute;
-top:120px;
-width:170px;
+.features{
+padding:80px 20px;
+text-align:center;
 }
 
-.left{
-left:80px;
+.features h2{
+font-size:36px;
+margin-bottom:40px;
 }
 
-.right{
-right:80px;
+.featureGrid{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.card{
+background:#0b0b0b;
+border:1px solid #111;
+padding:30px;
+width:220px;
+border-radius:12px;
+}
+
+.card h3{
+margin-bottom:10px;
+color:#00eaff;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#000;
+border-top:1px solid #111;
+}
+
+.discord{
+margin-top:20px;
+display:inline-block;
+background:#5865F2;
+padding:10px 22px;
+border-radius:8px;
+font-weight:bold;
 }
 
 </style>
@@ -155,14 +180,13 @@ right:80px;
 
 <nav>
 
-<div style="font-weight:bold">GAMERLOG SMP</div>
+<div class="logoText">GAMERLOG SMP</div>
 
 <ul>
-<li style="color:#00eaff">HOME</li>
+<li>HOME</li>
 <li>STAFF</li>
 <li>CREATORS</li>
 <li>PARTNER</li>
-<li>UPDATES</li>
 <li>SUPPORT</li>
 </ul>
 
@@ -170,16 +194,9 @@ right:80px;
 
 </nav>
 
-<!-- PLAYER SKINS -->
+<section class="hero">
 
-<img class="skin left" src="https://mc-heads.net/body/Notch">
-<img class="skin right" src="https://mc-heads.net/body/Technoblade">
-
-<div class="hero">
-
-<div class="logoBox">
 <img src="gamerlog-logo.png">
-</div>
 
 <div class="season">SEASON 3</div>
 
@@ -201,10 +218,48 @@ BEDROCK PORT<br>
 </div>
 
 <div class="cross">
-⚡ CROSS CONNECTION | JAVA + PE ⚡
+⚡ CROSSPLAY JAVA + BEDROCK ⚡
+</div>
+
+<br>
+
+<a class="discord" href="#">Join Discord</a>
+
+</section>
+
+<section class="features">
+
+<h2>Server Features</h2>
+
+<div class="featureGrid">
+
+<div class="card">
+<h3>Custom SMP</h3>
+<p>Unique survival gameplay with custom systems.</p>
+</div>
+
+<div class="card">
+<h3>Events</h3>
+<p>Weekly PvP and building competitions.</p>
+</div>
+
+<div class="card">
+<h3>Economy</h3>
+<p>Balanced economy with shops and trading.</p>
+</div>
+
+<div class="card">
+<h3>Crossplay</h3>
+<p>Java and Bedrock players can play together.</p>
 </div>
 
 </div>
+
+</section>
+
+<footer>
+© 2026 Gamerlog SMP • All Rights Reserved
+</footer>
 
 <script>
 
