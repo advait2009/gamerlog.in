@@ -295,71 +295,67 @@ btn.classList.remove("copied");
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gamerlog SMP Staff</title>
 
 <style>
 
 body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: radial-gradient(circle at top,#0c1b2e,#000);
-    color:white;
-    text-align:center;
+margin:0;
+font-family:Arial;
+background:linear-gradient(120deg,#020024,#090979,#000);
+color:white;
+text-align:center;
 }
 
 .title{
-    font-size:40px;
-    margin-top:60px;
-    background: linear-gradient(90deg,#4cc9f0,#9d4edd);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+font-size:40px;
+margin-top:60px;
+color:#6dd5ff;
 }
 
-.staff-container{
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-    gap:30px;
-    padding:60px;
-    max-width:1200px;
-    margin:auto;
+.staff{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+padding:50px;
 }
 
 .card{
-    background:#111827;
-    padding:30px;
-    border-radius:15px;
-    transition:0.3s;
+background:#111;
+padding:20px;
+border-radius:15px;
+width:220px;
+box-shadow:0 0 15px rgba(0,0,0,0.6);
+transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 20px #4cc9f0;
+transform:translateY(-10px);
 }
 
 .card img{
-    width:80px;
-    height:80px;
+width:120px;
+height:120px;
+object-fit:cover;
+border-radius:10px;
 }
 
 .name{
-    font-size:20px;
-    margin-top:10px;
+font-size:20px;
+margin-top:10px;
 }
 
 .rank{
-    font-size:14px;
-    margin-top:5px;
-    color:#00b4ff;
+font-size:14px;
+color:#00bfff;
 }
 
-.owner{color:#ffb703;}
+.owner{color:gold;}
+.head{color:#ff5c5c;}
 .dev{color:#4cc9f0;}
-.staff{color:#9d4edd;}
-.helper{color:#ffd60a;}
 
 </style>
 </head>
@@ -368,42 +364,24 @@ body{
 
 <h1 class="title">THE LEGENDS BEHIND SMP</h1>
 
-<div class="staff-container">
+<div class="staff">
 
 <div class="card">
-<img src="https://minotar.net/avatar/KtDev/100">
-<div class="name">KtDev</div>
-<div class="rank owner">OWNER</div>
+<img src="aadi.png">
+<div class="name">Aadi</div>
+<div class="rank owner">Owner</div>
 </div>
 
 <div class="card">
-<img src="https://minotar.net/avatar/Vansh/100">
-<div class="name">Vansh</div>
-<div class="rank dev">DEVELOPER</div>
+<img src="rushi.png">
+<div class="name">Rushi</div>
+<div class="rank head">Head Mod</div>
 </div>
 
 <div class="card">
-<img src="https://minotar.net/avatar/Hackerji/100">
-<div class="name">Hackerji</div>
-<div class="rank dev">DEVELOPER</div>
-</div>
-
-<div class="card">
-<img src="https://minotar.net/avatar/GODXMARATHA/100">
-<div class="name">GODXMARATHA</div>
-<div class="rank staff">STAFF</div>
-</div>
-
-<div class="card">
-<img src="https://minotar.net/avatar/PrimeBhai/100">
-<div class="name">PrimeBhai</div>
-<div class="rank staff">STAFF</div>
-</div>
-
-<div class="card">
-<img src="https://minotar.net/avatar/Redrebeller/100">
-<div class="name">Redrebeller</div>
-<div class="rank helper">TICKET HELPER</div>
+<img src="ashish.png">
+<div class="name">Ashish</div>
+<div class="rank dev">Developer</div>
 </div>
 
 </div>
