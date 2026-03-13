@@ -1,575 +1,248 @@
+:playblue: Beast - Mia Martina, Waka Flocka Flame
+ᴀᴀᴅɪ
+not_aadi_og
+•
+❤️happy Independence Day
+
+This is the start of the #│〢⋆˚🐚・ᴡᴇʙ-ѕᴛᴜꜰꜰѕ channel. 
+Ꮩꫝʀᴜɴ࿐☣Role icon, 「🜲 • Oᴡɴᴇʀ」 — 11/02/2026 20:04
+Want this login/signup page ?
+Reacts goal 5+
+Ping : @. 𝗓ᶻ . Members 
+Image
+Ꮩꫝʀᴜɴ࿐☣Role icon, 「🜲 • Oᴡɴᴇʀ」 — 12/02/2026 06:31
+Here is your reward
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
+yourwebname_login_signup.jsx
+4 KB
+Ꮩꫝʀᴜɴ࿐☣Role icon, 「🜲 • Oᴡɴᴇʀ」 — 12/02/2026 10:28
+Want this apollo theme ?
+Reacts goal 5+
+Ping : @. 𝗓ᶻ . Members 
+Image
+Ꮩꫝʀᴜɴ࿐☣Role icon, 「🜲 • Oᴡɴᴇʀ」 — 13/02/2026 09:18
+HERE IS YOUR REWARD @everyone:heart_glitch:
+Attachment file type: unknown
+apolloInstallerAmd64-1.zip.oplusdownload
+4.21 MB
+DesiGamerRole icon, . 𝗓ᶻ . Dropper — 13/02/2026 09:19
+Want this hosting interface ?
+Reacts goal 6+
+Ping : @. 𝗓ᶻ . Members 
+Image
+DesiGamerRole icon, . 𝗓ᶻ . Dropper — 16/02/2026 12:36
+HERE IS YOUR REWARD @here
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gamerlog SMP</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-background: radial-gradient(circle,#140021,#000);
-color:white;
-}
-
-/* NAVBAR */
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:#000;
-border-bottom:1px solid #111;
-}
-
-nav h1{
-font-size:22px;
-}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-nav ul li{
-color:#bbb;
-cursor:pointer;
-font-weight:bold;
-}
-
-nav ul li:hover{
-color:#00eaff;
-}
-
-.login{
-background:linear-gradient(90deg,#6a6cff,#9c5bff);
-padding:8px 18px;
-border-radius:8px;
-}
-
-/* HERO */
-
-.hero{
-text-align:center;
-padding:80px 20px;
-}
-
-.logo{
-width:420px;
-max-width:90%;
-margin-bottom:40px;
-}
-
-.season{
-font-size:36px;
-letter-spacing:5px;
-color:#ffd900;
-font-weight:bold;
-margin-bottom:10px;
-}
-
-.timer{
-font-size:60px;
-color:#7ef9ff;
-margin-bottom:40px;
-}
-
-/* SERVER INFO */
-
-.serverBox{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin-bottom:20px;
-}
-
-.box{
-background:#06141a;
-border:1px solid #0f2a35;
-padding:18px 30px;
-border-radius:10px;
-}
-
-.copy{
-cursor:pointer;
-margin-left:10px;
-}
-
-.cross{
-border:2px solid #ffc400;
-padding:10px 25px;
-border-radius:20px;
-color:#ffc400;
-display:inline-block;
-font-weight:bold;
-}
-
-/* STAFF */
-
-.staff{
-padding:80px 20px;
-text-align:center;
-}
-
-.staff h2{
-font-size:36px;
-margin-bottom:40px;
-}
-
-.staff-grid{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-}
-
-.staff-card{
-background:#0a0a0a;
-padding:20px;
-border-radius:10px;
-width:200px;
-border:1px solid #111;
-}
-
-.staff-card img{
-width:100px;
-margin-bottom:10px;
-}
-
-.role{
-color:#00eaff;
-font-size:14px;
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:20px;
-background:#000;
-border-top:1px solid #111;
-margin-top:40px;
-}
-
-</style>
-</head>
-
-<body>
-
-<nav>
-
-<h1>GAMERLOG SMP</h1>
-
-<ul>
-<li>HOME</li>
-<li>STAFF</li>
-<li>CREATORS</li>
-<li>PARTNER</li>
-<li>UPDATES</li>
-<li>SUPPORT</li>
-</ul>
-
-<div class="login">LOGIN</div>
-
-</nav>
-
-<section class="hero">
-
-<img src="gamerlog-logo.png" class="logo">
-
-<div class="season">SEASON 3</div>
-
-<div class="timer" id="timer">Loading...</div>
-
-<div class="serverBox">
-
-<div class="box">
-JAVA EDITION<br>
-<b id="ip">play.gamerlog.fun</b>
-<span class="copy" onclick="copyIP()">📋</span>
-</div>
-
-<div class="box">
-BEDROCK PORT<br>
-<b>25575</b>
-</div>
-
-</div>
-
-<div class="cross">
-⚡ CROSS CONNECTION | JAVA + PE ⚡
-</div>
-
-</section>
-
-<section class="staff">
-
-<h2>Server Staff</h2>
-
-<div class="staff-grid">
-
-<div class="staff-card">
-<img src="https://mc-heads.net/avatar/not_aadi_og">
-<h3>not_aadi_og</h3>
-<div class="role">Owner</div>
-</div>
-
-<div class="staff-card">
-<img src="https://mc-heads.net/avatar/Vansh">
-<h3>Vansh</h3>
-<div class="role">Developer</div>
-</div>
-
-<div class="staff-card">
-<img src="https://mc-heads.net/avatar/Hackerji">
-<h3>Hackerji</h3>
-<div class="role">Developer</div>
-</div>
-
-<div class="staff-card">
-<img src="https://mc-heads.net/avatar/GODXMARATHA">
-<h3>GODXMARATHA</h3>
-<div class="role">Staff</div>
-</div>
-
-</div>
-
-</section>
-
-<footer>
-© 2026 Gamerlog SMP • All Rights Reserved
-</footer>
-
-<script>
-
-/* COPY IP */
-
-function copyIP(){
-navigator.clipboard.writeText("play.gamerlog.fun");
-alert("Server IP Copied!");
-}
-
-/* COUNTDOWN WITH FIXED DATE */
-
-let launchDate = new Date("July 1, 2026 18:00:00").getTime();
-
-let timer = setInterval(function(){
-
-let now = new Date().getTime();
-let distance = launchDate - now;
-
-let hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-let seconds = Math.floor((distance % (1000*60)) / 1000);
-
-document.getElementById("timer").innerHTML =
-hours + ":" + minutes + ":" + seconds;
-
-if(distance < 0){
-clearInterval(timer);
-document.getElementById("timer").innerHTML = "SERVER OPEN!";
-}
-
-},1000);
-
-</script>
-
-</body>
-</html><!DOCTYPE html>
+<title>GBNodes - Minecraft Hosting</title>
+
+minecraft_hosting_website_template.html
+4 KB
+Ꮩꫝʀᴜɴ࿐☣Role icon, 「🜲 • Oᴡɴᴇʀ」 — 03/03/2026 11:19
+Want This Webstore ?
+:Arrow_Right: React 10+
+:Arrow_Right: React with :vyk_pepe_raining:  
+:Arrow_Right: Ping @everyone 
+Image
+Image
+Ꮩꫝʀᴜɴ࿐☣Role icon, 「🜲 • Oᴡɴᴇʀ」 — 03/03/2026 14:27
+HERE IS YOUR REWARD @here
+Credit : Firenox Territory ( @FIRENOX )
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gamerlog SMP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireFlx Store</title>
 
-<style>
+Webstore (Coders Web).html
+8 KB
+[Dropper]_ShadowFFRole icon, . 𝗓ᶻ . Dropper — 03/03/2026 19:52
+Want Hytale Egg for pterodactyl panel ?
+ React 10+
+ React with 🎁   
+ Ping @everyone 
+Want GTAV FiveM Egg for pterodactyl panel ?
+ React 12+
+ React with 🎁   
+ Ping @everyone 
+[Dropper]_ShadowFFRole icon, . 𝗓ᶻ . Dropper — 03/03/2026 19:54
+once more 
+once more
+[Dropper]_ShadowFFRole icon, . 𝗓ᶻ . Dropper — 03/03/2026 19:54
+HERE IS YOUR REWARD
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+hytale.json
+6 KB
+Want www.firemc.fun Codez?
+ React 20+
+ React with 🎁   
+ Ping @everyone 
+[Dropper]_ShadowFFRole icon, . 𝗓ᶻ . Dropper — 04/03/2026 16:28
+HERE IS YOUR REWARD
+Attachment file type: archive
+www.firemc.fun.7z
+2.72 MB
+Want applemc.fun Codez?
+ React 38+
+ React with 🎁   
+ Ping @here 
+Lɪɢʜᴛ PʟᴀʏᴢRole icon, . 𝗓ᶻ . Members — 06/03/2026 14:39
+Wnat Pterodactyle Panel Node Mod
+:TuZhi_Blue_arrows: React 20
+:TuZhi_Blue_arrows: Ping @. 𝗓ᶻ . Members 
+:TuZhi_Blue_arrows: React With :Claim:
+Lɪɢʜᴛ PʟᴀʏᴢRole icon, . 𝗓ᶻ . Members — 06/03/2026 15:02
+Attachment file type: archive
+pteranodon-bot-v197.zip
+2.17 KB
+[Dropper]_ShadowFFRole icon, . 𝗓ᶻ . Dropper — 07/03/2026 00:36
+you can do it guys only 5 more
+[Dropper]_ShadowFFRole icon, . 𝗓ᶻ . Dropper — 09/03/2026 19:23
+HERE IS YOUR REWARD
+Attachment file type: archive
+applemc.fun.7z
+11.95 MB
+How to open on mobile reply me
+See Thread ›
+There are no recent messages in this thread.
+﻿
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
+export default function AuthPage() {
+  const [isLogin, setIsLogin] = useState(true);
+  const [users, setUsers] = useState([]);
+  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSignup = () => {
+    if (!form.name || !form.email || !form.password) {
+      setMessage("Please fill all fields");
+      return;
+    }
+
+    const existingUser = users.find((u) => u.email === form.email);
+    if (existingUser) {
+      setMessage("User already exists");
+      return;
+    }
+
+    setUsers([...users, form]);
+    setMessage("Signup successful! Now login.");
+    setIsLogin(true);
+  };
+
+  const handleLogin = () => {
+    const validUser = users.find(
+      (u) => u.email === form.email && u.password === form.password
+    );
+
+    if (validUser) {
+      setMessage(`Welcome back, ${validUser.name}!`);
+    } else {
+      setMessage("Invalid email or password");
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-purple-900 to-black p-4">
+      <Card className="w-full max-w-md bg-black/60 backdrop-blur-xl border border-purple-700 shadow-2xl rounded-2xl">
+        <CardContent className="p-8">
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-3xl font-bold text-center text-purple-400 mb-6"
+          >
+            yourwebname
+          </motion.h1>
+
+          <div className="flex justify-center mb-6 gap-4">
+            <Button
+              variant={isLogin ? "default" : "outline"}
+              className="rounded-xl"
+              onClick={() => setIsLogin(true)}
+            >
+              Login
+            </Button>
+            <Button
+              variant={!isLogin ? "default" : "outline"}
+              className="rounded-xl"
+              onClick={() => setIsLogin(false)}
+            >
+              Signup
+            </Button>
+          </div>
+
+          {!isLogin && (
+            <Input
+              name="name"
+              placeholder="Full Name"
+              className="mb-4 bg-black/40 border-purple-600 text-white"
+              onChange={handleChange}
+            />
+          )}
+
+          <Input
+            name="email"
+            placeholder="Email"
+            type="email"
+            className="mb-4 bg-black/40 border-purple-600 text-white"
+            onChange={handleChange}
+          />
+
+          <Input
+            name="password"
+            placeholder="Password"
+            type="password"
+            className="mb-6 bg-black/40 border-purple-600 text-white"
+            onChange={handleChange}
+          />
+
+          {isLogin ? (
+            <Button
+              onClick={handleLogin}
+              className="w-full bg-purple-700 hover:bg-purple-800 rounded-xl"
+            >
+              Login
+            </Button>
+          ) : (
+            <Button
+              onClick={handleSignup}
+              className="w-full bg-purple-700 hover:bg-purple-800 rounded-xl"
+            >
+              Signup
+            </Button>
+          )}
+
+          {message && (
+            <p className="text-center text-purple-300 mt-4 text-sm">
+              {message}
+            </p>
+          )}
+        </CardContent>
+      </Card>
+    </div>
+  );
 }
-
-body{
-background: radial-gradient(circle,#140021,#000);
-color:white;
-}
-
-/* NAVBAR */
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:#000;
-border-bottom:1px solid #111;
-}
-
-nav h1{
-font-size:22px;
-}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-nav ul li{
-color:#bbb;
-cursor:pointer;
-font-weight:bold;
-}
-
-nav ul li:hover{
-color:#00eaff;
-}
-
-.login{
-background:linear-gradient(90deg,#6a6cff,#9c5bff);
-padding:8px 18px;
-border-radius:8px;
-}
-
-/* HERO */
-
-.hero{
-text-align:center;
-padding:80px 20px;
-}
-
-.logo{
-width:420px;
-max-width:90%;
-margin-bottom:40px;
-}
-
-.season{
-font-size:36px;
-letter-spacing:5px;
-color:#ffd900;
-font-weight:bold;
-margin-bottom:10px;
-}
-
-.timer{
-font-size:60px;
-color:#7ef9ff;
-margin-bottom:40px;
-}
-
-/* SERVER INFO */
-
-.serverBox{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin-bottom:20px;
-}
-
-.box{
-background:#06141a;
-border:1px solid #0f2a35;
-padding:18px 30px;
-border-radius:10px;
-}
-
-.copy{
-cursor:pointer;
-margin-left:10px;
-}
-
-.cross{
-border:2px solid #ffc400;
-padding:10px 25px;
-border-radius:20px;
-color:#ffc400;
-display:inline-block;
-font-weight:bold;
-}
-
-/* STAFF */
-
-.staff{
-padding:80px 20px;
-text-align:center;
-}
-
-.staff h2{
-font-size:36px;
-margin-bottom:40px;
-}
-
-.staff-grid{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-}
-
-.staff-card{
-background:#0a0a0a;
-padding:20px;
-border-radius:10px;
-width:200px;
-border:1px solid #111;
-}
-
-.staff-card img{
-width:100px;
-margin-bottom:10px;
-}
-
-.role{
-color:#00eaff;
-font-size:14px;
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:20px;
-background:#000;
-border-top:1px solid #111;
-margin-top:40px;
-}
-
-</style>
-</head>
-
-<body>
-
-<nav>
-
-<h1>GAMERLOG SMP</h1>
-
-<ul>
-<li>HOME</li>
-<li>STAFF</li>
-<li>CREATORS</li>
-<li>PARTNER</li>
-<li>UPDATES</li>
-<li>SUPPORT</li>
-</ul>
-
-<div class="login">LOGIN</div>
-
-</nav>
-
-<section class="hero">
-
-<img src="gamerlog-logo.png" class="logo">
-
-<div class="season">SEASON 3</div>
-
-<div class="timer" id="timer">Loading...</div>
-
-<div class="serverBox">
-
-<div class="box">
-JAVA EDITION<br>
-<b id="ip">play.gamerlog.fun</b>
-<span class="copy" onclick="copyIP()">📋</span>
-</div>
-
-<div class="box">
-BEDROCK PORT<br>
-<b>25575</b>
-</div>
-
-</div>
-
-<div class="cross">
-⚡ CROSS CONNECTION | JAVA + PE ⚡
-</div>
-
-</section>
-
-<section class="staff">
-
-<h2>Server Staff</h2>
-
-<div class="staff-grid">
-
-<div class="staff-card">
-<img src="https://mc-heads.net/avatar/not_aadi_og">
-<h3>not_aadi_og</h3>
-<div class="role">Owner</div>
-</div>
-
-<div class="staff-card">
-<img src="https://mc-heads.net/avatar/Vansh">
-<h3>Vansh</h3>
-<div class="role">Developer</div>
-</div>
-
-<div class="staff-card">
-<img src="https://mc-heads.net/avatar/Hackerji">
-<h3>Hackerji</h3>
-<div class="role">Developer</div>
-</div>
-
-<div class="staff-card">
-<img src="https://mc-heads.net/avatar/GODXMARATHA">
-<h3>GODXMARATHA</h3>
-<div class="role">Staff</div>
-</div>
-
-</div>
-
-</section>
-
-<footer>
-© 2026 Gamerlog SMP • All Rights Reserved
-</footer>
-
-<script>
-
-/* COPY IP */
-
-function copyIP(){
-navigator.clipboard.writeText("play.gamerlog.fun");
-alert("Server IP Copied!");
-}
-
-/* COUNTDOWN WITH FIXED DATE */
-
-let launchDate = new Date("July 1, 2026 18:00:00").getTime();
-
-let timer = setInterval(function(){
-
-let now = new Date().getTime();
-let distance = launchDate - now;
-
-let hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-let seconds = Math.floor((distance % (1000*60)) / 1000);
-
-document.getElementById("timer").innerHTML =
-hours + ":" + minutes + ":" + seconds;
-
-if(distance < 0){
-clearInterval(timer);
-document.getElementById("timer").innerHTML = "SERVER OPEN!";
-}
-
-},1000);
-
-</script>
-
-</body>
-</html>
