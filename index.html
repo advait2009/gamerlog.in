@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,20 +21,6 @@ color:white;
 overflow-x:hidden;
 }
 
-/* ANIMATIONS */
-
-@keyframes glow{
-0%{box-shadow:0 0 10px #a200ff}
-50%{box-shadow:0 0 40px #a200ff}
-100%{box-shadow:0 0 10px #a200ff}
-}
-
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-12px)}
-100%{transform:translateY(0)}
-}
-
 /* NAVBAR */
 
 nav{
@@ -46,7 +33,7 @@ border-bottom:1px solid #111;
 }
 
 .logoText{
-font-size:22px;
+font-size:24px;
 font-weight:bold;
 }
 
@@ -56,14 +43,14 @@ gap:30px;
 list-style:none;
 }
 
-nav ul li{
-cursor:pointer;
+nav ul li a{
 color:#aaa;
+text-decoration:none;
 font-weight:600;
 transition:0.3s;
 }
 
-nav ul li:hover{
+nav ul li a:hover{
 color:#00eaff;
 }
 
@@ -74,7 +61,7 @@ border-radius:8px;
 font-weight:bold;
 }
 
-/* HERO FULL SCREEN */
+/* HERO */
 
 .hero{
 min-height:100vh;
@@ -88,16 +75,18 @@ padding:40px;
 
 /* LOGO */
 
-.logoBox{
-padding:25px;
-border-radius:10px;
-animation:glow 3s infinite;
-}
-
 .logoBox img{
 width:450px;
 max-width:90%;
 animation:float 4s ease-in-out infinite;
+}
+
+/* ANIMATION */
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+100%{transform:translateY(0)}
 }
 
 /* TEXT */
@@ -105,12 +94,12 @@ animation:float 4s ease-in-out infinite;
 .season{
 margin-top:30px;
 color:#ffd000;
-font-size:48px;
+font-size:50px;
 letter-spacing:6px;
 }
 
 .coming{
-font-size:70px;
+font-size:75px;
 color:#6ff9ff;
 font-weight:bold;
 margin-top:10px;
@@ -128,21 +117,23 @@ margin-top:50px;
 
 .box{
 background:#0a0f18;
-padding:30px 40px;
+padding:35px 45px;
 border-radius:14px;
 border:1px solid #142235;
 transition:0.3s;
-font-size:20px;
+font-size:22px;
 }
 
 .box b{
-font-size:26px;
+font-size:28px;
 }
 
 .box:hover{
 transform:translateY(-5px);
 box-shadow:0 0 25px #00eaff;
 }
+
+/* COPY BUTTON */
 
 .copyBtn{
 margin-top:15px;
@@ -166,7 +157,7 @@ background:#00ff9d !important;
 box-shadow:0 0 15px #00ff9d;
 }
 
-/* CROSS */
+/* CROSSPLAY */
 
 .cross{
 border:2px solid #ffd000;
@@ -176,7 +167,7 @@ display:inline-block;
 color:#ffd000;
 margin-top:30px;
 font-weight:bold;
-font-size:18px;
+font-size:20px;
 }
 
 /* DISCORD */
@@ -185,7 +176,7 @@ font-size:18px;
 margin-top:35px;
 display:inline-block;
 background:#5865F2;
-padding:14px 30px;
+padding:14px 32px;
 border-radius:10px;
 font-weight:bold;
 text-decoration:none;
@@ -198,15 +189,6 @@ transition:0.3s;
 transform:scale(1.1);
 }
 
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:20px;
-background:#000;
-border-top:1px solid #111;
-}
-
 </style>
 </head>
 
@@ -217,8 +199,8 @@ border-top:1px solid #111;
 <div class="logoText">GAMERLOG SMP</div>
 
 <ul>
-<li>HOME</li>
-<li>STAFF</li>
+<li><a href="index.html">HOME</a></li>
+<li><a href="staff.html">STAFF</a></li>
 <li>CREATORS</li>
 <li>PARTNER</li>
 <li>SUPPORT</li>
@@ -263,10 +245,6 @@ Join Discord
 
 </section>
 
-<footer>
-© 2026 Gamerlog SMP • All Rights Reserved
-</footer>
-
 <script>
 
 function copyJava(btn){
@@ -301,6 +279,8 @@ btn.classList.remove("copied");
 
 </body>
 </html>
+```
+
 
 
 
