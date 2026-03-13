@@ -18,15 +18,9 @@ body{
 background:radial-gradient(circle at top,#1b0033,#000);
 color:white;
 overflow-x:hidden;
-animation:fadeIn 1s ease;
 }
 
 /* ANIMATIONS */
-
-@keyframes fadeIn{
-from{opacity:0}
-to{opacity:1}
-}
 
 @keyframes glow{
 0%{box-shadow:0 0 10px #a200ff}
@@ -52,7 +46,7 @@ border-bottom:1px solid #111;
 }
 
 .logoText{
-font-size:20px;
+font-size:22px;
 font-weight:bold;
 }
 
@@ -80,24 +74,28 @@ border-radius:8px;
 font-weight:bold;
 }
 
-/* HERO */
+/* HERO FULL SCREEN */
 
 .hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:100px 20px;
+padding:40px;
 }
 
 /* LOGO */
 
 .logoBox{
-display:inline-block;
-padding:20px;
+padding:25px;
 border-radius:10px;
 animation:glow 3s infinite;
 }
 
 .logoBox img{
-width:420px;
+width:450px;
 max-width:90%;
 animation:float 4s ease-in-out infinite;
 }
@@ -107,12 +105,12 @@ animation:float 4s ease-in-out infinite;
 .season{
 margin-top:30px;
 color:#ffd000;
-font-size:36px;
-letter-spacing:5px;
+font-size:48px;
+letter-spacing:6px;
 }
 
 .coming{
-font-size:50px;
+font-size:70px;
 color:#6ff9ff;
 font-weight:bold;
 margin-top:10px;
@@ -123,33 +121,39 @@ margin-top:10px;
 .serverBox{
 display:flex;
 justify-content:center;
-gap:25px;
+gap:30px;
 flex-wrap:wrap;
-margin-top:40px;
+margin-top:50px;
 }
 
 .box{
 background:#0a0f18;
-padding:22px 30px;
-border-radius:12px;
+padding:30px 40px;
+border-radius:14px;
 border:1px solid #142235;
 transition:0.3s;
+font-size:20px;
+}
+
+.box b{
+font-size:26px;
 }
 
 .box:hover{
 transform:translateY(-5px);
-box-shadow:0 0 20px #00eaff;
+box-shadow:0 0 25px #00eaff;
 }
 
 .copyBtn{
-margin-top:12px;
-padding:8px 18px;
+margin-top:15px;
+padding:10px 22px;
 border:none;
-border-radius:6px;
+border-radius:8px;
 background:#00eaff;
 color:black;
 cursor:pointer;
 font-weight:bold;
+font-size:16px;
 transition:0.3s;
 }
 
@@ -166,25 +170,27 @@ box-shadow:0 0 15px #00ff9d;
 
 .cross{
 border:2px solid #ffd000;
-padding:10px 24px;
-border-radius:20px;
+padding:12px 30px;
+border-radius:25px;
 display:inline-block;
 color:#ffd000;
-margin-top:25px;
+margin-top:30px;
 font-weight:bold;
+font-size:18px;
 }
 
 /* DISCORD */
 
 .discord{
-margin-top:30px;
+margin-top:35px;
 display:inline-block;
 background:#5865F2;
-padding:12px 26px;
-border-radius:8px;
+padding:14px 30px;
+border-radius:10px;
 font-weight:bold;
 text-decoration:none;
 color:white;
+font-size:18px;
 transition:0.3s;
 }
 
@@ -199,7 +205,6 @@ text-align:center;
 padding:20px;
 background:#000;
 border-top:1px solid #111;
-margin-top:60px;
 }
 
 </style>
@@ -251,8 +256,6 @@ BEDROCK PORT<br>
 <div class="cross">
 ⚡ CROSSPLAY JAVA + BEDROCK + PE ⚡
 </div>
-
-<br>
 
 <a class="discord" href="https://discord.gg/Zc6PkAXTgF" target="_blank">
 Join Discord
