@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Assassin SMP</title>
+<title>Gamerlog SMP</title>
 
 <style>
 
 body{
 margin:0;
 font-family:Arial;
-background: radial-gradient(circle at center,#140021,#000000);
+background: radial-gradient(circle,#140021,#000000);
 color:white;
-overflow-x:hidden;
+text-align:center;
 }
 
 /* NAVBAR */
@@ -23,13 +23,12 @@ justify-content:space-between;
 align-items:center;
 padding:15px 40px;
 background:#000;
-border-bottom:1px solid #111;
 }
 
 nav ul{
 display:flex;
 list-style:none;
-gap:30px;
+gap:25px;
 }
 
 nav ul li{
@@ -43,40 +42,23 @@ color:#00eaff;
 }
 
 .login{
-background:linear-gradient(90deg,#5b6cff,#9b59ff);
+background:linear-gradient(90deg,#6a6cff,#9c5bff);
 padding:8px 18px;
 border-radius:8px;
-color:white;
-font-weight:bold;
 }
 
-/* CENTER SECTION */
+/* LOGO */
 
 .hero{
-text-align:center;
-margin-top:60px;
+margin-top:80px;
 }
 
-.logoBox{
-width:320px;
-height:320px;
-margin:auto;
-background:#000;
-border-radius:6px;
-box-shadow:0 0 30px #a000ff;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:48px;
-font-weight:bold;
-flex-direction:column;
+.logo{
+width:420px;
+max-width:90%;
 }
 
-.logoBox span{
-color:#c77dff;
-}
-
-/* SEASON TEXT */
+/* SEASON */
 
 .season{
 margin-top:40px;
@@ -93,13 +75,14 @@ margin-top:10px;
 font-weight:bold;
 }
 
-/* SERVER BOX */
+/* SERVER INFO */
 
 .serverBox{
 display:flex;
 justify-content:center;
 gap:20px;
 margin-top:30px;
+flex-wrap:wrap;
 }
 
 .box{
@@ -114,32 +97,16 @@ margin-left:10px;
 cursor:pointer;
 }
 
-/* CROSS */
+/* CROSS PLAY */
 
 .cross{
-margin-top:20px;
+margin-top:25px;
 border:2px solid #ffc400;
 display:inline-block;
 padding:10px 25px;
 border-radius:20px;
 color:#ffc400;
 font-weight:bold;
-}
-
-/* PLAYER SKINS */
-
-.skin{
-position:absolute;
-top:180px;
-width:160px;
-}
-
-.left{
-left:80px;
-}
-
-.right{
-right:80px;
 }
 
 </style>
@@ -149,7 +116,7 @@ right:80px;
 
 <nav>
 
-<div style="font-weight:bold">KTGAMERS</div>
+<div style="font-weight:bold">GAMERLOG SMP</div>
 
 <ul>
 <li style="color:#00eaff">HOME</li>
@@ -164,15 +131,9 @@ right:80px;
 
 </nav>
 
-<img class="skin left" src="https://mc-heads.net/body/Notch">
-<img class="skin right" src="https://mc-heads.net/body/Technoblade">
-
 <div class="hero">
 
-<div class="logoBox">
-ASSASSIN
-<span>SMP</span>
-</div>
+<img src="gamerlog-logo.png" class="logo">
 
 <div class="season">SEASON 3</div>
 
@@ -182,13 +143,13 @@ ASSASSIN
 
 <div class="box">
 JAVA EDITION<br>
-<b id="ip">play.ktsmp.in</b>
+<b id="ip">play.gamerlog.fun</b>
 <span class="copy" onclick="copyIP()">📋</span>
 </div>
 
 <div class="box">
 BEDROCK PORT<br>
-<b>19132</b>
+<b>25575</b>
 </div>
 
 </div>
@@ -204,7 +165,7 @@ BEDROCK PORT<br>
 /* COPY IP */
 
 function copyIP(){
-navigator.clipboard.writeText("play.ktsmp.in");
+navigator.clipboard.writeText("play.gamerlog.fun");
 alert("IP Copied!");
 }
 
@@ -213,12 +174,13 @@ alert("IP Copied!");
 let time = 104000;
 
 function updateTimer(){
+
 let h = Math.floor(time/3600);
 let m = Math.floor((time%3600)/60);
 let s = time%60;
 
 document.getElementById("timer").innerText =
-`${h}:${m}:${s}`;
+h + ":" + m + ":" + s;
 
 time--;
 }
