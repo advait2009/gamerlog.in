@@ -15,7 +15,7 @@ font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-background: radial-gradient(circle at center,#140021,#000);
+background: radial-gradient(circle,#140021,#000);
 color:white;
 }
 
@@ -31,7 +31,6 @@ border-bottom:1px solid #111;
 }
 
 nav h1{
-color:white;
 font-size:22px;
 }
 
@@ -42,8 +41,8 @@ list-style:none;
 }
 
 nav ul li{
-cursor:pointer;
 color:#bbb;
+cursor:pointer;
 font-weight:bold;
 }
 
@@ -55,7 +54,6 @@ color:#00eaff;
 background:linear-gradient(90deg,#6a6cff,#9c5bff);
 padding:8px 18px;
 border-radius:8px;
-font-weight:bold;
 }
 
 /* HERO */
@@ -169,6 +167,7 @@ margin-top:40px;
 <body>
 
 <nav>
+
 <h1>GAMERLOG SMP</h1>
 
 <ul>
@@ -181,6 +180,7 @@ margin-top:40px;
 </ul>
 
 <div class="login">LOGIN</div>
+
 </nav>
 
 <section class="hero">
@@ -189,7 +189,7 @@ margin-top:40px;
 
 <div class="season">SEASON 3</div>
 
-<div class="timer" id="timer">30:00:00</div>
+<div class="timer" id="timer">Loading...</div>
 
 <div class="serverBox">
 
@@ -259,23 +259,315 @@ navigator.clipboard.writeText("play.gamerlog.fun");
 alert("Server IP Copied!");
 }
 
-/* COUNTDOWN */
+/* COUNTDOWN WITH FIXED DATE */
 
-let time = 104000;
+let launchDate = new Date("July 1, 2026 18:00:00").getTime();
 
-function updateTimer(){
+let timer = setInterval(function(){
 
-let h = Math.floor(time/3600);
-let m = Math.floor((time%3600)/60);
-let s = time%60;
+let now = new Date().getTime();
+let distance = launchDate - now;
 
-document.getElementById("timer").innerText =
-h + ":" + m + ":" + s;
+let hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+let seconds = Math.floor((distance % (1000*60)) / 1000);
 
-time--;
+document.getElementById("timer").innerHTML =
+hours + ":" + minutes + ":" + seconds;
+
+if(distance < 0){
+clearInterval(timer);
+document.getElementById("timer").innerHTML = "SERVER OPEN!";
 }
 
-setInterval(updateTimer,1000);
+},1000);
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gamerlog SMP</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background: radial-gradient(circle,#140021,#000);
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:#000;
+border-bottom:1px solid #111;
+}
+
+nav h1{
+font-size:22px;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav ul li{
+color:#bbb;
+cursor:pointer;
+font-weight:bold;
+}
+
+nav ul li:hover{
+color:#00eaff;
+}
+
+.login{
+background:linear-gradient(90deg,#6a6cff,#9c5bff);
+padding:8px 18px;
+border-radius:8px;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:80px 20px;
+}
+
+.logo{
+width:420px;
+max-width:90%;
+margin-bottom:40px;
+}
+
+.season{
+font-size:36px;
+letter-spacing:5px;
+color:#ffd900;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.timer{
+font-size:60px;
+color:#7ef9ff;
+margin-bottom:40px;
+}
+
+/* SERVER INFO */
+
+.serverBox{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+.box{
+background:#06141a;
+border:1px solid #0f2a35;
+padding:18px 30px;
+border-radius:10px;
+}
+
+.copy{
+cursor:pointer;
+margin-left:10px;
+}
+
+.cross{
+border:2px solid #ffc400;
+padding:10px 25px;
+border-radius:20px;
+color:#ffc400;
+display:inline-block;
+font-weight:bold;
+}
+
+/* STAFF */
+
+.staff{
+padding:80px 20px;
+text-align:center;
+}
+
+.staff h2{
+font-size:36px;
+margin-bottom:40px;
+}
+
+.staff-grid{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.staff-card{
+background:#0a0a0a;
+padding:20px;
+border-radius:10px;
+width:200px;
+border:1px solid #111;
+}
+
+.staff-card img{
+width:100px;
+margin-bottom:10px;
+}
+
+.role{
+color:#00eaff;
+font-size:14px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#000;
+border-top:1px solid #111;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<h1>GAMERLOG SMP</h1>
+
+<ul>
+<li>HOME</li>
+<li>STAFF</li>
+<li>CREATORS</li>
+<li>PARTNER</li>
+<li>UPDATES</li>
+<li>SUPPORT</li>
+</ul>
+
+<div class="login">LOGIN</div>
+
+</nav>
+
+<section class="hero">
+
+<img src="gamerlog-logo.png" class="logo">
+
+<div class="season">SEASON 3</div>
+
+<div class="timer" id="timer">Loading...</div>
+
+<div class="serverBox">
+
+<div class="box">
+JAVA EDITION<br>
+<b id="ip">play.gamerlog.fun</b>
+<span class="copy" onclick="copyIP()">📋</span>
+</div>
+
+<div class="box">
+BEDROCK PORT<br>
+<b>25575</b>
+</div>
+
+</div>
+
+<div class="cross">
+⚡ CROSS CONNECTION | JAVA + PE ⚡
+</div>
+
+</section>
+
+<section class="staff">
+
+<h2>Server Staff</h2>
+
+<div class="staff-grid">
+
+<div class="staff-card">
+<img src="https://mc-heads.net/avatar/not_aadi_og">
+<h3>not_aadi_og</h3>
+<div class="role">Owner</div>
+</div>
+
+<div class="staff-card">
+<img src="https://mc-heads.net/avatar/Vansh">
+<h3>Vansh</h3>
+<div class="role">Developer</div>
+</div>
+
+<div class="staff-card">
+<img src="https://mc-heads.net/avatar/Hackerji">
+<h3>Hackerji</h3>
+<div class="role">Developer</div>
+</div>
+
+<div class="staff-card">
+<img src="https://mc-heads.net/avatar/GODXMARATHA">
+<h3>GODXMARATHA</h3>
+<div class="role">Staff</div>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Gamerlog SMP • All Rights Reserved
+</footer>
+
+<script>
+
+/* COPY IP */
+
+function copyIP(){
+navigator.clipboard.writeText("play.gamerlog.fun");
+alert("Server IP Copied!");
+}
+
+/* COUNTDOWN WITH FIXED DATE */
+
+let launchDate = new Date("July 1, 2026 18:00:00").getTime();
+
+let timer = setInterval(function(){
+
+let now = new Date().getTime();
+let distance = launchDate - now;
+
+let hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+let seconds = Math.floor((distance % (1000*60)) / 1000);
+
+document.getElementById("timer").innerHTML =
+hours + ":" + minutes + ":" + seconds;
+
+if(distance < 0){
+clearInterval(timer);
+document.getElementById("timer").innerHTML = "SERVER OPEN!";
+}
+
+},1000);
 
 </script>
 
