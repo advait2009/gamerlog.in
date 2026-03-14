@@ -9,86 +9,142 @@
 
 body{
 margin:0;
-font-family: 'Segoe UI', sans-serif;
-background:#0b0b0b;
+font-family:Segoe UI, sans-serif;
+background:#070707;
 color:white;
-text-align:center;
+overflow-x:hidden;
+}
+
+/* animated background */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,#ff003c,#7a00ff,#ff003c);
+background-size:300% 300%;
+animation:bgmove 10s infinite linear;
+opacity:0.1;
+z-index:-1;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
 }
 
 h1{
+text-align:center;
+font-size:45px;
 margin-top:60px;
-font-size:42px;
-letter-spacing:2px;
+animation:fadeDown 1s ease;
+}
+
+.section{
+margin-top:80px;
+text-align:center;
+}
+
+.section-title{
+font-size:32px;
+margin-bottom:40px;
 background:linear-gradient(90deg,#ff003c,#7a00ff);
 -webkit-background-clip:text;
 color:transparent;
 }
 
-.subtitle{
-color:#bbb;
-margin-bottom:50px;
-}
+/* cards */
 
-.partner-container{
+.container{
 display:flex;
 justify-content:center;
-align-items:center;
 flex-wrap:wrap;
 gap:40px;
-padding:20px;
 }
 
-.partner-card{
-width:300px;
-background:#141414;
-border-radius:18px;
+.card{
+width:280px;
 padding:30px;
-transition:0.3s;
-border:1px solid #1f1f1f;
-}
-
-.partner-card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px #7a00ff;
-}
-
-.partner-logo{
-width:90px;
-height:90px;
 border-radius:20px;
-margin-bottom:20px;
+background:#111;
+transition:0.4s;
+position:relative;
+overflow:hidden;
 }
 
-.partner-name{
+.card::before{
+content:"";
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:conic-gradient(#ff003c,#7a00ff,#ff003c);
+animation:spin 6s linear infinite;
+opacity:0;
+transition:0.4s;
+}
+
+.card:hover::before{
+opacity:0.25;
+}
+
+.card:hover{
+transform:translateY(-15px) scale(1.05);
+box-shadow:0 0 30px #7a00ff;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+
+.logo{
+width:90px;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.name{
 font-size:22px;
 font-weight:bold;
-margin-bottom:8px;
 }
 
-.partner-type{
+.desc{
+color:#bbb;
 font-size:14px;
-color:#888;
-margin-bottom:18px;
+margin-top:6px;
+margin-bottom:15px;
 }
 
-.partner-btn{
+.btn{
 display:inline-block;
-padding:10px 22px;
-background:linear-gradient(90deg,#ff003c,#7a00ff);
+padding:10px 20px;
 border-radius:8px;
 text-decoration:none;
 color:white;
-font-weight:bold;
+background:linear-gradient(90deg,#ff003c,#7a00ff);
 transition:0.3s;
 }
 
-.partner-btn:hover{
+.btn:hover{
 opacity:0.8;
 }
 
+/* entrance animation */
+
+@keyframes fadeDown{
+0%{opacity:0;transform:translateY(-40px)}
+100%{opacity:1;transform:translateY(0)}
+}
+
 footer{
-margin-top:80px;
-padding:25px;
+text-align:center;
+margin-top:100px;
+padding:30px;
 color:#777;
 border-top:1px solid #222;
 }
@@ -98,32 +154,54 @@ border-top:1px solid #222;
 
 <body>
 
-<h1>🤝 Gamerlog SMP Partners</h1>
-<p class="subtitle">Amazing servers & creators who support our community</p>
+<h1>🤝 Gamerlog SMP Partnerships</h1>
 
-<div class="partner-container">
+<!-- YOUTUBE PARTNERS -->
 
-<div class="partner-card">
-<img class="partner-logo" src="https://mc-heads.net/avatar/Steve">
-<div class="partner-name">Dragon SMP</div>
-<div class="partner-type">Minecraft Partner Server</div>
-<a class="partner-btn" href="#">Visit Server</a>
+<div class="section">
+<div class="section-title">📺 YouTube Partners</div>
+
+<div class="container">
+
+<div class="card">
+<img class="logo" src="https://mc-heads.net/avatar/Steve">
+<div class="name">Creator Name</div>
+<div class="desc">Official Gamerlog SMP YouTube Partner</div>
+<a class="btn" href="#">Visit Channel</a>
 </div>
 
-<div class="partner-card">
-<img class="partner-logo" src="https://mc-heads.net/avatar/Alex">
-<div class="partner-name">Shadow Creator</div>
-<div class="partner-type">Official Content Creator</div>
-<a class="partner-btn" href="#">YouTube</a>
+<div class="card">
+<img class="logo" src="https://mc-heads.net/avatar/Alex">
+<div class="name">Creator Name</div>
+<div class="desc">Minecraft Content Creator</div>
+<a class="btn" href="#">Visit Channel</a>
 </div>
 
-<div class="partner-card">
-<img class="partner-logo" src="https://mc-heads.net/avatar/Herobrine">
-<div class="partner-name">Night Network</div>
-<div class="partner-type">Gaming Community</div>
-<a class="partner-btn" href="#">Join</a>
+</div>
 </div>
 
+<!-- SERVER PARTNERS -->
+
+<div class="section">
+<div class="section-title">🖥 Server Partnerships</div>
+
+<div class="container">
+
+<div class="card">
+<img class="logo" src="https://mc-heads.net/avatar/Herobrine">
+<div class="name">Partner Server</div>
+<div class="desc">Official Minecraft Partner Server</div>
+<a class="btn" href="#">Join Server</a>
+</div>
+
+<div class="card">
+<img class="logo" src="https://mc-heads.net/avatar/Notch">
+<div class="name">Community Network</div>
+<div class="desc">Gaming Community Partner</div>
+<a class="btn" href="#">Visit</a>
+</div>
+
+</div>
 </div>
 
 <footer>
