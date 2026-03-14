@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gamerlog SMP</title>
 
 <style>
@@ -18,7 +19,7 @@ font-family:Segoe UI,Arial;
 }
 
 body{
-background: radial-gradient(circle at top,#1b0033,#000);
+background:radial-gradient(circle at top,#14002c,#000);
 color:white;
 }
 
@@ -30,6 +31,9 @@ justify-content:space-between;
 align-items:center;
 padding:20px 60px;
 background:#000;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
@@ -64,7 +68,7 @@ text-align:center;
 }
 
 .hero img{
-width:350px;
+width:320px;
 animation:float 4s infinite ease-in-out;
 }
 
@@ -267,33 +271,22 @@ color:#ddd;
 .creatorBtn a{
 position:relative;
 display:inline-block;
-text-decoration:none;
-padding:14px 36px;
+padding:14px 38px;
 border-radius:14px;
+text-decoration:none;
 font-weight:600;
 letter-spacing:1px;
 color:white;
-
 background:linear-gradient(135deg,#ff3c3c,#ff6a6a);
-
-backdrop-filter:blur(10px);
 overflow:hidden;
-
-transition:all .35s ease;
-
-box-shadow:
-0 6px 20px rgba(255,60,60,0.35),
-0 0 12px rgba(255,60,60,0.25);
-
-animation:softGlow 3s ease-in-out infinite;
+transition:all .4s cubic-bezier(.22,.68,0,1);
+box-shadow:0 10px 25px rgba(255,60,60,.35);
+animation:subscribeGlow 4s ease-in-out infinite;
 }
 
 .creatorBtn a:hover{
-transform:translateY(-4px) scale(1.05);
-
-box-shadow:
-0 12px 35px rgba(255,60,60,0.55),
-0 0 25px rgba(255,60,60,0.5);
+transform:translateY(-6px) scale(1.06);
+box-shadow:0 18px 45px rgba(255,60,60,.6);
 }
 
 .creatorBtn a::before{
@@ -303,41 +296,60 @@ top:0;
 left:-120%;
 width:120%;
 height:100%;
-
-background:linear-gradient(
-120deg,
-transparent,
-rgba(255,255,255,0.5),
-transparent
-);
-
-transition:0.7s;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
+transition:.7s;
 }
 
 .creatorBtn a:hover::before{
 left:120%;
 }
 
-@keyframes softGlow{
-
-0%{
-box-shadow:
-0 6px 20px rgba(255,60,60,0.35),
-0 0 12px rgba(255,60,60,0.25);
+@keyframes subscribeGlow{
+0%{box-shadow:0 10px 25px rgba(255,60,60,.35);}
+50%{box-shadow:0 14px 35px rgba(255,60,60,.55);}
+100%{box-shadow:0 10px 25px rgba(255,60,60,.35);}
 }
 
-50%{
-box-shadow:
-0 10px 28px rgba(255,60,60,0.55),
-0 0 22px rgba(255,60,60,0.5);
+/* PARTNER SECTION */
+
+.partnerSection{
+padding:120px 20px;
+background:#000;
+text-align:center;
 }
 
-100%{
-box-shadow:
-0 6px 20px rgba(255,60,60,0.35),
-0 0 12px rgba(255,60,60,0.25);
+.partnerTitle{
+font-size:45px;
+color:#ffd000;
+margin-bottom:40px;
 }
 
+.sponsorWall{
+width:320px;
+height:200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:20px;
+background:#111;
+border:2px dashed #444;
+font-size:22px;
+color:#888;
+animation:glow 3s infinite;
+}
+
+@keyframes glow{
+0%{box-shadow:0 0 0px #ffd000;}
+50%{box-shadow:0 0 25px #ffd000;}
+100%{box-shadow:0 0 0px #ffd000;}
+}
+
+footer{
+text-align:center;
+padding:40px;
+background:#000;
+color:#777;
 }
 
 </style>
@@ -346,18 +358,19 @@ box-shadow:
 <body>
 
 <nav>
+
 <div class="logo">GAMERLOG SMP</div>
 
 <ul>
 <li><a href="#">Home</a></li>
 <li><a href="#staff">Staff</a></li>
 <li><a href="#creators">Creators</a></li>
+<li><a href="#partners">Partners</a></li>
 </ul>
+
 </nav>
 
 <section class="hero">
-
-<img src="gamerlog-logo.png">
 
 <div class="season">SEASON 3</div>
 <div class="coming">COMING SOON</div>
@@ -414,24 +427,6 @@ Join Discord
 
 </div>
 
-<h2 style="margin-top:70px;color:#6dd5ff;">MEDIA TEAM</h2>
-
-<div class="staff">
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/pm_xd/120">
-<div class="name">PM_xd</div>
-<div class="media">Media</div>
-</div>
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/gamer_my_loart/120">
-<div class="name">Gamer_MY_Loart</div>
-<div class="media">Media</div>
-</div>
-
-</div>
-
 </section>
 
 <section id="creators" class="creatorSection">
@@ -441,8 +436,11 @@ Join Discord
 <div class="creatorContainer">
 
 <div class="creatorCard">
+
 <div class="avatar">AO</div>
+
 <div class="creatorName">not_aadi_og</div>
+
 <div class="creatorTag">📹 CONTENT CREATOR</div>
 
 <div class="creatorDesc">
@@ -458,8 +456,11 @@ Catch epic survival adventures, server trolling and intense gameplay on my YouTu
 </div>
 
 <div class="creatorCard">
+
 <div class="avatar">PM</div>
+
 <div class="creatorName">PM_xd</div>
+
 <div class="creatorTag">📹 CONTENT CREATOR</div>
 
 <div class="creatorDesc">
@@ -478,12 +479,27 @@ Watch exciting Minecraft gameplay and SMP adventures on the channel.
 
 </section>
 
+<section id="partners" class="partnerSection">
+
+<h1 class="partnerTitle">Official Sponsors</h1>
+
+<div class="sponsorWall">
+🚀 Sponsors Coming Soon
+</div>
+
+</section>
+
+<footer>
+© Gamerlog SMP
+</footer>
+
 <script>
 
 function copyIP(button){
 navigator.clipboard.writeText("play.gamerlog.fun");
 button.innerText="✓ Copied!";
 button.classList.add("copied");
+
 setTimeout(()=>{
 button.innerText="Copy IP";
 button.classList.remove("copied");
@@ -494,6 +510,7 @@ function copyPort(button){
 navigator.clipboard.writeText("25575");
 button.innerText="✓ Copied!";
 button.classList.add("copied");
+
 setTimeout(()=>{
 button.innerText="Copy Port";
 button.classList.remove("copied");
