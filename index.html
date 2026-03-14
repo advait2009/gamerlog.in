@@ -38,7 +38,7 @@ body{
   100%{transform:translateY(0) translateX(400px) scale(0.5);}
 }
 
-/* Smoke effect */
+/* Smoke */
 .smoke div{
   position:absolute;
   width:40px;
@@ -53,7 +53,7 @@ body{
   100%{transform:translateY(-400px) translateX(200px) scale(1);}
 }
 
-/* FLOATING PARTNER CARD */
+/* HERO / PARTNER CARD */
 .hero{
   position:relative;
   width:100%;
@@ -67,16 +67,17 @@ body{
 .partner-box{
   position:relative;
   z-index:2;
-  width:450px;
+  width:470px;
   padding:50px;
   border-radius:25px;
-  background:rgba(20,20,20,0.9);
+  background:rgba(20,20,20,0.95);
   backdrop-filter:blur(6px);
-  box-shadow:0 0 50px rgba(122,0,255,0.6);
-  animation:float 5s ease-in-out infinite;
+  box-shadow:0 0 60px rgba(122,0,255,0.7);
+  animation:floatJump 5s ease-in-out infinite;
+  transform-origin:center;
 }
 
-/* Glow border */
+/* GLOW BORDER */
 .partner-box::before{
   content:"";
   position:absolute;
@@ -88,53 +89,81 @@ body{
   background:linear-gradient(90deg,#ff003c,#7a00ff,#ff003c);
   background-size:300%;
   z-index:-1;
-  animation:borderMove 6s linear infinite;
+  animation:borderGlow 6s linear infinite;
 }
 
-@keyframes borderMove{
+@keyframes borderGlow{
   0%{background-position:0%}
   100%{background-position:300%}
 }
 
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-20px)}
-  100%{transform:translateY(0)}
+/* FLOAT + JUMP + ROTATE ANIMATION */
+@keyframes floatJump{
+  0%{transform:translateY(0) rotate(0deg);}
+  20%{transform:translateY(-15px) rotate(5deg);}
+  40%{transform:translateY(0) rotate(-5deg);}
+  60%{transform:translateY(-10px) rotate(3deg);}
+  80%{transform:translateY(0) rotate(-3deg);}
+  100%{transform:translateY(0) rotate(0deg);}
+}
+
+/* Glowing pulse text animation */
+.desc span{
+  display:inline-block;
+  animation:glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse{
+  0%,100%{color:#bbb;text-shadow:0 0 3px #ff003c,0 0 5px #7a00ff;}
+  50%{color:#fff;text-shadow:0 0 10px #ff003c,0 0 20px #7a00ff;}
 }
 
 .logo{
-  width:130px;
+  width:140px;
   border-radius:20px;
   margin-bottom:20px;
 }
 
 .title{
-  font-size:34px;
+  font-size:36px;
   font-weight:bold;
-  margin-bottom:10px;
+  margin-bottom:15px;
+  animation:titleShake 4s ease-in-out infinite;
+}
+
+@keyframes titleShake{
+  0%,100%{transform:rotate(0deg);}
+  25%{transform:rotate(2deg);}
+  50%{transform:rotate(-2deg);}
+  75%{transform:rotate(1deg);}
 }
 
 .desc{
-  color:#bbb;
-  font-size:15px;
+  font-size:16px;
   margin-bottom:25px;
   line-height:1.6;
 }
 
 .btn{
   display:inline-block;
-  padding:14px 30px;
-  border-radius:10px;
+  padding:14px 32px;
+  border-radius:12px;
   text-decoration:none;
   font-size:16px;
   color:white;
   background:linear-gradient(90deg,#ff003c,#7a00ff);
   transition:0.3s;
+  animation:btnPulse 2s ease-in-out infinite;
 }
 
 .btn:hover{
-  transform:scale(1.1);
+  transform:scale(1.15);
   box-shadow:0 0 25px #7a00ff;
+}
+
+@keyframes btnPulse{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.05);}
 }
 </style>
 </head>
@@ -148,10 +177,9 @@ body{
     <img class="logo" src="https://mc-heads.net/avatar/Steve">
     <div class="title">Official Partner Server</div>
     <div class="desc">
-      This server is the official partner of Gamerlog SMP.  
-      Experience epic Minecraft adventures, PvP battles, and community events.
+      <span>⚡ Unleash chaos, conquer worlds &amp; dominate every battle! ⚡</span>
     </div>
-    <a class="btn" href="#">Visit Partner</a>
+    <a class="btn" href="#">Join the Adventure</a>
   </div>
 </div>
 
