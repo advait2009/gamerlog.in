@@ -7,38 +7,49 @@
 <style>
 body{
   margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background:#050505;
-  overflow-x:hidden;
+  font-family:'Segoe UI',sans-serif;
   color:white;
+  overflow:hidden;
+  background:#050505;
 }
 
-/* FLYING DRAGON BACKGROUND */
+/* DRAGON BACKGROUND */
 .hero{
   position:relative;
+  width:100%;
   height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
-  background:url('https://i.imgur.com/jXoDqkR.png') repeat-x;
-  background-size:cover;
-  animation:dragonMove 30s linear infinite;
+  background:#050505;
+  overflow:hidden;
+}
+
+.dragon-bg{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:180%;
+  transform:translate(-50%,-50%);
+  animation:dragonMove 60s linear infinite;
+  opacity:0.5;
+  z-index:0;
 }
 
 @keyframes dragonMove{
-  0%{background-position:0 0;}
-  100%{background-position:-2000px 0;}
+  0%{transform:translate(-50%,-50%) translateX(0);}
+  100%{transform:translate(-50%,-50%) translateX(-600px);}
 }
 
-/* MOVING PARTICLES */
-.particles{
+/* PARTICLES */
+.particles, .smoke{
   position:absolute;
   width:100%;
   height:100%;
   pointer-events:none;
-  overflow:hidden;
   z-index:1;
+  overflow:hidden;
 }
 
 .particle{
@@ -56,6 +67,21 @@ body{
   100%{transform:translateY(0) translateX(400px) scale(0.5);}
 }
 
+/* Smoke effect */
+.smoke div{
+  position:absolute;
+  width:40px;
+  height:40px;
+  background:rgba(255,255,255,0.05);
+  border-radius:50%;
+  animation:smokeMove 20s linear infinite;
+}
+
+@keyframes smokeMove{
+  0%{transform:translateY(600px) translateX(0) scale(0.5);}
+  100%{transform:translateY(-400px) translateX(200px) scale(1);}
+}
+
 /* FLOATING PARTNER CARD */
 .partner-box{
   position:relative;
@@ -69,7 +95,7 @@ body{
   animation:float 5s ease-in-out infinite;
 }
 
-/* GLOW BORDER */
+/* Glow border */
 .partner-box::before{
   content:"";
   position:absolute;
@@ -129,59 +155,22 @@ body{
   transform:scale(1.1);
   box-shadow:0 0 25px #7a00ff;
 }
-
-/* LONG SCROLL SECTION */
-.info{
-  padding:150px 20px;
-  text-align:center;
-  background:#0b0b0b;
-}
-
-.info h2{
-  font-size:42px;
-  margin-bottom:20px;
-  background:linear-gradient(90deg,#ff003c,#7a00ff);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
-.info p{
-  max-width:900px;
-  margin:auto;
-  color:#aaa;
-  font-size:18px;
-  line-height:1.8;
-}
-
-/* FOOTER */
-footer{
-  padding:50px;
-  text-align:center;
-  background:#080808;
-  color:#777;
-}
-
-/* Scroll animations */
-.info, footer{
-  opacity:0;
-  transform:translateY(40px);
-  animation:fadeIn 1.2s forwards;
-  animation-delay:0.5s;
-}
-
-@keyframes fadeIn{
-  to{opacity:1; transform:translateY(0);}
-}
 </style>
 </head>
 <body>
 
 <section class="hero">
 
-<div class="particles">
-  <!-- generate particles dynamically with JS -->
-</div>
+<!-- Dragon background -->
+<img class="dragon-bg" src="https://i.imgur.com/jXoDqkR.png" alt="Dragon">
 
+<!-- Particles -->
+<div class="particles"></div>
+
+<!-- Smoke -->
+<div class="smoke"></div>
+
+<!-- Partner Card -->
 <div class="partner-box">
   <img class="logo" src="https://mc-heads.net/avatar/Steve">
   <div class="title">Official Partner Server</div>
@@ -194,21 +183,8 @@ footer{
 
 </section>
 
-<section class="info">
-  <h2>Why Our Partnership Matters</h2>
-  <p>
-    Gamerlog SMP collaborates with trusted Minecraft communities to provide the best multiplayer experience.  
-    Partners help grow the network, support events, and build an active, fun community for players of all ages.  
-    Together we create epic survival adventures, competitive PvP arenas, and unforgettable Minecraft memories.
-  </p>
-</section>
-
-<footer>
-© 2026 Gamerlog SMP • All Rights Reserved
-</footer>
-
 <script>
-// Generate moving particles
+// Generate particles
 const particleContainer = document.querySelector('.particles');
 for(let i=0;i<50;i++){
   let p = document.createElement('div');
@@ -219,6 +195,18 @@ for(let i=0;i<50;i++){
   p.style.width=(3+Math.random()*5)+'px';
   p.style.height=p.style.width;
   particleContainer.appendChild(p);
+}
+
+// Generate smoke
+const smokeContainer = document.querySelector('.smoke');
+for(let i=0;i<20;i++){
+  let s = document.createElement('div');
+  s.style.left=Math.random()*window.innerWidth+'px';
+  s.style.bottom='-50px';
+  s.style.width=(20+Math.random()*40)+'px';
+  s.style.height=s.style.width;
+  s.style.animationDuration=(15+Math.random()*10)+'s';
+  smokeContainer.appendChild(s);
 }
 </script>
 
