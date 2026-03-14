@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gamerlog SMP</title>
 
 <style>
@@ -244,21 +245,66 @@ font-size:14px;
 color:#ddd;
 }
 
+/* NEW SUBSCRIBE ANIMATION */
+
 .creatorBtn a{
 display:inline-block;
-padding:14px 38px;
-border-radius:14px;
+padding:16px 42px;
+border-radius:16px;
+font-weight:700;
 text-decoration:none;
-font-weight:600;
 color:white;
-background:linear-gradient(135deg,#ff3c3c,#ff6a6a);
+background:linear-gradient(135deg,#ff2e2e,#ff6a6a);
+position:relative;
+overflow:hidden;
 transition:.4s;
-box-shadow:0 10px 25px rgba(255,60,60,.35);
+box-shadow:0 12px 35px rgba(255,60,60,.45);
+animation:subFloat 4s ease-in-out infinite;
 }
 
 .creatorBtn a:hover{
-transform:translateY(-6px) scale(1.06);
-box-shadow:0 18px 45px rgba(255,60,60,.6);
+transform:scale(1.08);
+box-shadow:0 20px 55px rgba(255,60,60,.8);
+}
+
+.creatorBtn a::after{
+content:"";
+position:absolute;
+top:0;
+left:-150%;
+width:120%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.8),transparent);
+transition:.8s;
+}
+
+.creatorBtn a:hover::after{
+left:130%;
+}
+
+@keyframes subFloat{
+0%{transform:translateY(0)}
+50%{transform:translateY(-6px)}
+100%{transform:translateY(0)}
+}
+
+/* VIDEO */
+
+.videoAd{
+padding:120px 20px;
+text-align:center;
+background:radial-gradient(circle,#1a001a,#000);
+}
+
+.videoTitle{
+font-size:48px;
+margin-bottom:50px;
+color:#ff4d4d;
+}
+
+.videoBox iframe{
+border-radius:20px;
+box-shadow:0 0 40px rgba(255,0,0,.6);
 }
 
 /* PARTNERS */
@@ -356,6 +402,7 @@ color:#777;
 <li><a href="#home">Home</a></li>
 <li><a href="#staff">Staff</a></li>
 <li><a href="#creators">Creators</a></li>
+<li><a href="#video">Video</a></li>
 <li><a href="#partners">Partners</a></li>
 <li><a href="#community">Discord</a></li>
 </ul>
@@ -430,40 +477,42 @@ BEDROCK PORT<br>
 <div class="creatorContainer">
 
 <div class="creatorCard">
-
 <div class="avatar">AO</div>
 <div class="creatorName">not_aadi_og</div>
 <div class="creatorTag">CONTENT CREATOR</div>
-
-<div class="creatorDesc">
-Epic Minecraft survival gameplay and SMP adventures.
-</div>
-
+<div class="creatorDesc">Epic Minecraft survival gameplay.</div>
 <div class="creatorBtn">
-<a href="https://www.youtube.com/@not_aadi_og" target="_blank">
-SUBSCRIBE
-</a>
+<a href="https://www.youtube.com/@not_aadi_og" target="_blank">SUBSCRIBE</a>
 </div>
-
 </div>
 
 <div class="creatorCard">
-
 <div class="avatar">PM</div>
 <div class="creatorName">PM_xd</div>
 <div class="creatorTag">CONTENT CREATOR</div>
-
-<div class="creatorDesc">
-Watch exciting Minecraft gameplay and SMP adventures.
-</div>
-
+<div class="creatorDesc">Minecraft gameplay and SMP adventures.</div>
 <div class="creatorBtn">
-<a href="https://www.youtube.com/@PM_xd" target="_blank">
-SUBSCRIBE
-</a>
+<a href="https://www.youtube.com/@PM_xd" target="_blank">SUBSCRIBE</a>
+</div>
 </div>
 
 </div>
+
+</section>
+
+<!-- VIDEO -->
+
+<section id="video" class="videoAd">
+
+<h1 class="videoTitle">Featured Video</h1>
+
+<div class="videoBox">
+
+<iframe width="900" height="500"
+src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+frameborder="0"
+allowfullscreen>
+</iframe>
 
 </div>
 
