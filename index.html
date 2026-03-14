@@ -1,4 +1,4 @@
-```html id="gamerlogsite">
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -262,19 +262,54 @@ font-size:14px;
 color:#ddd;
 }
 
+/* SUPER SMOOTH SUBSCRIBE BUTTON */
+
 .creatorBtn a{
+position:relative;
+display:inline-block;
 text-decoration:none;
 background:#ff3c3c;
-padding:12px 28px;
-border-radius:10px;
+padding:12px 32px;
+border-radius:12px;
 color:white;
 font-weight:bold;
-transition:.3s;
+letter-spacing:1px;
+overflow:hidden;
+transition:all .35s ease;
+box-shadow:0 0 10px rgba(255,60,60,0.6);
+animation:subPulse 2.5s infinite;
 }
 
 .creatorBtn a:hover{
-background:#ff5c5c;
-box-shadow:0 0 15px #ff3c3c;
+transform:translateY(-3px) scale(1.05);
+box-shadow:0 0 20px #ff3c3c,0 0 40px rgba(255,60,60,0.5);
+background:#ff5555;
+}
+
+/* shine animation */
+
+.creatorBtn a::before{
+content:"";
+position:absolute;
+top:0;
+left:-75%;
+width:50%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.8),transparent);
+transform:skewX(-25deg);
+transition:.7s;
+}
+
+.creatorBtn a:hover::before{
+left:130%;
+}
+
+/* pulse glow */
+
+@keyframes subPulse{
+0%{box-shadow:0 0 10px rgba(255,60,60,0.5);}
+50%{box-shadow:0 0 30px rgba(255,60,60,1);}
+100%{box-shadow:0 0 10px rgba(255,60,60,0.5);}
 }
 
 </style>
@@ -291,8 +326,6 @@ box-shadow:0 0 15px #ff3c3c;
 <li><a href="#creators">Creators</a></li>
 </ul>
 </nav>
-
-<!-- HOME -->
 
 <section class="hero">
 
@@ -424,31 +457,23 @@ Watch exciting Minecraft gameplay and SMP adventures on the channel.
 <script>
 
 function copyIP(button){
-
 navigator.clipboard.writeText("play.gamerlog.fun");
-
 button.innerText="✓ Copied!";
 button.classList.add("copied");
-
 setTimeout(()=>{
 button.innerText="Copy IP";
 button.classList.remove("copied");
 },2000);
-
 }
 
 function copyPort(button){
-
 navigator.clipboard.writeText("25575");
-
 button.innerText="✓ Copied!";
 button.classList.add("copied");
-
 setTimeout(()=>{
 button.innerText="Copy Port";
 button.classList.remove("copied");
 },2000);
-
 }
 
 </script>
