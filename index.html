@@ -14,7 +14,7 @@ html{scroll-behavior:smooth;}
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI, Arial;
+font-family:Segoe UI,Arial;
 }
 
 body{
@@ -30,7 +30,6 @@ justify-content:space-between;
 align-items:center;
 padding:18px 60px;
 background:#000;
-border-bottom:1px solid #111;
 }
 
 .logoText{
@@ -48,7 +47,6 @@ nav ul li a{
 color:#aaa;
 text-decoration:none;
 font-weight:600;
-transition:.3s;
 }
 
 nav ul li a:hover{
@@ -75,8 +73,7 @@ padding:40px;
 }
 
 .logoBox img{
-width:450px;
-max-width:90%;
+width:420px;
 animation:float 4s infinite ease-in-out;
 }
 
@@ -94,11 +91,13 @@ letter-spacing:6px;
 }
 
 .coming{
-font-size:75px;
+font-size:70px;
 color:#6ff9ff;
 font-weight:bold;
 margin-top:10px;
 }
+
+/* SERVER BOX */
 
 .serverBox{
 display:flex;
@@ -113,19 +112,11 @@ padding:35px 45px;
 border-radius:14px;
 border:1px solid #142235;
 font-size:22px;
-transition:.3s;
 }
 
 .box b{
 font-size:28px;
 }
-
-.box:hover{
-transform:translateY(-5px);
-box-shadow:0 0 25px #00eaff;
-}
-
-/* COPY BUTTON */
 
 .copyBtn{
 margin-top:15px;
@@ -139,7 +130,24 @@ font-weight:bold;
 }
 
 .copied{
-background:#00ff9d !important;
+background:#00ff9d!important;
+}
+
+/* SERVER STATUS */
+
+.status{
+margin-top:30px;
+font-size:22px;
+}
+
+.online{
+color:#00ff9d;
+font-weight:bold;
+}
+
+.offline{
+color:red;
+font-weight:bold;
 }
 
 /* CROSSPLAY */
@@ -193,12 +201,6 @@ background:#111;
 padding:20px;
 border-radius:15px;
 width:220px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 20px #00eaff;
 }
 
 .card img{
@@ -235,6 +237,8 @@ margin-bottom:50px;
 .creatorContainer{
 display:flex;
 justify-content:center;
+gap:40px;
+flex-wrap:wrap;
 }
 
 .creatorCard{
@@ -289,11 +293,6 @@ padding:10px 25px;
 border-radius:10px;
 color:white;
 font-weight:bold;
-box-shadow:0 0 10px #ff3c3c;
-}
-
-.creatorBtn a:hover{
-background:#ff5c5c;
 }
 
 </style>
@@ -329,9 +328,9 @@ background:#ff5c5c;
 <div class="serverBox">
 
 <div class="box">
-JAVA EDITION<br>
+JAVA IP<br>
 <b>play.gamerlog.fun</b><br>
-<button class="copyBtn" onclick="copyJava(this)">Copy IP</button>
+<button class="copyBtn" onclick="copyIP(this)">Copy IP</button>
 </div>
 
 <div class="box">
@@ -340,6 +339,10 @@ BEDROCK PORT<br>
 <button class="copyBtn" onclick="copyPort(this)">Copy Port</button>
 </div>
 
+</div>
+
+<div class="status">
+Server Status: <span id="statusText">Checking...</span>
 </div>
 
 <div class="cross">
@@ -409,22 +412,27 @@ Join Discord
 <div class="creatorContainer">
 
 <div class="creatorCard">
-
 <div class="avatar">AO</div>
-
 <div class="creatorName">not_aadi_og</div>
-
 <div class="creatorTag">📹 CONTENT CREATOR</div>
-
 <div class="creatorDesc">
-Catch epic survival adventures, server trolling,
-and intense gameplay on my YouTube channel.
+Catch epic survival adventures, server trolling and intense gameplay on my YouTube channel.
 </div>
-
 <div class="creatorBtn">
 <a href="https://www.youtube.com/@not_aadi_og" target="_blank">▶ SUBSCRIBE</a>
 </div>
+</div>
 
+<div class="creatorCard">
+<div class="avatar">PM</div>
+<div class="creatorName">PM_xd</div>
+<div class="creatorTag">📹 CONTENT CREATOR</div>
+<div class="creatorDesc">
+Watch exciting Minecraft gameplay, SMP moments and awesome adventures on the channel.
+</div>
+<div class="creatorBtn">
+<a href="https://www.youtube.com/@PM_xd" target="_blank">▶ SUBSCRIBE</a>
+</div>
 </div>
 
 </div>
@@ -433,7 +441,7 @@ and intense gameplay on my YouTube channel.
 
 <script>
 
-function copyJava(btn){
+function copyIP(btn){
 navigator.clipboard.writeText("play.gamerlog.fun");
 btn.innerText="Copied!";
 btn.classList.add("copied");
@@ -452,6 +460,29 @@ btn.innerText="Copy Port";
 btn.classList.remove("copied");
 },2000);
 }
+
+/* SERVER STATUS */
+
+async function checkServer(){
+try{
+let res=await fetch("https://api.mcsrvstat.us/2/play.gamerlog.fun");
+let data=await res.json();
+
+let status=document.getElementById("statusText");
+
+if(data.online){
+status.innerHTML=`<span class="online">ONLINE</span> | Players: ${data.players.online}`;
+}else{
+status.innerHTML=`<span class="offline">OFFLINE</span>`;
+}
+
+}catch{
+document.getElementById("statusText").innerText="Status Error";
+}
+}
+
+checkServer();
+setInterval(checkServer,30000);
 
 </script>
 
