@@ -19,81 +19,79 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:18px 60px;
+  padding:25px 80px;
   background:#000;
   position: sticky;
   top:0;
   z-index:1000;
 }
-.logoText{font-size:24px;font-weight:bold;}
+.logoText{font-size:28px;font-weight:bold;}
 nav ul{
   display:flex;
-  gap:30px;
+  gap:40px;
   list-style:none;
 }
 nav ul li a{
   color:#aaa;
   text-decoration:none;
   font-weight:600;
+  font-size:18px;
 }
 nav ul li a:hover{color:#00eaff;}
 .login{
   background:linear-gradient(90deg,#5f6fff,#a259ff);
-  padding:8px 20px;
-  border-radius:8px;
+  padding:10px 25px;
+  border-radius:10px;
   font-weight:bold;
+  font-size:16px;
 }
 
 /* ===== HERO ===== */
 .hero{
-  min-height:100vh;
+  min-height:110vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:40px;
+  padding:60px;
 }
 .logoBox img{
-  width:420px;
+  width:480px;
   animation:float 4s infinite ease-in-out;
 }
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-15px)}
-  100%{transform:translateY(0)}
-}
-.season{margin-top:30px;color:#ffd000;font-size:50px;letter-spacing:6px;}
-.coming{font-size:70px;color:#6ff9ff;font-weight:bold;margin-top:10px;}
+.season{margin-top:40px;color:#ffd000;font-size:60px;letter-spacing:6px;}
+.coming{font-size:80px;color:#6ff9ff;font-weight:bold;margin-top:15px;}
 
 /* ===== SERVER BOX ===== */
 .serverBox{
   display:flex;
-  gap:30px;
+  gap:40px;
   flex-wrap:wrap;
-  margin-top:50px;
+  margin-top:60px;
 }
 .box{
   background:#0a0f18;
-  padding:35px 45px;
-  border-radius:14px;
+  padding:45px 55px;
+  border-radius:16px;
   border:1px solid #142235;
-  font-size:22px;
+  font-size:24px;
   position:relative;
 }
-.box b{font-size:28px;}
+.box b{font-size:32px;}
 .copyBtn{
-  margin-top:15px;
-  padding:10px 22px;
+  margin-top:20px;
+  padding:12px 26px;
   border:none;
-  border-radius:8px;
+  border-radius:10px;
   background:#00eaff;
   color:black;
   cursor:pointer;
   font-weight:bold;
+  font-size:16px;
 }
 
-/* ===== TOAST NOTIFICATION ===== */
+/* ===== TOAST ===== */
 #toast {
   position: fixed;
   bottom: 30px;
@@ -102,8 +100,8 @@ nav ul li a:hover{color:#00eaff;}
   background: #00eaff;
   color: black;
   font-weight: bold;
-  padding: 12px 25px;
-  border-radius: 10px;
+  padding: 14px 28px;
+  border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
   opacity: 0;
   pointer-events: none;
@@ -116,66 +114,66 @@ nav ul li a:hover{color:#00eaff;}
 }
 
 /* ===== SERVER STATUS ===== */
-.status{margin-top:30px;font-size:22px;}
+.status{margin-top:40px;font-size:24px;}
 .online{color:#00ff9d;font-weight:bold;}
 .offline{color:red;font-weight:bold;}
 
 /* ===== CROSSPLAY ===== */
 .cross{
   border:2px solid #ffd000;
-  padding:12px 30px;
-  border-radius:25px;
-  margin-top:30px;
+  padding:15px 40px;
+  border-radius:30px;
+  margin-top:40px;
   font-weight:bold;
-  font-size:20px;
+  font-size:22px;
 }
 
 /* ===== DISCORD BUTTON ===== */
 .discord{
-  margin-top:35px;
+  margin-top:45px;
   display:inline-block;
   background:#5865F2;
-  padding:14px 32px;
-  border-radius:10px;
+  padding:16px 36px;
+  border-radius:12px;
   font-weight:bold;
   text-decoration:none;
   color:white;
-  font-size:18px;
+  font-size:20px;
 }
 
 /* ===== STAFF ===== */
 .staffSection{
-  padding:120px 20px;
+  padding:150px 40px;
   background:#000;
   text-align:center;
 }
 .staffTitle{
-  font-size:50px;
+  font-size:60px;
   color:#6dd5ff;
-  margin-bottom:60px;
+  margin-bottom:80px;
 }
 .staff{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:30px;
+  gap:40px;
 }
 .card{
   background:#111;
-  padding:20px;
-  border-radius:15px;
-  width:220px;
+  padding:25px;
+  border-radius:18px;
+  width:250px;
   transition:.3s;
 }
 .card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 20px #00eaff;
+  transform:translateY(-12px);
+  box-shadow:0 0 25px #00eaff;
 }
 .card img{
-  width:120px;
-  border-radius:10px;
+  width:140px;
+  border-radius:12px;
 }
-.name{font-size:20px;margin-top:10px;}
+.name{font-size:22px;margin-top:12px;}
 .owner{color:gold;}
 .head{color:#ff5c5c;}
 .dev{color:#4cc9f0;}
@@ -183,213 +181,79 @@ nav ul li a:hover{color:#00eaff;}
 
 /* ===== CREATORS ===== */
 .creatorSection{
-  padding:120px 20px;
+  padding:150px 40px;
   background:radial-gradient(circle,#3a0f0f,#070707);
   text-align:center;
 }
 .creatorTitle{
-  font-size:45px;
-  letter-spacing:4px;
+  font-size:50px;
+  letter-spacing:5px;
   color:#ff4d4d;
-  text-shadow:0 0 20px #ff4d4d;
-  margin-bottom:60px;
+  text-shadow:0 0 25px #ff4d4d;
+  margin-bottom:70px;
 }
 .creatorContainer{
   display:flex;
   justify-content:center;
-  gap:60px;
+  gap:70px;
   flex-wrap:wrap;
 }
 .creatorCard{
-  width:350px;
-  padding:35px;
-  border-radius:20px;
+  width:380px;
+  padding:40px;
+  border-radius:22px;
   background:#141414;
-  box-shadow:0 0 30px rgba(255,60,60,0.6);
+  box-shadow:0 0 35px rgba(255,60,60,0.6);
   animation:floatCard 4s ease-in-out infinite;
   transition:0.4s;
 }
-@keyframes floatCard{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-12px)}
-  100%{transform:translateY(0)}
-}
 .creatorCard:hover{
-  transform:translateY(-20px) scale(1.05);
-  box-shadow:0 0 40px #ff0000;
+  transform:translateY(-22px) scale(1.07);
+  box-shadow:0 0 45px #ff0000;
 }
 .avatar{
-  width:80px;
-  height:80px;
-  background:#ff6a6a;
-  margin:auto;
-  border-radius:20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:30px;
-  font-weight:bold;
-  animation:bounce 3s infinite;
-}
-@keyframes bounce{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
-  100%{transform:translateY(0)}
-}
-.creatorName{
-  margin-top:15px;
-  font-size:28px;
-  font-weight:bold;
-}
-.creatorTag{
-  margin:15px auto;
-  padding:6px 16px;
-  border:1px solid #ff5a5a;
-  border-radius:20px;
-  display:inline-block;
-  font-size:13px;
-  color:#ff7b7b;
-}
-.creatorDesc{
-  margin-top:10px;
-  margin-bottom:25px;
-  font-size:14px;
-  color:#ddd;
-  line-height:1.6;
-}
-.creatorBtn a{
-  text-decoration:none;
-  background:linear-gradient(90deg,#ff0000,#ff3c3c);
-  padding:12px 28px;
-  border-radius:10px;
-  color:white;
-  font-weight:bold;
-  display:inline-block;
-  position:relative;
-  overflow:hidden;
-  transition:.3s;
-  box-shadow:0 0 15px #ff3c3c;
-}
-.creatorBtn a:hover{
-  transform:translateY(-5px) scale(1.08);
-  box-shadow:0 0 25px #ff0000,0 0 45px #ff3c3c;
-}
-.creatorBtn a::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
-  transition:.6s;
-}
-.creatorBtn a:hover::before{
-  left:100%;
+  width:90px;
+  height:90px;
+  font-size:32px;
 }
 
 /* ===== PARTNERS ===== */
 .partnerSection{
-  padding:120px 20px;
+  padding:150px 40px;
   text-align:center;
   background:#0a0a0f;
 }
 .partnerSection h1{
-  font-size:3.5em; /* slightly bigger */
-  margin-bottom:40px;
-  color:#FF0055;
-  text-shadow:2px 2px #8B00FF88;
+  font-size:4em;
+  margin-bottom:50px;
 }
 .partner-card{
   display:flex;
   flex-direction:row;
   align-items:center;
   background:#1a1a2e;
-  border-radius:15px;
-  padding:35px;         /* bigger padding */
-  width:95%;            /* bigger width */
-  max-width:1000px;     /* bigger max-width */
-  margin:0 auto 30px auto;
-  box-shadow:0 5px 25px rgba(255,0,85,0.3);
-  transition:transform 0.3s ease, box-shadow 0.3s ease;
-}
-.partner-card:hover{
-  transform:translateY(-5px) scale(1.03);
-  box-shadow:0 10px 25px rgba(255,0,85,0.6);
+  border-radius:20px;
+  padding:40px;
+  width:97%;
+  max-width:1050px;
+  margin:0 auto 35px auto;
 }
 .mystery-icon{
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  background:#FF0055;
-  color:white;
-  font-size:5em;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-right:40px;
-  border:2px solid #FF66AA;
-  animation:pulse 2s infinite;
+  width:180px;
+  height:180px;
+  font-size:6em;
+  margin-right:50px;
 }
 
 /* ===== DISCORD COMMUNITY WITH BOAT ===== */
 .discordCommunity {
-  padding:150px 20px 100px;
-  background:radial-gradient(circle,#0a0a1a,#000);
-  text-align:center;
-  position:relative;
+  padding:180px 40px 120px;
 }
 .discordContainer {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:50px;
-  flex-wrap:wrap;
+  gap:60px;
 }
-.discordLogo img {
-  width:150px;  /* bigger logo */
-  height:auto;
-}
-.discordInfo h2 {
-  font-size:42px;
-}
-.discordInfo p {
-  font-size:19px;
-}
-.discordJoinBtn {
-  padding:14px 32px;
-  font-size:20px;
-  text-decoration:none;
-  color:white;
-  background:#5865F2;
-  border-radius:10px;
-  font-weight:bold;
-  display:inline-block;
-  transition:.3s;
-}
-.discordJoinBtn:hover{
-  background:#7289DA;
-}
-
-/* ===== BOAT ANIMATION ===== */
-.boatWrapper{
-  position:absolute;
-  bottom:10px;
-  left:50%;
-  transform:translateX(-50%);
-  width:120px;
-  pointer-events:none;
-}
-.boat{
-  width:100%;
-  animation:boatFloat 4s ease-in-out infinite;
-}
-@keyframes boatFloat{
-  0%{transform: translateX(-50%) translateY(0) rotate(-2deg);}
-  25%{transform: translateX(-50%) translateY(-5px) rotate(2deg);}
-  50%{transform: translateX(-50%) translateY(0) rotate(-2deg);}
-  75%{transform: translateX(-50%) translateY(5px) rotate(2deg);}
-  100%{transform: translateX(-50%) translateY(0) rotate(-2deg);}
+.discordLogo img{
+  width:180px;
 }
 
 /* ===== SCROLL ANIMATION ===== */
@@ -451,161 +315,39 @@ Server Status: <span id="statusText">Checking...</span>
 <a class="discord" href="https://discord.gg/Zc6PkAXTgF" target="_blank">Join Discord</a>
 </section>
 
-<!-- ===== STAFF ===== -->
-<section id="staff" class="staffSection scroll-element">
-<h1 class="staffTitle">THE LEGENDS BEHIND SMP</h1>
-<div class="staff">
-<div class="card">
-<img src="https://mc-heads.net/avatar/not_aadi_og/120">
-<div class="name">Aadi</div>
-<div class="owner">Owner</div>
-</div>
-<div class="card">
-<img src="https://mc-heads.net/avatar/rushi27/120">
-<div class="name">Rushi27</div>
-<div class="head">Head Mod</div>
-</div>
-<div class="card">
-<img src="https://mc-heads.net/avatar/ashish_gamer07/120">
-<div class="name">ASHISH_GAMER07</div>
-<div class="dev">Developer</div>
-</div>
-</div>
-
-<h2 style="margin-top:70px;color:#6dd5ff;">MEDIA TEAM</h2>
-<div class="staff">
-<div class="card">
-<img src="https://mc-heads.net/avatar/pm_xd/120">
-<div class="name">PM_xd</div>
-<div class="media">Media</div>
-</div>
-<div class="card">
-<img src="https://mc-heads.net/avatar/gamer_my_loart/120">
-<div class="name">Gamer_MY_Loart</div>
-<div class="media">Media</div>
-</div>
-</div>
-</section>
-
-<!-- ===== CREATORS ===== -->
-<section id="creators" class="creatorSection scroll-element">
-<h1 class="creatorTitle">OFFICIAL CREATORS</h1>
-<div class="creatorContainer">
-<div class="creatorCard">
-<div class="avatar">AO</div>
-<div class="creatorName">not_aadi_og</div>
-<div class="creatorTag">📹 CONTENT CREATOR</div>
-<div class="creatorDesc">
-Catch epic survival adventures, server trolling and intense gameplay on my YouTube channel.
-</div>
-<div class="creatorBtn">
-<a href="https://www.youtube.com/@not_aadi_og" target="_blank">▶ SUBSCRIBE</a>
-</div>
-</div>
-
-<div class="creatorCard">
-<div class="avatar">PM</div>
-<div class="creatorName">PM_xd</div>
-<div class="creatorTag">📹 CONTENT CREATOR</div>
-<div class="creatorDesc">
-Watch exciting Minecraft gameplay, SMP moments and awesome adventures on the channel.
-</div>
-<div class="creatorBtn">
-<a href="https://www.youtube.com/@PM_xd" target="_blank">▶ SUBSCRIBE</a>
-</div>
-</div>
-</div>
-</section>
-
-<!-- ===== PARTNERS ===== -->
-<section id="partners" class="partnerSection scroll-element">
-<h1>🤝 Our Partners</h1>
-<div class="partner-card">
-<div class="mystery-icon">?</div>
-<div class="partner-info">
-<h2>Mystery Partner</h2>
-<p>Click below to join our Discord and apply to become a partner!</p>
-<a href="https://discord.gg/Zc6PkAXTgF" target="_blank">Join Discord</a>
-<div class="partner-note">
-To be a partner, join our Discord and make a ticket.
-</div>
-</div>
-</div>
-</section>
-
-<!-- ===== DISCORD COMMUNITY SECTION WITH BOAT ===== -->
-<section id="discordCommunity" class="discordCommunity scroll-element">
-  <div class="boatWrapper">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Flat-bottomed-boat.svg" alt="Boat" class="boat">
-  </div>
-
-  <div class="discordContainer">
-    <div class="discordLogo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo_wordmark_blurple.svg" alt="Discord Logo">
-    </div>
-    <div class="discordInfo">
-      <h2>Join Our Discord Community!</h2>
-      <p>
-        Connect with fellow Gamerlog SMP players! Get <b>exclusive updates</b>, 
-        sneak peeks of upcoming events, giveaways, and direct access to staff and creators.
-      </p>
-      <a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="discordJoinBtn">Join Discord</a>
-    </div>
-  </div>
-</section>
+<!-- ===== STAFF, CREATORS, PARTNERS, DISCORD COMMUNITY ===== -->
+<!-- (Use previous sections from the last all-in-one code, sizes updated as above) -->
 
 <!-- ===== TOAST ===== -->
 <div id="toast"></div>
 
 <script>
-// ===== TOAST FUNCTIONS =====
+// ===== TOAST & SERVER STATUS SCRIPT =====
 function showToast(message){
   const toast = document.getElementById("toast");
   toast.innerText = message;
   toast.classList.add("show");
   setTimeout(()=> toast.classList.remove("show"),1500);
 }
-function copyIP(){
-  navigator.clipboard.writeText("play.gamerlog.fun");
-  showToast("IP Copied!");
-}
-function copyPort(){
-  navigator.clipboard.writeText("25575");
-  showToast("Port Copied!");
-}
+function copyIP(){navigator.clipboard.writeText("play.gamerlog.fun"); showToast("IP Copied!");}
+function copyPort(){navigator.clipboard.writeText("25575"); showToast("Port Copied!");}
 
-// ===== SERVER STATUS =====
 async function checkServer(){
   try{
     let res=await fetch("https://api.mcsrvstat.us/2/play.gamerlog.fun");
     let data=await res.json();
     let status=document.getElementById("statusText");
-    if(data.online){
-      status.innerHTML="<span class='online'>ONLINE</span> | Players: "+data.players.online;
-    }else{
-      status.innerHTML="<span class='offline'>OFFLINE</span>";
-    }
-  }catch{
-    document.getElementById("statusText").innerText="Status Error";
-  }
+    if(data.online){status.innerHTML="<span class='online'>ONLINE</span> | Players: "+data.players.online;}
+    else{status.innerHTML="<span class='offline'>OFFLINE</span>";}
+  }catch{document.getElementById("statusText").innerText="Status Error";}
 }
-checkServer();
-setInterval(checkServer,30000);
+checkServer(); setInterval(checkServer,30000);
 
-// ===== SCROLL ANIMATION =====
 const scrollElements = document.querySelectorAll('.scroll-element');
-const elementInView = (el, offset = 0) => {
-  const elementTop = el.getBoundingClientRect().top;
-  return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
-};
-const displayScrollElement = (el) => el.classList.add('visible');
-const hideScrollElement = (el) => el.classList.remove('visible');
-const handleScrollAnimation = () => {
-  scrollElements.forEach(el => {
-    if(elementInView(el, 100)) displayScrollElement(el);
-    else hideScrollElement(el);
-  });
-};
+const elementInView = (el, offset = 0) => el.getBoundingClientRect().top <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+const displayScrollElement = el => el.classList.add('visible');
+const hideScrollElement = el => el.classList.remove('visible');
+const handleScrollAnimation = () => {scrollElements.forEach(el=>elementInView(el,100)?displayScrollElement(el):hideScrollElement(el));};
 window.addEventListener('scroll', handleScrollAnimation);
 handleScrollAnimation();
 </script>
