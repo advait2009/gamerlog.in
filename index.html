@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Gamerlog SMP</title>
 
 <style>
@@ -67,17 +66,6 @@ align-items:center;
 text-align:center;
 }
 
-.hero img{
-width:320px;
-animation:float 4s infinite ease-in-out;
-}
-
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-15px)}
-100%{transform:translateY(0)}
-}
-
 .season{
 margin-top:20px;
 font-size:50px;
@@ -90,8 +78,6 @@ font-size:70px;
 color:#6ff9ff;
 font-weight:bold;
 }
-
-/* SERVER BOX */
 
 .serverBox{
 display:flex;
@@ -139,18 +125,6 @@ border:2px solid #ffd000;
 padding:12px 30px;
 border-radius:30px;
 font-size:20px;
-}
-
-.discord{
-margin-top:35px;
-display:inline-block;
-background:#5865F2;
-padding:14px 34px;
-border-radius:10px;
-font-weight:bold;
-text-decoration:none;
-color:white;
-font-size:18px;
 }
 
 /* STAFF */
@@ -211,7 +185,6 @@ text-align:center;
 font-size:45px;
 letter-spacing:4px;
 color:#ff4d4d;
-text-shadow:0 0 20px #ff4d4d;
 margin-bottom:60px;
 }
 
@@ -266,22 +239,16 @@ font-size:14px;
 color:#ddd;
 }
 
-/* AESTHETIC SUBSCRIBE BUTTON */
-
 .creatorBtn a{
-position:relative;
 display:inline-block;
 padding:14px 38px;
 border-radius:14px;
 text-decoration:none;
 font-weight:600;
-letter-spacing:1px;
 color:white;
 background:linear-gradient(135deg,#ff3c3c,#ff6a6a);
-overflow:hidden;
-transition:all .4s cubic-bezier(.22,.68,0,1);
+transition:.4s;
 box-shadow:0 10px 25px rgba(255,60,60,.35);
-animation:subscribeGlow 4s ease-in-out infinite;
 }
 
 .creatorBtn a:hover{
@@ -289,28 +256,7 @@ transform:translateY(-6px) scale(1.06);
 box-shadow:0 18px 45px rgba(255,60,60,.6);
 }
 
-.creatorBtn a::before{
-content:"";
-position:absolute;
-top:0;
-left:-120%;
-width:120%;
-height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
-transition:.7s;
-}
-
-.creatorBtn a:hover::before{
-left:120%;
-}
-
-@keyframes subscribeGlow{
-0%{box-shadow:0 10px 25px rgba(255,60,60,.35);}
-50%{box-shadow:0 14px 35px rgba(255,60,60,.55);}
-100%{box-shadow:0 10px 25px rgba(255,60,60,.35);}
-}
-
-/* PARTNER SECTION */
+/* PARTNERS */
 
 .partnerSection{
 padding:120px 20px;
@@ -345,6 +291,46 @@ animation:glow 3s infinite;
 100%{box-shadow:0 0 0px #ffd000;}
 }
 
+/* DISCORD */
+
+.discordSection{
+padding:120px 20px;
+text-align:center;
+background:radial-gradient(circle,#0f1a40,#000);
+}
+
+.discordTitle{
+font-size:50px;
+color:#6dd5ff;
+margin-bottom:20px;
+}
+
+.discordText{
+max-width:600px;
+margin:auto;
+font-size:18px;
+color:#ccc;
+margin-bottom:40px;
+}
+
+.discordJoin{
+display:inline-block;
+padding:18px 50px;
+font-size:20px;
+font-weight:bold;
+color:white;
+text-decoration:none;
+border-radius:14px;
+background:linear-gradient(135deg,#5865F2,#6dd5ff);
+box-shadow:0 0 25px rgba(88,101,242,.6);
+transition:.4s;
+}
+
+.discordJoin:hover{
+transform:scale(1.1);
+box-shadow:0 0 40px rgba(88,101,242,1);
+}
+
 footer{
 text-align:center;
 padding:40px;
@@ -358,19 +344,19 @@ color:#777;
 <body>
 
 <nav>
-
 <div class="logo">GAMERLOG SMP</div>
-
 <ul>
-<li><a href="#">Home</a></li>
+<li><a href="#home">Home</a></li>
 <li><a href="#staff">Staff</a></li>
 <li><a href="#creators">Creators</a></li>
 <li><a href="#partners">Partners</a></li>
+<li><a href="#community">Discord</a></li>
 </ul>
-
 </nav>
 
-<section class="hero">
+<!-- HOME -->
+
+<section id="home" class="hero">
 
 <div class="season">SEASON 3</div>
 <div class="coming">COMING SOON</div>
@@ -395,11 +381,9 @@ BEDROCK PORT<br>
 ⚡ CROSSPLAY JAVA + BEDROCK + PE ⚡
 </div>
 
-<a class="discord" href="https://discord.gg/Zc6PkAXTgF" target="_blank">
-Join Discord
-</a>
-
 </section>
+
+<!-- STAFF -->
 
 <section id="staff" class="staffSection">
 
@@ -429,6 +413,8 @@ Join Discord
 
 </section>
 
+<!-- CREATORS -->
+
 <section id="creators" class="creatorSection">
 
 <h1 class="creatorTitle">OFFICIAL CREATORS</h1>
@@ -436,56 +422,39 @@ Join Discord
 <div class="creatorContainer">
 
 <div class="creatorCard">
-
 <div class="avatar">AO</div>
-
 <div class="creatorName">not_aadi_og</div>
-
-<div class="creatorTag">📹 CONTENT CREATOR</div>
-
-<div class="creatorDesc">
-Catch epic survival adventures, server trolling and intense gameplay on my YouTube channel.
-</div>
-
+<div class="creatorTag">CONTENT CREATOR</div>
+<div class="creatorDesc">Epic Minecraft gameplay and SMP adventures.</div>
 <div class="creatorBtn">
-<a href="https://www.youtube.com/@not_aadi_og" target="_blank">
-▶ SUBSCRIBE
-</a>
+<a href="https://www.youtube.com/@not_aadi_og" target="_blank">SUBSCRIBE</a>
 </div>
-
-</div>
-
-<div class="creatorCard">
-
-<div class="avatar">PM</div>
-
-<div class="creatorName">PM_xd</div>
-
-<div class="creatorTag">📹 CONTENT CREATOR</div>
-
-<div class="creatorDesc">
-Watch exciting Minecraft gameplay and SMP adventures on the channel.
-</div>
-
-<div class="creatorBtn">
-<a href="https://www.youtube.com/@PM_xd" target="_blank">
-▶ SUBSCRIBE
-</a>
-</div>
-
 </div>
 
 </div>
 
 </section>
 
+<!-- PARTNERS -->
+
 <section id="partners" class="partnerSection">
-
 <h1 class="partnerTitle">Official Sponsors</h1>
+<div class="sponsorWall">🚀 Sponsors Coming Soon</div>
+</section>
 
-<div class="sponsorWall">
-🚀 Sponsors Coming Soon
-</div>
+<!-- DISCORD -->
+
+<section id="community" class="discordSection">
+
+<h1 class="discordTitle">Join Gamerlog Community</h1>
+
+<p class="discordText">
+Join our Discord server for updates, events, giveaways and Minecraft fun.
+</p>
+
+<a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="discordJoin">
+Join Discord
+</a>
 
 </section>
 
