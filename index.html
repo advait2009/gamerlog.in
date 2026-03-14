@@ -10,46 +10,47 @@
 body{
 margin:0;
 font-family:Segoe UI, sans-serif;
+color:white;
+background:#050505;
+}
+
+/* DRAGON BACKGROUND SECTION */
+
+.hero{
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-color:white;
-overflow:hidden;
-
-/* DRAGON BACKGROUND */
+text-align:center;
 background:url("https://i.imgur.com/6IUbEMB.png") center/cover no-repeat;
+position:relative;
 }
 
-/* dark overlay */
-
-body::after{
+.hero::after{
 content:"";
 position:absolute;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.7);
-z-index:0;
+background:rgba(0,0,0,0.75);
 }
 
 /* floating partner card */
 
 .partner-box{
 position:relative;
-z-index:1;
-width:420px;
+z-index:2;
+width:450px;
 padding:50px;
 border-radius:25px;
 background:rgba(20,20,20,0.9);
-text-align:center;
 backdrop-filter:blur(6px);
 box-shadow:0 0 40px rgba(122,0,255,0.5);
-animation:float 4s ease-in-out infinite;
+animation:float 5s ease-in-out infinite;
 }
 
-/* glowing animated border */
+/* glowing border */
 
 .partner-box::before{
 content:"";
@@ -70,22 +71,20 @@ animation:borderMove 6s linear infinite;
 100%{background-position:300%}
 }
 
-/* floating animation */
-
 @keyframes float{
 0%{transform:translateY(0)}
-50%{transform:translateY(-15px)}
+50%{transform:translateY(-18px)}
 100%{transform:translateY(0)}
 }
 
 .logo{
-width:120px;
+width:130px;
 border-radius:20px;
 margin-bottom:20px;
 }
 
 .title{
-font-size:32px;
+font-size:34px;
 font-weight:bold;
 margin-bottom:10px;
 }
@@ -94,6 +93,7 @@ margin-bottom:10px;
 color:#bbb;
 font-size:15px;
 margin-bottom:25px;
+line-height:1.6;
 }
 
 .btn{
@@ -112,25 +112,82 @@ transform:scale(1.1);
 box-shadow:0 0 20px #7a00ff;
 }
 
+/* second long section */
+
+.info{
+padding:120px 20px;
+text-align:center;
+background:#0b0b0b;
+}
+
+.info h2{
+font-size:38px;
+margin-bottom:20px;
+background:linear-gradient(90deg,#ff003c,#7a00ff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.info p{
+max-width:800px;
+margin:auto;
+color:#aaa;
+font-size:17px;
+line-height:1.8;
+}
+
+/* footer */
+
+footer{
+padding:40px;
+text-align:center;
+background:#080808;
+color:#777;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- HERO PARTNER SECTION -->
+
+<section class="hero">
+
 <div class="partner-box">
 
 <img class="logo" src="https://mc-heads.net/avatar/Steve">
 
-<div class="title">Official Server Partner</div>
+<div class="title">Official Partner Server</div>
 
 <div class="desc">
 This server is the official partner of Gamerlog SMP.  
-Join the adventure and experience epic Minecraft gameplay.
+Experience powerful gameplay, strong community, and epic Minecraft adventures.
 </div>
 
 <a class="btn" href="#">Visit Partner</a>
 
 </div>
+
+</section>
+
+<!-- LONG INFO SECTION -->
+
+<section class="info">
+
+<h2>Why Our Partnership Matters</h2>
+
+<p>
+Gamerlog SMP works with trusted Minecraft communities to bring players the best multiplayer experience.
+Our partners help grow the network, support events, and build an active community for everyone.
+Together we create epic survival adventures, PvP battles, and unforgettable Minecraft moments.
+</p>
+
+</section>
+
+<footer>
+© 2026 Gamerlog SMP • All Rights Reserved
+</footer>
 
 </body>
 </html>
