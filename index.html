@@ -1,4 +1,4 @@
-```html
+```html id="gamerlogsite">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,13 @@
 <style>
 
 html{scroll-behavior:smooth;}
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial;}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,Arial;
+}
 
 body{
 background: radial-gradient(circle at top,#1b0033,#000);
@@ -26,7 +32,7 @@ padding:20px 60px;
 background:#000;
 }
 
-.logoText{
+.logo{
 font-size:24px;
 font-weight:bold;
 color:#00eaff;
@@ -55,11 +61,10 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:40px;
 }
 
-.logoBox img{
-width:420px;
+.hero img{
+width:350px;
 animation:float 4s infinite ease-in-out;
 }
 
@@ -70,8 +75,8 @@ animation:float 4s infinite ease-in-out;
 }
 
 .season{
-margin-top:30px;
-font-size:55px;
+margin-top:20px;
+font-size:50px;
 letter-spacing:5px;
 color:#ffd000;
 }
@@ -103,26 +108,32 @@ text-align:center;
 
 .copyBtn{
 margin-top:15px;
-padding:10px 22px;
+padding:12px 28px;
 border:none;
 border-radius:8px;
 background:#00eaff;
 color:black;
 cursor:pointer;
 font-weight:bold;
+font-size:16px;
+transition:.3s;
 }
 
-.status{margin-top:30px;font-size:22px;}
+.copyBtn:hover{
+transform:scale(1.08);
+box-shadow:0 0 15px #00eaff;
+}
 
-.online{color:#00ff9d;}
-.offline{color:red;}
+.copyBtn.copied{
+background:#00ff9d;
+box-shadow:0 0 20px #00ff9d;
+}
 
 .cross{
+margin-top:30px;
 border:2px solid #ffd000;
 padding:12px 30px;
 border-radius:30px;
-margin-top:30px;
-font-weight:bold;
 font-size:20px;
 }
 
@@ -258,6 +269,12 @@ padding:12px 28px;
 border-radius:10px;
 color:white;
 font-weight:bold;
+transition:.3s;
+}
+
+.creatorBtn a:hover{
+background:#ff5c5c;
+box-shadow:0 0 15px #ff3c3c;
 }
 
 </style>
@@ -266,20 +283,20 @@ font-weight:bold;
 <body>
 
 <nav>
-<div class="logoText">GAMERLOG SMP</div>
+<div class="logo">GAMERLOG SMP</div>
 
 <ul>
-<li><a href="#">HOME</a></li>
-<li><a href="#staff">STAFF</a></li>
-<li><a href="#creators">CREATORS</a></li>
+<li><a href="#">Home</a></li>
+<li><a href="#staff">Staff</a></li>
+<li><a href="#creators">Creators</a></li>
 </ul>
 </nav>
 
+<!-- HOME -->
+
 <section class="hero">
 
-<div class="logoBox">
 <img src="gamerlog-logo.png">
-</div>
 
 <div class="season">SEASON 3</div>
 <div class="coming">COMING SOON</div>
@@ -289,19 +306,15 @@ font-weight:bold;
 <div class="box">
 JAVA IP<br>
 <b>play.gamerlog.fun</b><br>
-<button class="copyBtn" onclick="copyIP()">Copy IP</button>
+<button class="copyBtn" onclick="copyIP(this)">Copy IP</button>
 </div>
 
 <div class="box">
 BEDROCK PORT<br>
 <b>25575</b><br>
-<button class="copyBtn" onclick="copyPort()">Copy Port</button>
+<button class="copyBtn" onclick="copyPort(this)">Copy Port</button>
 </div>
 
-</div>
-
-<div class="status">
-Server Status: <span id="statusText">Checking...</span>
 </div>
 
 <div class="cross">
@@ -374,24 +387,34 @@ Join Discord
 <div class="avatar">AO</div>
 <div class="creatorName">not_aadi_og</div>
 <div class="creatorTag">📹 CONTENT CREATOR</div>
+
 <div class="creatorDesc">
 Catch epic survival adventures, server trolling and intense gameplay on my YouTube channel.
 </div>
+
 <div class="creatorBtn">
-<a href="https://www.youtube.com/@not_aadi_og" target="_blank">▶ SUBSCRIBE</a>
+<a href="https://www.youtube.com/@not_aadi_og" target="_blank">
+▶ SUBSCRIBE
+</a>
 </div>
+
 </div>
 
 <div class="creatorCard">
 <div class="avatar">PM</div>
 <div class="creatorName">PM_xd</div>
 <div class="creatorTag">📹 CONTENT CREATOR</div>
+
 <div class="creatorDesc">
-Watch exciting Minecraft gameplay, SMP moments and awesome adventures on the channel.
+Watch exciting Minecraft gameplay and SMP adventures on the channel.
 </div>
+
 <div class="creatorBtn">
-<a href="https://www.youtube.com/@PM_xd" target="_blank">▶ SUBSCRIBE</a>
+<a href="https://www.youtube.com/@PM_xd" target="_blank">
+▶ SUBSCRIBE
+</a>
 </div>
+
 </div>
 
 </div>
@@ -400,14 +423,32 @@ Watch exciting Minecraft gameplay, SMP moments and awesome adventures on the cha
 
 <script>
 
-function copyIP(){
+function copyIP(button){
+
 navigator.clipboard.writeText("play.gamerlog.fun");
-alert("IP Copied!");
+
+button.innerText="✓ Copied!";
+button.classList.add("copied");
+
+setTimeout(()=>{
+button.innerText="Copy IP";
+button.classList.remove("copied");
+},2000);
+
 }
 
-function copyPort(){
+function copyPort(button){
+
 navigator.clipboard.writeText("25575");
-alert("Port Copied!");
+
+button.innerText="✓ Copied!";
+button.classList.add("copied");
+
+setTimeout(()=>{
+button.innerText="Copy Port";
+button.classList.remove("copied");
+},2000);
+
 }
 
 </script>
