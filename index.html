@@ -13,42 +13,13 @@ body{
   background:#050505;
 }
 
-/* DRAGON BACKGROUND */
-.hero{
-  position:relative;
-  width:100%;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:#050505;
-  overflow:hidden;
-}
-
-.dragon-bg{
-  position:absolute;
-  top:50%;
-  left:50%;
-  width:180%;
-  transform:translate(-50%,-50%);
-  animation:dragonMove 60s linear infinite;
-  opacity:0.5;
-  z-index:0;
-}
-
-@keyframes dragonMove{
-  0%{transform:translate(-50%,-50%) translateX(0);}
-  100%{transform:translate(-50%,-50%) translateX(-600px);}
-}
-
 /* PARTICLES */
 .particles, .smoke{
   position:absolute;
   width:100%;
   height:100%;
   pointer-events:none;
-  z-index:1;
+  z-index:0;
   overflow:hidden;
 }
 
@@ -83,6 +54,16 @@ body{
 }
 
 /* FLOATING PARTNER CARD */
+.hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
 .partner-box{
   position:relative;
   z-index:2;
@@ -159,29 +140,20 @@ body{
 </head>
 <body>
 
-<section class="hero">
-
-<!-- Dragon background -->
-<img class="dragon-bg" src="https://i.imgur.com/jXoDqkR.png" alt="Dragon">
-
-<!-- Particles -->
 <div class="particles"></div>
-
-<!-- Smoke -->
 <div class="smoke"></div>
 
-<!-- Partner Card -->
-<div class="partner-box">
-  <img class="logo" src="https://mc-heads.net/avatar/Steve">
-  <div class="title">Official Partner Server</div>
-  <div class="desc">
-    This server is the official partner of Gamerlog SMP.  
-    Experience epic Minecraft adventures, PvP battles, and community events.
+<div class="hero">
+  <div class="partner-box">
+    <img class="logo" src="https://mc-heads.net/avatar/Steve">
+    <div class="title">Official Partner Server</div>
+    <div class="desc">
+      This server is the official partner of Gamerlog SMP.  
+      Experience epic Minecraft adventures, PvP battles, and community events.
+    </div>
+    <a class="btn" href="#">Visit Partner</a>
   </div>
-  <a class="btn" href="#">Visit Partner</a>
 </div>
-
-</section>
 
 <script>
 // Generate particles
