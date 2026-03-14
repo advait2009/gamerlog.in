@@ -1,193 +1,105 @@
-```html id="partner-always-open"
-<!DOCTYPE html>
-<html lang="en">
+<mtml>
 <head>
-<meta charset="UTF-8">
-<title>Gamerlog SMP | Partner</title>
-<style>
-body{
-  margin:0;
-  font-family:'Segoe UI',sans-serif;
-  color:white;
-  background:#1a001a;
-  overflow:hidden;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-}
+  <title>Partners | Gamerlog SMP</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #8B00FF, #FF0055);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
 
-/* PARTICLES */
-.particles{
-  position:absolute;
-  width:100%;
-  height:100%;
-  z-index:0;
-  overflow:hidden;
-}
+    h1 {
+      margin-top: 30px;
+      font-size: 3em;
+      text-shadow: 2px 2px #00000088;
+    }
 
-.particle{
-  position:absolute;
-  width:6px;
-  height:6px;
-  background:linear-gradient(45deg,#ff003c,#7a00ff);
-  border-radius:50%;
-  animation:particleMove 12s linear infinite;
-  opacity:0.7;
-}
+    .partners-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      padding: 40px;
+      width: 90%;
+      max-width: 1200px;
+    }
 
-@keyframes particleMove{
-  0%{transform:translateY(0) translateX(0) scale(0.5);}
-  50%{transform:translateY(-600px) translateX(100px) scale(1);}
-  100%{transform:translateY(0) translateX(200px) scale(0.5);}
-}
+    .partner-card {
+      background: #2a002a88;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.4s ease, background 0.4s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
 
-/* HERO / PARTNER CARD */
-.hero{
-  position:relative;
-  width:100%;
-  height:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
+    .partner-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      background: #FF005588;
+    }
 
-.partner-box{
-  position:relative;
-  z-index:1;
-  width:420px;
-  padding:40px;
-  border-radius:25px;
-  background:rgba(30,0,30,0.95);
-  backdrop-filter:blur(6px);
-  box-shadow:0 0 50px rgba(186,0,255,0.7);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
-  transform-style: preserve-3d;
-  animation:floatSmooth 4s ease-in-out infinite;
-}
+    .partner-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 2px solid white;
+    }
 
-/* Glowing red-purple border */
-.partner-box::before{
-  content:"";
-  position:absolute;
-  top:-4px;
-  left:-4px;
-  right:-4px;
-  bottom:-4px;
-  border-radius:25px;
-  background:linear-gradient(90deg,#ff003c,#7a00ff);
-  background-size:200%;
-  z-index:-1;
-  animation:borderGlow 5s linear infinite;
-}
+    .partner-card h3 {
+      margin: 10px 0 5px;
+    }
 
-@keyframes borderGlow{
-  0%{background-position:0%}
-  100%{background-position:200%}
-}
+    .partner-card p {
+      margin: 0;
+      font-size: 0.9em;
+      color: #f0f0f0;
+    }
 
-/* Floating animation */
-@keyframes floatSmooth{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-8px);}
-}
+    footer {
+      margin: 40px 0 20px;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
 
-/* Logo */
-.logo{
-  width:130px;
-  border-radius:20px;
-  position:relative;
-}
-
-/* Emoji sparkle on logo */
-.logo::after{
-  content:"✨";
-  position:absolute;
-  top:-10px;
-  right:-10px;
-  font-size:18px;
-  animation:emojiSpark 2s ease-in-out infinite;
-}
-
-@keyframes emojiSpark{
-  0%,100%{transform:translateY(0) rotate(0deg); opacity:0.8;}
-  50%{transform:translateY(-6px) rotate(15deg); opacity:1;}
-}
-
-/* Title, Description, Button */
-.title{
-  font-size:28px;
-  font-weight:bold;
-  margin:15px 0 10px 0;
-  background:linear-gradient(90deg,#ff003c,#7a00ff);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
-.desc{
-  font-size:16px;
-  color:#e0b3ff;
-  margin-bottom:20px;
-  line-height:1.5;
-}
-
-/* Add emojis in description */
-.desc::before{
-  content:"🔥 ⚔️ 🛡️ ";
-}
-.desc::after{
-  content:" 💎 ✨";
-}
-
-.btn{
-  display:inline-block;
-  padding:14px 32px;
-  font-size:16px;
-  border-radius:12px;
-  text-decoration:none;
-  color:white;
-  background:linear-gradient(90deg,#ff003c,#7a00ff);
-  transition: all 0.3s ease;
-}
-
-.btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 20px #7a00ff;
-}
-</style>
+  </style>
 </head>
+
 <body>
+  <h1>🤝 Our Partners</h1>
 
-<div class="particles"></div>
+  <div class="partners-container">
+    <div class="partner-card">
+      <img src="https://i.imgur.com/partner1.png" alt="Partner 1">
+      <h3>PartnerOne 💻</h3>
+      <p>Official Developer</p>
+    </div>
 
-<div class="hero">
-  <div class="partner-box">
-    <img class="logo" src="https://mc-heads.net/avatar/Steve">
-    <div class="title">Gamerlog SMP Partner ✨</div>
-    <div class="desc">Join the adventure, battle, and rise as legend!</div>
-    <a class="btn" href="#">Join Now ⚡</a>
+    <div class="partner-card">
+      <img src="https://i.imgur.com/partner2.png" alt="Partner 2">
+      <h3>RedRebeller 🛠️</h3>
+      <p>Staff & Support</p>
+    </div>
+
+    <div class="partner-card">
+      <img src="https://i.imgur.com/partner3.png" alt="Partner 3">
+      <h3>MediaHub 📸</h3>
+      <p>Media & Promotion</p>
+    </div>
+
+    <div class="partner-card">
+      <img src="https://i.imgur.com/partner4.png" alt="Partner 4">
+      <h3>PrimeBhai 🛡️</h3>
+      <p>Support Team</p>
+    </div>
   </div>
-</div>
 
-<script>
-// Generate smooth particles
-const particleContainer = document.querySelector('.particles');
-for(let i=0;i<40;i++){
-  let p = document.createElement('div');
-  p.className='particle';
-  p.style.left=Math.random()*window.innerWidth+'px';
-  p.style.top=Math.random()*window.innerHeight+'px';
-  p.style.animationDuration=(8+Math.random()*8)+'s';
-  p.style.width=(3+Math.random()*4)+'px';
-  p.style.height=p.style.width;
-  particleContainer.appendChild(p);
-}
-</script>
-
+  <footer>© 2026 Gamerlog SMP | All Rights Reserved</footer>
 </body>
-</html>
-```
+</mtml>
