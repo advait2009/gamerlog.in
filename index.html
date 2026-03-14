@@ -90,22 +90,26 @@ nav ul li a:hover{color:#00eaff;}
   font-weight:bold;
 }
 
-/* ===== COPY MESSAGE ANIMATION ===== */
-.copyMsg{
-  display:inline-block;
-  opacity:0;
-  margin-left:10px;
-  color:#00eaff;
-  font-weight:bold;
-  position:absolute;
-  top:5px;
-  right:10px;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transform: translateY(-10px);
+/* ===== TOAST NOTIFICATION ===== */
+#toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(50px);
+  background: #00eaff;
+  color: black;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 9999;
 }
-.copyMsg.show{
-  opacity:1;
-  transform: translateY(-25px);
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* ===== SERVER STATUS ===== */
@@ -386,14 +390,12 @@ nav ul li a:hover{color:#00eaff;}
 <div class="box">
 JAVA IP<br>
 <b>play.gamerlog.fun</b><br>
-<button class="copyBtn" onclick="copyIP(this)">Copy IP</button>
-<span class="copyMsg">IP Copied!</span>
+<button class="copyBtn" onclick="copyIP()">Copy IP</button>
 </div>
 <div class="box">
 BEDROCK PORT<br>
 <b>25575</b><br>
-<button class="copyBtn" onclick="copyPort(this)">Copy Port</button>
-<span class="copyMsg">Port Copied!</span>
+<button class="copyBtn" onclick="copyPort()">Copy Port</button>
 </div>
 </div>
 
@@ -490,19 +492,23 @@ To be a partner, join our Discord and make a ticket.
 </div>
 </section>
 
+<!-- ===== TOAST ===== -->
+<div id="toast"></div>
+
 <script>
-function copyIP(btn){
+function showToast(message){
+  const toast = document.getElementById("toast");
+  toast.innerText = message;
+  toast.classList.add("show");
+  setTimeout(()=> toast.classList.remove("show"),1500);
+}
+function copyIP(){
   navigator.clipboard.writeText("play.gamerlog.fun");
-  showCopyMsg(btn);
+  showToast("IP Copied!");
 }
-function copyPort(btn){
+function copyPort(){
   navigator.clipboard.writeText("25575");
-  showCopyMsg(btn);
-}
-function showCopyMsg(button){
-  const msg = button.nextElementSibling;
-  msg.classList.add("show");
-  setTimeout(()=> msg.classList.remove("show"),1500);
+  showToast("Port Copied!");
 }
 
 async function checkServer(){
