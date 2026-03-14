@@ -21,6 +21,9 @@ nav{
   align-items:center;
   padding:18px 60px;
   background:#000;
+  position: sticky;
+  top:0;
+  z-index:1000;
 }
 .logoText{font-size:24px;font-weight:bold;}
 nav ul{
@@ -362,6 +365,16 @@ nav ul li a:hover{color:#00eaff;}
   color:#bbbbbb;
 }
 
+/* ===== SCROLL ANIMATION ===== */
+.scroll-element {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+.scroll-element.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 </head>
 <body>
@@ -379,7 +392,7 @@ nav ul li a:hover{color:#00eaff;}
 </nav>
 
 <!-- ===== HERO ===== -->
-<section class="hero">
+<section class="hero scroll-element">
 <div class="logoBox">
 <img src="gamerlog-logo.png">
 </div>
@@ -411,7 +424,7 @@ Server Status: <span id="statusText">Checking...</span>
 </section>
 
 <!-- ===== STAFF ===== -->
-<section id="staff" class="staffSection">
+<section id="staff" class="staffSection scroll-element">
 <h1 class="staffTitle">THE LEGENDS BEHIND SMP</h1>
 <div class="staff">
 <div class="card">
@@ -447,7 +460,7 @@ Server Status: <span id="statusText">Checking...</span>
 </section>
 
 <!-- ===== CREATORS ===== -->
-<section id="creators" class="creatorSection">
+<section id="creators" class="creatorSection scroll-element">
 <h1 class="creatorTitle">OFFICIAL CREATORS</h1>
 <div class="creatorContainer">
 <div class="creatorCard">
@@ -477,7 +490,7 @@ Watch exciting Minecraft gameplay, SMP moments and awesome adventures on the cha
 </section>
 
 <!-- ===== PARTNERS ===== -->
-<section id="partners" class="partnerSection">
+<section id="partners" class="partnerSection scroll-element">
 <h1>🤝 Our Partners</h1>
 <div class="partner-card">
 <div class="mystery-icon">?</div>
@@ -496,6 +509,7 @@ To be a partner, join our Discord and make a ticket.
 <div id="toast"></div>
 
 <script>
+// ===== TOAST FUNCTIONS =====
 function showToast(message){
   const toast = document.getElementById("toast");
   toast.innerText = message;
@@ -511,6 +525,7 @@ function copyPort(){
   showToast("Port Copied!");
 }
 
+// ===== SERVER STATUS =====
 async function checkServer(){
   try{
     let res=await fetch("https://api.mcsrvstat.us/2/play.gamerlog.fun");
@@ -527,6 +542,23 @@ async function checkServer(){
 }
 checkServer();
 setInterval(checkServer,30000);
+
+// ===== SCROLL ANIMATION =====
+const scrollElements = document.querySelectorAll('.scroll-element');
+const elementInView = (el, offset = 0) => {
+  const elementTop = el.getBoundingClientRect().top;
+  return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+};
+const displayScrollElement = (el) => el.classList.add('visible');
+const hideScrollElement = (el) => el.classList.remove('visible');
+const handleScrollAnimation = () => {
+  scrollElements.forEach(el => {
+    if(elementInView(el, 100)) displayScrollElement(el);
+    else hideScrollElement(el);
+  });
+};
+window.addEventListener('scroll', handleScrollAnimation);
+handleScrollAnimation();
 </script>
 
 </body>
