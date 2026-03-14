@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Gamerlog SMP</title>
 
 <style>
@@ -27,8 +26,8 @@ color:white;
 
 nav{
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 padding:20px 60px;
 background:#000;
 position:sticky;
@@ -245,8 +244,6 @@ font-size:14px;
 color:#ddd;
 }
 
-/* NEW SUBSCRIBE ANIMATION */
-
 .creatorBtn a{
 display:inline-block;
 padding:16px 42px;
@@ -255,37 +252,56 @@ font-weight:700;
 text-decoration:none;
 color:white;
 background:linear-gradient(135deg,#ff2e2e,#ff6a6a);
-position:relative;
-overflow:hidden;
 transition:.4s;
-box-shadow:0 12px 35px rgba(255,60,60,.45);
-animation:subFloat 4s ease-in-out infinite;
 }
 
 .creatorBtn a:hover{
-transform:scale(1.08);
-box-shadow:0 20px 55px rgba(255,60,60,.8);
+transform:scale(1.1);
+box-shadow:0 0 25px red;
 }
 
-.creatorBtn a::after{
-content:"";
-position:absolute;
-top:0;
-left:-150%;
-width:120%;
-height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,.8),transparent);
-transition:.8s;
+/* MEDIA TEAM */
+
+.mediaSection{
+padding:120px 20px;
+background:#050505;
+text-align:center;
 }
 
-.creatorBtn a:hover::after{
-left:130%;
+.mediaTitle{
+font-size:45px;
+color:#ff7b00;
+margin-bottom:60px;
 }
 
-@keyframes subFloat{
-0%{transform:translateY(0)}
-50%{transform:translateY(-6px)}
-100%{transform:translateY(0)}
+.mediaGrid{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.mediaCard{
+background:#111;
+padding:25px;
+border-radius:18px;
+width:260px;
+transition:.3s;
+}
+
+.mediaCard:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px orange;
+}
+
+.mediaName{
+font-size:22px;
+margin-top:10px;
+}
+
+.mediaRole{
+color:#ffb347;
+font-size:14px;
 }
 
 /* VIDEO */
@@ -293,7 +309,7 @@ left:130%;
 .videoAd{
 padding:120px 20px;
 text-align:center;
-background:radial-gradient(circle,#1a001a,#000);
+background:#000;
 }
 
 .videoTitle{
@@ -333,13 +349,6 @@ background:#111;
 border:2px dashed #444;
 font-size:22px;
 color:#888;
-animation:glow 3s infinite;
-}
-
-@keyframes glow{
-0%{box-shadow:0 0 0px #ffd000;}
-50%{box-shadow:0 0 25px #ffd000;}
-100%{box-shadow:0 0 0px #ffd000;}
 }
 
 /* DISCORD */
@@ -347,21 +356,13 @@ animation:glow 3s infinite;
 .discordSection{
 padding:120px 20px;
 text-align:center;
-background:radial-gradient(circle,#0f1a40,#000);
+background:#0f1a40;
 }
 
 .discordTitle{
 font-size:50px;
 color:#6dd5ff;
 margin-bottom:20px;
-}
-
-.discordText{
-max-width:600px;
-margin:auto;
-font-size:18px;
-color:#ccc;
-margin-bottom:40px;
 }
 
 .discordJoin{
@@ -373,13 +374,6 @@ color:white;
 text-decoration:none;
 border-radius:14px;
 background:linear-gradient(135deg,#5865F2,#6dd5ff);
-box-shadow:0 0 25px rgba(88,101,242,.6);
-transition:.4s;
-}
-
-.discordJoin:hover{
-transform:scale(1.1);
-box-shadow:0 0 40px rgba(88,101,242,1);
 }
 
 footer{
@@ -395,18 +389,17 @@ color:#777;
 <body>
 
 <nav>
-
 <div class="logo">GAMERLOG SMP</div>
 
 <ul>
 <li><a href="#home">Home</a></li>
 <li><a href="#staff">Staff</a></li>
 <li><a href="#creators">Creators</a></li>
+<li><a href="#media">Media</a></li>
 <li><a href="#video">Video</a></li>
 <li><a href="#partners">Partners</a></li>
 <li><a href="#community">Discord</a></li>
 </ul>
-
 </nav>
 
 <!-- HOME -->
@@ -432,17 +425,13 @@ BEDROCK PORT<br>
 
 </div>
 
-<div class="cross">
-⚡ CROSSPLAY JAVA + BEDROCK + PE ⚡
-</div>
-
 </section>
 
 <!-- STAFF -->
 
 <section id="staff" class="staffSection">
 
-<h1 class="staffTitle">THE LEGENDS BEHIND SMP</h1>
+<h1 class="staffTitle">SERVER STAFF</h1>
 
 <div class="staff">
 
@@ -480,9 +469,8 @@ BEDROCK PORT<br>
 <div class="avatar">AO</div>
 <div class="creatorName">not_aadi_og</div>
 <div class="creatorTag">CONTENT CREATOR</div>
-<div class="creatorDesc">Epic Minecraft survival gameplay.</div>
 <div class="creatorBtn">
-<a href="https://www.youtube.com/@not_aadi_og" target="_blank">SUBSCRIBE</a>
+<a href="https://www.youtube.com/@not_aadi_og">SUBSCRIBE</a>
 </div>
 </div>
 
@@ -490,10 +478,36 @@ BEDROCK PORT<br>
 <div class="avatar">PM</div>
 <div class="creatorName">PM_xd</div>
 <div class="creatorTag">CONTENT CREATOR</div>
-<div class="creatorDesc">Minecraft gameplay and SMP adventures.</div>
 <div class="creatorBtn">
-<a href="https://www.youtube.com/@PM_xd" target="_blank">SUBSCRIBE</a>
+<a href="#">SUBSCRIBE</a>
 </div>
+</div>
+
+</div>
+
+</section>
+
+<!-- MEDIA TEAM -->
+
+<section id="media" class="mediaSection">
+
+<h1 class="mediaTitle">MEDIA TEAM</h1>
+
+<div class="mediaGrid">
+
+<div class="mediaCard">
+<div class="mediaName">Video Editor</div>
+<div class="mediaRole">Editing Team</div>
+</div>
+
+<div class="mediaCard">
+<div class="mediaName">Thumbnail Designer</div>
+<div class="mediaRole">Graphics Team</div>
+</div>
+
+<div class="mediaCard">
+<div class="mediaName">Clip Creator</div>
+<div class="mediaRole">Shorts Team</div>
 </div>
 
 </div>
@@ -525,7 +539,7 @@ allowfullscreen>
 <h1 class="partnerTitle">Official Sponsors</h1>
 
 <div class="sponsorWall">
-🚀 Sponsors Coming Soon
+Sponsors Coming Soon
 </div>
 
 </section>
@@ -536,11 +550,7 @@ allowfullscreen>
 
 <h1 class="discordTitle">Join Gamerlog Community</h1>
 
-<p class="discordText">
-Join our Discord server for updates, events and giveaways.
-</p>
-
-<a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="discordJoin">
+<a href="https://discord.gg/Zc6PkAXTgF" class="discordJoin">
 Join Discord
 </a>
 
