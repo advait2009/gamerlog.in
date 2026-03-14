@@ -10,19 +10,33 @@
 html{scroll-behavior:smooth;}
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial;}
 
-/* ANIMATED BACKGROUND */
-
 body{
-background: linear-gradient(-45deg,#12001f,#000000,#00111a,#1b0033);
-background-size:400% 400%;
-animation:bgMove 12s ease infinite;
+background: radial-gradient(circle at top,#1b0033,#000);
 color:white;
+overflow-x:hidden;
 }
 
-@keyframes bgMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+/* PARTICLE BACKGROUND */
+
+.particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+background-image:
+radial-gradient(white 1px, transparent 1px),
+radial-gradient(white 1px, transparent 1px);
+background-size:60px 60px;
+animation:moveParticles 60s linear infinite;
+opacity:0.08;
+z-index:-1;
+}
+
+@keyframes moveParticles{
+0%{background-position:0 0, 30px 30px;}
+100%{background-position:1000px 1000px, 1030px 1030px;}
 }
 
 /* NAVBAR */
@@ -123,11 +137,6 @@ background:#00eaff;
 color:black;
 cursor:pointer;
 font-weight:bold;
-transition:0.3s;
-}
-
-.copyBtn:hover{
-transform:scale(1.1);
 }
 
 /* STATUS */
@@ -159,11 +168,6 @@ font-weight:bold;
 text-decoration:none;
 color:white;
 font-size:18px;
-transition:0.3s;
-}
-
-.discord:hover{
-transform:scale(1.1);
 }
 
 /* STAFF */
@@ -251,11 +255,6 @@ transition:0.4s;
 100%{transform:translateY(0)}
 }
 
-.creatorCard:hover{
-transform:translateY(-20px) scale(1.05);
-box-shadow:0 0 40px #ff0000;
-}
-
 .avatar{
 width:80px;
 height:80px;
@@ -267,13 +266,6 @@ align-items:center;
 justify-content:center;
 font-size:30px;
 font-weight:bold;
-animation:bounce 3s infinite;
-}
-
-@keyframes bounce{
-0%{transform:translateY(0)}
-50%{transform:translateY(-8px)}
-100%{transform:translateY(0)}
 }
 
 .creatorName{
@@ -300,31 +292,21 @@ color:#ddd;
 line-height:1.6;
 }
 
-/* SUBSCRIBE BUTTON */
-
 .creatorBtn a{
 text-decoration:none;
-background:linear-gradient(90deg,#ff0000,#ff3c3c);
+background:#ff3c3c;
 padding:12px 28px;
 border-radius:10px;
 color:white;
 font-weight:bold;
-display:inline-block;
-position:relative;
-overflow:hidden;
-transition:.3s;
-box-shadow:0 0 15px #ff3c3c;
-}
-
-.creatorBtn a:hover{
-transform:translateY(-5px) scale(1.08);
-box-shadow:0 0 25px #ff0000,0 0 45px #ff3c3c;
 }
 
 </style>
 </head>
 
 <body>
+
+<div class="particles"></div>
 
 <nav>
 <div class="logoText">GAMERLOG SMP</div>
@@ -374,86 +356,6 @@ Server Status: <span id="statusText">Checking...</span>
 <a class="discord" href="https://discord.gg/Zc6PkAXTgF" target="_blank">
 Join Discord
 </a>
-
-</section>
-
-<section id="staff" class="staffSection">
-
-<h1 class="staffTitle">THE LEGENDS BEHIND SMP</h1>
-
-<div class="staff">
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/not_aadi_og/120">
-<div class="name">Aadi</div>
-<div class="owner">Owner</div>
-</div>
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/rushi27/120">
-<div class="name">Rushi27</div>
-<div class="head">Head Mod</div>
-</div>
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/ashish_gamer07/120">
-<div class="name">ASHISH_GAMER07</div>
-<div class="dev">Developer</div>
-</div>
-
-</div>
-
-<h2 style="margin-top:70px;color:#6dd5ff;">MEDIA TEAM</h2>
-
-<div class="staff">
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/pm_xd/120">
-<div class="name">PM_xd</div>
-<div class="media">Media</div>
-</div>
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/gamer_my_loart/120">
-<div class="name">Gamer_MY_Loart</div>
-<div class="media">Media</div>
-</div>
-
-</div>
-
-</section>
-
-<section id="creators" class="creatorSection">
-
-<h1 class="creatorTitle">OFFICIAL CREATORS</h1>
-
-<div class="creatorContainer">
-
-<div class="creatorCard">
-<div class="avatar">AO</div>
-<div class="creatorName">not_aadi_og</div>
-<div class="creatorTag">📹 CONTENT CREATOR</div>
-<div class="creatorDesc">
-Catch epic survival adventures, server trolling and intense gameplay on my YouTube channel.
-</div>
-<div class="creatorBtn">
-<a href="https://www.youtube.com/@not_aadi_og" target="_blank">▶ SUBSCRIBE</a>
-</div>
-</div>
-
-<div class="creatorCard">
-<div class="avatar">PM</div>
-<div class="creatorName">PM_xd</div>
-<div class="creatorTag">📹 CONTENT CREATOR</div>
-<div class="creatorDesc">
-Watch exciting Minecraft gameplay, SMP moments and awesome adventures on the channel.
-</div>
-<div class="creatorBtn">
-<a href="https://www.youtube.com/@PM_xd" target="_blank">▶ SUBSCRIBE</a>
-</div>
-</div>
-
-</div>
 
 </section>
 
