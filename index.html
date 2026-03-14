@@ -3,370 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gamerlog SMP</title>
+<title>Official Creators</title>
 
 <style>
 
-html{
-scroll-behavior:smooth;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI, Arial;
-}
-
 body{
-background:radial-gradient(circle at top,#1b0033,#000);
-color:white;
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:radial-gradient(circle,#3a0f0f,#070707);
+    font-family:Arial, Helvetica, sans-serif;
+    color:white;
 }
 
-/* NAVBAR */
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 60px;
-background:#000;
-border-bottom:1px solid #111;
+.container{
+    text-align:center;
 }
 
-.logoText{
-font-size:24px;
-font-weight:bold;
-}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-nav ul li a{
-color:#aaa;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-}
-
-nav ul li a:hover{
-color:#00eaff;
-}
-
-.login{
-background:linear-gradient(90deg,#5f6fff,#a259ff);
-padding:8px 20px;
-border-radius:8px;
-font-weight:bold;
-}
-
-/* HERO */
-
-.hero{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px;
-}
-
-.logoBox img{
-width:450px;
-max-width:90%;
-animation:float 4s infinite ease-in-out;
-}
-
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-15px)}
-100%{transform:translateY(0)}
-}
-
-.season{
-margin-top:30px;
-color:#ffd000;
-font-size:50px;
-letter-spacing:6px;
-}
-
-.coming{
-font-size:75px;
-color:#6ff9ff;
-font-weight:bold;
-margin-top:10px;
-}
-
-.serverBox{
-display:flex;
-gap:30px;
-flex-wrap:wrap;
-margin-top:50px;
-}
-
-.box{
-background:#0a0f18;
-padding:35px 45px;
-border-radius:14px;
-border:1px solid #142235;
-font-size:22px;
-transition:.3s;
-}
-
-.box b{
-font-size:28px;
-}
-
-.box:hover{
-transform:translateY(-5px);
-box-shadow:0 0 25px #00eaff;
-}
-
-/* COPY BUTTON */
-
-.copyBtn{
-margin-top:15px;
-padding:10px 22px;
-border:none;
-border-radius:8px;
-background:#00eaff;
-color:black;
-cursor:pointer;
-font-weight:bold;
-}
-
-.copied{
-background:#00ff9d !important;
-}
-
-/* CROSSPLAY */
-
-.cross{
-border:2px solid #ffd000;
-padding:12px 30px;
-border-radius:25px;
-margin-top:30px;
-font-weight:bold;
-font-size:20px;
-}
-
-/* DISCORD */
-
-.discord{
-margin-top:35px;
-display:inline-block;
-background:#5865F2;
-padding:14px 32px;
-border-radius:10px;
-font-weight:bold;
-text-decoration:none;
-color:white;
-font-size:18px;
-}
-
-/* STAFF SECTION */
-
-.staffSection{
-padding:120px 20px;
-background:#000;
-text-align:center;
-}
-
-.staffTitle{
-font-size:50px;
-color:#6dd5ff;
-margin-bottom:60px;
-}
-
-.staff{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
+.title{
+    font-size:40px;
+    letter-spacing:4px;
+    color:#ff4d4d;
+    text-shadow:0 0 15px #ff4d4d;
+    margin-bottom:30px;
 }
 
 .card{
-background:#111;
-padding:20px;
-border-radius:15px;
-width:220px;
-transition:.3s;
+    width:350px;
+    padding:35px;
+    border-radius:20px;
+    background:#141414;
+    box-shadow:0 0 25px rgba(255,60,60,0.6);
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 20px #00eaff;
-}
-
-.card img{
-width:120px;
-border-radius:10px;
+.avatar{
+    width:80px;
+    height:80px;
+    background:#ff6a6a;
+    margin:auto;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    font-weight:bold;
 }
 
 .name{
-font-size:20px;
-margin-top:10px;
+    margin-top:15px;
+    font-size:28px;
+    font-weight:bold;
 }
 
-.owner{color:gold;}
-.head{color:#ff5c5c;}
-.dev{color:#4cc9f0;}
+.tag{
+    margin:15px auto;
+    padding:6px 16px;
+    border:1px solid #ff5a5a;
+    border-radius:20px;
+    display:inline-block;
+    font-size:13px;
+    color:#ff7b7b;
+}
+
+.desc{
+    margin-top:10px;
+    font-size:14px;
+    color:#ddd;
+}
+
+.subscribe{
+    margin-top:20px;
+}
+
+.subscribe a{
+    text-decoration:none;
+    background:#ff3c3c;
+    padding:10px 25px;
+    border-radius:10px;
+    color:white;
+    font-weight:bold;
+    box-shadow:0 0 10px #ff3c3c;
+}
+
+.subscribe a:hover{
+    background:#ff5c5c;
+}
 
 </style>
 </head>
 
 <body>
 
-<nav>
+<div class="container">
 
-<div class="logoText">GAMERLOG SMP</div>
-
-<ul>
-<li><a href="#">HOME</a></li>
-<li><a href="#staff">STAFF</a></li>
-<li>CREATORS</li>
-<li>PARTNER</li>
-<li>SUPPORT</li>
-</ul>
-
-<div class="login">LOGIN</div>
-
-</nav>
-
-<section class="hero">
-
-<div class="logoBox">
-<img src="gamerlog-logo.png">
-</div>
-
-<div class="season">SEASON 3</div>
-<div class="coming">COMING SOON</div>
-
-<div class="serverBox">
-
-<div class="box">
-JAVA EDITION<br>
-<b>play.gamerlog.fun</b><br>
-<button class="copyBtn" onclick="copyJava(this)">Copy IP</button>
-</div>
-
-<div class="box">
-BEDROCK PORT<br>
-<b>25575</b><br>
-<button class="copyBtn" onclick="copyPort(this)">Copy Port</button>
-</div>
-
-</div>
-
-<div class="cross">
-⚡ CROSSPLAY JAVA + BEDROCK + PE ⚡
-</div>
-
-<a class="discord" href="https://discord.gg/Zc6PkAXTgF" target="_blank">
-Join Discord
-</a>
-
-</section>
-
-
-<!-- STAFF SECTION -->
-
-
-```html
-<section id="staff" class="staffSection">
-
-<h1 class="staffTitle">THE LEGENDS BEHIND SMP</h1>
-
-<!-- TOP STAFF -->
-<div class="staff">
+<div class="title">OFFICIAL CREATORS</div>
 
 <div class="card">
-<img src="https://mc-heads.net/avatar/not_aadi_og/120">
-<div class="name">Aadi</div>
-<div class="owner">Owner</div>
+
+<div class="avatar">SH</div>
+
+<div class="name">Shxdow</div>
+
+<div class="tag">📹 CONTENT CREATOR</div>
+
+<div class="desc">
+Catch the most epic survival adventures, server trolling,
+and intense gameplay on my channel!
 </div>
 
-<div class="card">
-<img src="https://mc-heads.net/avatar/rushi27/120">
-<div class="name">Rushi27</div>
-<div class="head">Head Mod</div>
-</div>
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/ashish_gamer07/120">
-<div class="name">ASHISH_GAMER07</div>
-<div class="dev">Developer</div>
-</div>
-
-</div>
-
-
-<h2 style="margin-top:70px;color:#6dd5ff;">MEDIA TEAM</h2>
-
-<!-- MEDIA TEAM -->
-<div class="staff">
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/pm_xd/120">
-<div class="name">PM_xd</div>
-<div class="media">Media</div>
-</div>
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/gamer_my_loart/120">
-<div class="name">Gamer_MY_Loart</div>
-<div class="media">Media</div>
+<div class="subscribe">
+<a href="#">▶ SUBSCRIBE</a>
 </div>
 
 </div>
 
-</section>
-```
-
-```
-
-
-
-
-</section>
-
-
-<script>
-
-function copyJava(btn){
-
-navigator.clipboard.writeText("play.gamerlog.fun");
-
-btn.innerText="Copied!";
-btn.classList.add("copied");
-
-setTimeout(()=>{
-btn.innerText="Copy IP";
-btn.classList.remove("copied");
-},2000);
-
-}
-
-function copyPort(btn){
-
-navigator.clipboard.writeText("25575");
-
-btn.innerText="Copied!";
-btn.classList.add("copied");
-
-setTimeout(()=>{
-btn.innerText="Copy Port";
-btn.classList.remove("copied");
-},2000);
-
-}
-
-</script>
+</div>
 
 </body>
 </html>
-```
