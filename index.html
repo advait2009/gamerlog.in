@@ -3,150 +3,113 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Gamerlog SMP | Partners</title>
+<title>Gamerlog SMP | Partner</title>
 
 <style>
 
 body{
 margin:0;
 font-family:Segoe UI, sans-serif;
-background:#070707;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 color:white;
-overflow-x:hidden;
+overflow:hidden;
+
+/* DRAGON BACKGROUND */
+background:url("https://i.imgur.com/6IUbEMB.png") center/cover no-repeat;
 }
 
-/* animated background */
-body::before{
+/* dark overlay */
+
+body::after{
 content:"";
-position:fixed;
+position:absolute;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:linear-gradient(120deg,#ff003c,#7a00ff,#ff003c);
-background-size:300% 300%;
-animation:bgmove 10s infinite linear;
-opacity:0.1;
-z-index:-1;
+background:rgba(0,0,0,0.7);
+z-index:0;
 }
 
-@keyframes bgmove{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
-}
+/* floating partner card */
 
-h1{
-text-align:center;
-font-size:45px;
-margin-top:60px;
-animation:fadeDown 1s ease;
-}
-
-.section{
-margin-top:80px;
-text-align:center;
-}
-
-.section-title{
-font-size:32px;
-margin-bottom:40px;
-background:linear-gradient(90deg,#ff003c,#7a00ff);
--webkit-background-clip:text;
-color:transparent;
-}
-
-/* cards */
-
-.container{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:40px;
-}
-
-.card{
-width:280px;
-padding:30px;
-border-radius:20px;
-background:#111;
-transition:0.4s;
+.partner-box{
 position:relative;
-overflow:hidden;
+z-index:1;
+width:420px;
+padding:50px;
+border-radius:25px;
+background:rgba(20,20,20,0.9);
+text-align:center;
+backdrop-filter:blur(6px);
+box-shadow:0 0 40px rgba(122,0,255,0.5);
+animation:float 4s ease-in-out infinite;
 }
 
-.card::before{
+/* glowing animated border */
+
+.partner-box::before{
 content:"";
 position:absolute;
-top:-50%;
-left:-50%;
-width:200%;
-height:200%;
-background:conic-gradient(#ff003c,#7a00ff,#ff003c);
-animation:spin 6s linear infinite;
-opacity:0;
-transition:0.4s;
+top:-3px;
+left:-3px;
+right:-3px;
+bottom:-3px;
+border-radius:25px;
+background:linear-gradient(90deg,#ff003c,#7a00ff,#ff003c);
+background-size:300%;
+z-index:-1;
+animation:borderMove 6s linear infinite;
 }
 
-.card:hover::before{
-opacity:0.25;
+@keyframes borderMove{
+0%{background-position:0%}
+100%{background-position:300%}
 }
 
-.card:hover{
-transform:translateY(-15px) scale(1.05);
-box-shadow:0 0 30px #7a00ff;
-}
+/* floating animation */
 
-@keyframes spin{
-0%{transform:rotate(0deg)}
-100%{transform:rotate(360deg)}
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+100%{transform:translateY(0)}
 }
 
 .logo{
-width:90px;
-border-radius:15px;
-margin-bottom:15px;
+width:120px;
+border-radius:20px;
+margin-bottom:20px;
 }
 
-.name{
-font-size:22px;
+.title{
+font-size:32px;
 font-weight:bold;
+margin-bottom:10px;
 }
 
 .desc{
 color:#bbb;
-font-size:14px;
-margin-top:6px;
-margin-bottom:15px;
+font-size:15px;
+margin-bottom:25px;
 }
 
 .btn{
 display:inline-block;
-padding:10px 20px;
-border-radius:8px;
+padding:12px 28px;
+border-radius:10px;
 text-decoration:none;
+font-size:16px;
 color:white;
 background:linear-gradient(90deg,#ff003c,#7a00ff);
 transition:0.3s;
 }
 
 .btn:hover{
-opacity:0.8;
-}
-
-/* entrance animation */
-
-@keyframes fadeDown{
-0%{opacity:0;transform:translateY(-40px)}
-100%{opacity:1;transform:translateY(0)}
-}
-
-footer{
-text-align:center;
-margin-top:100px;
-padding:30px;
-color:#777;
-border-top:1px solid #222;
+transform:scale(1.1);
+box-shadow:0 0 20px #7a00ff;
 }
 
 </style>
@@ -154,59 +117,20 @@ border-top:1px solid #222;
 
 <body>
 
-<h1>🤝 Gamerlog SMP Partnerships</h1>
+<div class="partner-box">
 
-<!-- YOUTUBE PARTNERS -->
-
-<div class="section">
-<div class="section-title">📺 YouTube Partners</div>
-
-<div class="container">
-
-<div class="card">
 <img class="logo" src="https://mc-heads.net/avatar/Steve">
-<div class="name">Creator Name</div>
-<div class="desc">Official Gamerlog SMP YouTube Partner</div>
-<a class="btn" href="#">Visit Channel</a>
+
+<div class="title">Official Server Partner</div>
+
+<div class="desc">
+This server is the official partner of Gamerlog SMP.  
+Join the adventure and experience epic Minecraft gameplay.
 </div>
 
-<div class="card">
-<img class="logo" src="https://mc-heads.net/avatar/Alex">
-<div class="name">Creator Name</div>
-<div class="desc">Minecraft Content Creator</div>
-<a class="btn" href="#">Visit Channel</a>
-</div>
+<a class="btn" href="#">Visit Partner</a>
 
 </div>
-</div>
-
-<!-- SERVER PARTNERS -->
-
-<div class="section">
-<div class="section-title">🖥 Server Partnerships</div>
-
-<div class="container">
-
-<div class="card">
-<img class="logo" src="https://mc-heads.net/avatar/Herobrine">
-<div class="name">Partner Server</div>
-<div class="desc">Official Minecraft Partner Server</div>
-<a class="btn" href="#">Join Server</a>
-</div>
-
-<div class="card">
-<img class="logo" src="https://mc-heads.net/avatar/Notch">
-<div class="name">Community Network</div>
-<div class="desc">Gaming Community Partner</div>
-<a class="btn" href="#">Visit</a>
-</div>
-
-</div>
-</div>
-
-<footer>
-© 2026 Gamerlog SMP
-</footer>
 
 </body>
 </html>
