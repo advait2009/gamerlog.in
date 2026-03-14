@@ -290,12 +290,12 @@ nav ul li a:hover{color:#00eaff;}
 
 /* ===== PARTNERS ===== */
 .partnerSection{
-  padding:100px 20px;
+  padding:120px 20px;
   text-align:center;
   background:#0a0a0f;
 }
 .partnerSection h1{
-  font-size:3em;
+  font-size:3.5em; /* slightly bigger */
   margin-bottom:40px;
   color:#FF0055;
   text-shadow:2px 2px #8B00FF88;
@@ -306,11 +306,11 @@ nav ul li a:hover{color:#00eaff;}
   align-items:center;
   background:#1a1a2e;
   border-radius:15px;
-  padding:25px;
-  width:90%;
-  max-width:900px;
+  padding:35px;         /* bigger padding */
+  width:95%;            /* bigger width */
+  max-width:1000px;     /* bigger max-width */
   margin:0 auto 30px auto;
-  box-shadow:0 5px 20px rgba(255,0,85,0.3);
+  box-shadow:0 5px 25px rgba(255,0,85,0.3);
   transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
 .partner-card:hover{
@@ -318,115 +318,66 @@ nav ul li a:hover{color:#00eaff;}
   box-shadow:0 10px 25px rgba(255,0,85,0.6);
 }
 .mystery-icon{
-  width:120px;
-  height:120px;
+  width:150px;
+  height:150px;
   border-radius:50%;
   background:#FF0055;
   color:white;
-  font-size:4em;
+  font-size:5em;
   display:flex;
   justify-content:center;
   align-items:center;
-  margin-right:30px;
+  margin-right:40px;
   border:2px solid #FF66AA;
   animation:pulse 2s infinite;
-}
-@keyframes pulse{
-  0%{transform:scale(1);box-shadow:0 0 10px #FF66AA88;}
-  50%{transform:scale(1.1);box-shadow:0 0 25px #FF66AAAA;}
-  100%{transform:scale(1);box-shadow:0 0 10px #FF66AA88;}
-}
-.partner-info h2{
-  margin:0;
-  color:#FF66AA;
-  font-size:1.8em;
-}
-.partner-info p{
-  margin:8px 0 15px;
-  font-size:1em;
-  color:#cccccc;
-}
-.partner-info a{
-  padding:10px 25px;
-  font-size:1em;
-  color:white;
-  background:#8B00FF;
-  border:none;
-  border-radius:10px;
-  text-decoration:none;
-  transition:0.3s;
-}
-.partner-info a:hover{
-  background:#FF0055;
-}
-.partner-note{
-  margin-top:15px;
-  font-size:0.95em;
-  color:#bbbbbb;
 }
 
 /* ===== DISCORD COMMUNITY WITH BOAT ===== */
 .discordCommunity {
-  position: relative;
-  padding: 120px 20px 80px;
-  text-align: center;
-  background: radial-gradient(circle,#1b0033,#000);
-  color: white;
-  overflow: hidden;
+  padding:150px 20px 100px;
+  background:radial-gradient(circle,#0a0a1a,#000);
+  text-align:center;
+  position:relative;
 }
 .discordContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:50px;
+  flex-wrap:wrap;
 }
 .discordLogo img {
-  width: 120px;
-}
-.discordInfo {
-  max-width: 600px;
-  text-align: left;
+  width:150px;  /* bigger logo */
+  height:auto;
 }
 .discordInfo h2 {
-  font-size: 36px;
-  margin-bottom: 15px;
-  color: #7289DA;
+  font-size:42px;
 }
 .discordInfo p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  font-size:19px;
 }
 .discordJoinBtn {
-  display: inline-block;
-  background: #5865F2;
-  color: white;
-  font-weight: bold;
-  padding: 12px 28px;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: transform 0.3s, box-shadow 0.3s;
+  padding:14px 32px;
+  font-size:20px;
+  text-decoration:none;
+  color:white;
+  background:#5865F2;
+  border-radius:10px;
+  font-weight:bold;
+  display:inline-block;
+  transition:.3s;
 }
-.discordJoinBtn:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 0 20px #5865F2;
+.discordJoinBtn:hover{
+  background:#7289DA;
 }
-@media (max-width: 768px) {
-  .discordContainer {
-    flex-direction: column;
-    text-align: center;
-  }
-  .discordInfo {
-    text-align: center;
-  }
-}
+
+/* ===== BOAT ANIMATION ===== */
 .boatWrapper{
   position:absolute;
   bottom:10px;
   left:50%;
   transform:translateX(-50%);
-  width:100px;
+  width:120px;
   pointer-events:none;
 }
 .boat{
@@ -453,7 +404,6 @@ nav ul li a:hover{color:#00eaff;}
 }
 </style>
 </head>
-
 <body>
 
 <!-- ===== NAVBAR ===== -->
@@ -583,7 +533,7 @@ To be a partner, join our Discord and make a ticket.
 </div>
 </section>
 
-<!-- ===== DISCORD COMMUNITY WITH BOAT ===== -->
+<!-- ===== DISCORD COMMUNITY SECTION WITH BOAT ===== -->
 <section id="discordCommunity" class="discordCommunity scroll-element">
   <div class="boatWrapper">
     <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Flat-bottomed-boat.svg" alt="Boat" class="boat">
@@ -591,7 +541,7 @@ To be a partner, join our Discord and make a ticket.
 
   <div class="discordContainer">
     <div class="discordLogo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg" alt="Discord Logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo_wordmark_blurple.svg" alt="Discord Logo">
     </div>
     <div class="discordInfo">
       <h2>Join Our Discord Community!</h2>
