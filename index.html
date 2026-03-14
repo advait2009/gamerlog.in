@@ -20,21 +20,20 @@ overflow-x:hidden;
 
 .particles{
 position:fixed;
-top:0;
-left:0;
 width:100%;
 height:100%;
-pointer-events:none;
+top:0;
+left:0;
 background-image:
 radial-gradient(white 1px, transparent 1px),
 radial-gradient(white 1px, transparent 1px);
-background-size:60px 60px;
-animation:moveParticles 60s linear infinite;
+background-size:70px 70px;
+animation:particlesMove 80s linear infinite;
 opacity:0.08;
 z-index:-1;
 }
 
-@keyframes moveParticles{
+@keyframes particlesMove{
 0%{background-position:0 0, 30px 30px;}
 100%{background-position:1000px 1000px, 1030px 1030px;}
 }
@@ -45,11 +44,18 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 60px;
+padding:20px 60px;
 background:#000;
+position:sticky;
+top:0;
+z-index:10;
 }
 
-.logoText{font-size:24px;font-weight:bold;}
+.logoText{
+font-size:24px;
+font-weight:bold;
+color:#00eaff;
+}
 
 nav ul{
 display:flex;
@@ -57,19 +63,14 @@ gap:30px;
 list-style:none;
 }
 
-nav ul li a{
+nav a{
 color:#aaa;
 text-decoration:none;
 font-weight:600;
 }
 
-nav ul li a:hover{color:#00eaff;}
-
-.login{
-background:linear-gradient(90deg,#5f6fff,#a259ff);
-padding:8px 20px;
-border-radius:8px;
-font-weight:bold;
+nav a:hover{
+color:#00eaff;
 }
 
 /* HERO */
@@ -86,20 +87,20 @@ padding:40px;
 
 .logoBox img{
 width:420px;
-animation:float 4s infinite ease-in-out;
+animation:logoFloat 4s ease-in-out infinite;
 }
 
-@keyframes float{
+@keyframes logoFloat{
 0%{transform:translateY(0)}
-50%{transform:translateY(-15px)}
+50%{transform:translateY(-20px)}
 100%{transform:translateY(0)}
 }
 
 .season{
 margin-top:30px;
+font-size:55px;
+letter-spacing:5px;
 color:#ffd000;
-font-size:50px;
-letter-spacing:6px;
 }
 
 .coming{
@@ -114,16 +115,25 @@ margin-top:10px;
 .serverBox{
 display:flex;
 gap:30px;
-flex-wrap:wrap;
 margin-top:50px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .box{
-background:#0a0f18;
+background:rgba(10,15,24,0.8);
+backdrop-filter:blur(10px);
 padding:35px 45px;
-border-radius:14px;
-border:1px solid #142235;
+border-radius:16px;
+border:1px solid #1e3a5f;
 font-size:22px;
+text-align:center;
+transition:0.3s;
+}
+
+.box:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px #00eaff;
 }
 
 .box b{font-size:28px;}
@@ -137,20 +147,45 @@ background:#00eaff;
 color:black;
 cursor:pointer;
 font-weight:bold;
+transition:0.25s;
+}
+
+.copyBtn:hover{
+transform:scale(1.1);
+}
+
+/* COPY MESSAGE */
+
+.copyMsg{
+margin-top:10px;
+font-size:14px;
+color:#00ff9d;
+display:none;
 }
 
 /* STATUS */
 
-.status{margin-top:30px;font-size:22px;}
-.online{color:#00ff9d;font-weight:bold;}
-.offline{color:red;font-weight:bold;}
+.status{
+margin-top:30px;
+font-size:22px;
+}
+
+.online{
+color:#00ff9d;
+font-weight:bold;
+}
+
+.offline{
+color:red;
+font-weight:bold;
+}
 
 /* CROSSPLAY */
 
 .cross{
 border:2px solid #ffd000;
 padding:12px 30px;
-border-radius:25px;
+border-radius:30px;
 margin-top:30px;
 font-weight:bold;
 font-size:20px;
@@ -162,12 +197,18 @@ font-size:20px;
 margin-top:35px;
 display:inline-block;
 background:#5865F2;
-padding:14px 32px;
+padding:14px 34px;
 border-radius:10px;
 font-weight:bold;
 text-decoration:none;
 color:white;
 font-size:18px;
+transition:0.3s;
+}
+
+.discord:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px #5865F2;
 }
 
 /* STAFF */
@@ -209,7 +250,10 @@ width:120px;
 border-radius:10px;
 }
 
-.name{font-size:20px;margin-top:10px;}
+.name{
+font-size:20px;
+margin-top:10px;
+}
 
 .owner{color:gold;}
 .head{color:#ff5c5c;}
@@ -245,13 +289,12 @@ padding:35px;
 border-radius:20px;
 background:#141414;
 box-shadow:0 0 30px rgba(255,60,60,0.6);
-animation:floatCard 4s ease-in-out infinite;
-transition:0.4s;
+animation:creatorFloat 4s infinite ease-in-out;
 }
 
-@keyframes floatCard{
+@keyframes creatorFloat{
 0%{transform:translateY(0)}
-50%{transform:translateY(-12px)}
+50%{transform:translateY(-10px)}
 100%{transform:translateY(0)}
 }
 
@@ -294,11 +337,17 @@ line-height:1.6;
 
 .creatorBtn a{
 text-decoration:none;
-background:#ff3c3c;
+background:linear-gradient(90deg,#ff0000,#ff3c3c);
 padding:12px 28px;
 border-radius:10px;
 color:white;
 font-weight:bold;
+transition:0.3s;
+}
+
+.creatorBtn a:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px red;
 }
 
 </style>
@@ -316,8 +365,6 @@ font-weight:bold;
 <li><a href="#staff">STAFF</a></li>
 <li><a href="#creators">CREATORS</a></li>
 </ul>
-
-<div class="login">LOGIN</div>
 </nav>
 
 <section class="hero">
@@ -335,12 +382,14 @@ font-weight:bold;
 JAVA IP<br>
 <b>play.gamerlog.fun</b><br>
 <button class="copyBtn" onclick="copyIP()">Copy IP</button>
+<div class="copyMsg" id="ipMsg">Copied!</div>
 </div>
 
 <div class="box">
 BEDROCK PORT<br>
 <b>25575</b><br>
 <button class="copyBtn" onclick="copyPort()">Copy Port</button>
+<div class="copyMsg" id="portMsg">Copied!</div>
 </div>
 
 </div>
@@ -363,12 +412,14 @@ Join Discord
 
 function copyIP(){
 navigator.clipboard.writeText("play.gamerlog.fun");
-alert("IP Copied!");
+document.getElementById("ipMsg").style.display="block";
+setTimeout(()=>{ipMsg.style.display="none"},2000);
 }
 
 function copyPort(){
 navigator.clipboard.writeText("25575");
-alert("Port Copied!");
+document.getElementById("portMsg").style.display="block";
+setTimeout(()=>{portMsg.style.display="none"},2000);
 }
 
 async function checkServer(){
