@@ -31,27 +31,33 @@
       max-width: 900px;
       margin-bottom: 30px;
       box-shadow: 0 5px 20px rgba(255,0,85,0.3);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .partner-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(255,0,85,0.6);
     }
 
-    .partner-card img {
+    .partner-card .mystery-icon {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      margin-right: 30px;
       background: #FF0055;
       color: white;
       font-size: 4em;
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      line-height: 120px;
+      margin-right: 30px;
       border: 2px solid #FF66AA;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 10px #FF66AA88; }
+      50% { transform: scale(1.1); box-shadow: 0 0 25px #FF66AAAA; }
+      100% { transform: scale(1); box-shadow: 0 0 10px #FF66AA88; }
     }
 
     .partner-info h2 {
@@ -95,7 +101,7 @@
 
   <!-- Mystery Partner -->
   <div class="partner-card">
-    <div style="width:120px; height:120px; border-radius:50%; background:#FF0055; color:white; font-size:4em; display:flex; justify-content:center; align-items:center; margin-right:30px; border: 2px solid #FF66AA;">
+    <div class="mystery-icon">
       ?
     </div>
     <div class="partner-info">
