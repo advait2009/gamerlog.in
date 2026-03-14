@@ -585,4 +585,80 @@ To be a partner, join our Discord and make a ticket.
 
 <!-- ===== DISCORD COMMUNITY WITH BOAT ===== -->
 <section id="discordCommunity" class="discordCommunity scroll-element">
- 
+  <div class="boatWrapper">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Flat-bottomed-boat.svg" alt="Boat" class="boat">
+  </div>
+
+  <div class="discordContainer">
+    <div class="discordLogo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg" alt="Discord Logo">
+    </div>
+    <div class="discordInfo">
+      <h2>Join Our Discord Community!</h2>
+      <p>
+        Connect with fellow Gamerlog SMP players! Get <b>exclusive updates</b>, 
+        sneak peeks of upcoming events, giveaways, and direct access to staff and creators.
+      </p>
+      <a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="discordJoinBtn">Join Discord</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TOAST ===== -->
+<div id="toast"></div>
+
+<script>
+// ===== TOAST FUNCTIONS =====
+function showToast(message){
+  const toast = document.getElementById("toast");
+  toast.innerText = message;
+  toast.classList.add("show");
+  setTimeout(()=> toast.classList.remove("show"),1500);
+}
+function copyIP(){
+  navigator.clipboard.writeText("play.gamerlog.fun");
+  showToast("IP Copied!");
+}
+function copyPort(){
+  navigator.clipboard.writeText("25575");
+  showToast("Port Copied!");
+}
+
+// ===== SERVER STATUS =====
+async function checkServer(){
+  try{
+    let res=await fetch("https://api.mcsrvstat.us/2/play.gamerlog.fun");
+    let data=await res.json();
+    let status=document.getElementById("statusText");
+    if(data.online){
+      status.innerHTML="<span class='online'>ONLINE</span> | Players: "+data.players.online;
+    }else{
+      status.innerHTML="<span class='offline'>OFFLINE</span>";
+    }
+  }catch{
+    document.getElementById("statusText").innerText="Status Error";
+  }
+}
+checkServer();
+setInterval(checkServer,30000);
+
+// ===== SCROLL ANIMATION =====
+const scrollElements = document.querySelectorAll('.scroll-element');
+const elementInView = (el, offset = 0) => {
+  const elementTop = el.getBoundingClientRect().top;
+  return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+};
+const displayScrollElement = (el) => el.classList.add('visible');
+const hideScrollElement = (el) => el.classList.remove('visible');
+const handleScrollAnimation = () => {
+  scrollElements.forEach(el => {
+    if(elementInView(el, 100)) displayScrollElement(el);
+    else hideScrollElement(el);
+  });
+};
+window.addEventListener('scroll', handleScrollAnimation);
+handleScrollAnimation();
+</script>
+
+</body>
+</html>
