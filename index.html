@@ -1,15 +1,15 @@
-```html id="partner-ultra"
+```html id="partner-emoji"
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Gamerlog SMP | Interactive Partner</title>
+<title>Gamerlog SMP | Partner</title>
 <style>
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
   color:white;
-  background:#050105;
+  background:#1a001a;
   overflow:hidden;
   display:flex;
   justify-content:center;
@@ -30,7 +30,7 @@ body{
   position:absolute;
   width:6px;
   height:6px;
-  background:linear-gradient(45deg,#b300ff,#ff00c8,#7a00ff);
+  background:linear-gradient(45deg,#ff003c,#7a00ff);
   border-radius:50%;
   animation:particleMove 12s linear infinite;
   opacity:0.7;
@@ -38,8 +38,8 @@ body{
 
 @keyframes particleMove{
   0%{transform:translateY(0) translateX(0) scale(0.5);}
-  50%{transform:translateY(-800px) translateX(200px) scale(1);}
-  100%{transform:translateY(0) translateX(400px) scale(0.5);}
+  50%{transform:translateY(-600px) translateX(100px) scale(1);}
+  100%{transform:translateY(0) translateX(200px) scale(0.5);}
 }
 
 /* HERO / PARTNER CARD */
@@ -58,76 +58,89 @@ body{
   width:220px;
   height:220px;
   border-radius:25px;
-  background:rgba(25,0,40,0.95);
-  backdrop-filter:blur(8px);
-  box-shadow:0 0 60px rgba(186,0,255,0.7);
+  background:rgba(30,0,30,0.95);
+  backdrop-filter:blur(6px);
+  box-shadow:0 0 40px rgba(186,0,255,0.7);
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  transition: all 0.7s cubic-bezier(0.25,1,0.5,1);
+  transition: all 0.6s ease-in-out;
   overflow:hidden;
   cursor:pointer;
   transform-style: preserve-3d;
 }
 
-/* Glowing RGB border */
+/* Glowing red-purple border */
 .partner-box::before{
   content:"";
   position:absolute;
-  top:-5px;
-  left:-5px;
-  right:-5px;
-  bottom:-5px;
+  top:-4px;
+  left:-4px;
+  right:-4px;
+  bottom:-4px;
   border-radius:25px;
-  background:linear-gradient(90deg,#b300ff,#ff00c8,#7a00ff);
-  background-size:300%;
+  background:linear-gradient(90deg,#ff003c,#7a00ff);
+  background-size:200%;
   z-index:-1;
   animation:borderGlow 5s linear infinite;
 }
 
 @keyframes borderGlow{
   0%{background-position:0%}
-  100%{background-position:300%}
+  100%{background-position:200%}
 }
 
 /* Floating animation */
 .partner-box{
-  animation:floatSmooth 6s ease-in-out infinite;
+  animation:floatSmooth 4s ease-in-out infinite;
 }
 
 @keyframes floatSmooth{
-  0%{transform:translateY(0);}
-  25%{transform:translateY(-8px);}
-  50%{transform:translateY(0);}
-  75%{transform:translateY(-5px);}
-  100%{transform:translateY(0);}
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-8px);}
 }
 
 /* Logo */
 .logo{
-  width:130px;
+  width:120px;
   border-radius:20px;
   transition: transform 0.5s ease;
+  position:relative;
+}
+
+/* Emoji sparkle on logo */
+.logo::after{
+  content:"✨";
+  position:absolute;
+  top:-10px;
+  right:-10px;
+  font-size:18px;
+  animation:emojiSpark 2s ease-in-out infinite;
+}
+
+@keyframes emojiSpark{
+  0%,100%{transform:translateY(0) rotate(0deg); opacity:0.8;}
+  50%{transform:translateY(-6px) rotate(15deg); opacity:1;}
 }
 
 /* Title & Desc hidden by default */
 .title, .desc, .btn{
   opacity:0;
   transform:translateY(30px);
-  transition: all 0.6s ease;
+  transition: all 0.5s ease;
   text-align:center;
 }
 
-/* HOVER EFFECT */
+/* HOVER EFFECT (simple open) */
 .partner-box:hover{
-  width:450px;
+  width:420px;
   height:auto;
-  padding:45px;
+  padding:40px;
 }
 
 .partner-box:hover .logo{
-  transform:scale(1.1) rotate(5deg);
+  transform:scale(1.05);
 }
 
 .partner-box:hover .title,
@@ -139,35 +152,43 @@ body{
 
 /* Text styles */
 .title{
-  font-size:32px;
+  font-size:28px;
   font-weight:bold;
-  margin-bottom:12px;
-  background:linear-gradient(90deg,#b300ff,#ff00c8,#7a00ff);
+  margin-bottom:10px;
+  background:linear-gradient(90deg,#ff003c,#7a00ff);
   -webkit-background-clip:text;
   color:transparent;
 }
 
 .desc{
-  font-size:16px;
-  color:#e0c0ff;
+  font-size:15px;
+  color:#e0b3ff;
   margin-bottom:20px;
-  line-height:1.6;
+  line-height:1.5;
+}
+
+/* Add emojis in description */
+.desc::before{
+  content:"🔥 ⚔️ 🛡️ ";
+}
+.desc::after{
+  content:" 💎 ✨";
 }
 
 .btn{
   display:inline-block;
-  padding:14px 32px;
-  font-size:16px;
-  border-radius:12px;
+  padding:12px 28px;
+  font-size:15px;
+  border-radius:10px;
   text-decoration:none;
   color:white;
-  background:linear-gradient(90deg,#b300ff,#ff00c8,#7a00ff);
+  background:linear-gradient(90deg,#ff003c,#7a00ff);
   transition: all 0.3s ease;
 }
 
 .btn:hover{
-  transform:scale(1.12);
-  box-shadow:0 0 25px #ff00c8;
+  transform:scale(1.1);
+  box-shadow:0 0 15px #7a00ff;
 }
 </style>
 </head>
@@ -178,22 +199,22 @@ body{
 <div class="hero">
   <div class="partner-box">
     <img class="logo" src="https://mc-heads.net/avatar/Steve">
-    <div class="title">Gamerlog SMP Partner</div>
-    <div class="desc">⚡ Enter the arena, conquer worlds, and become legend! ⚡</div>
-    <a class="btn" href="#">Join Now</a>
+    <div class="title">Gamerlog SMP Partner ✨</div>
+    <div class="desc">Join the adventure, battle, and rise as legend!</div>
+    <a class="btn" href="#">Join Now ⚡</a>
   </div>
 </div>
 
 <script>
-// Generate smooth particles
+// Generate simple particles
 const particleContainer = document.querySelector('.particles');
-for(let i=0;i<60;i++){
+for(let i=0;i<40;i++){
   let p = document.createElement('div');
   p.className='particle';
   p.style.left=Math.random()*window.innerWidth+'px';
   p.style.top=Math.random()*window.innerHeight+'px';
-  p.style.animationDuration=(8+Math.random()*10)+'s';
-  p.style.width=(3+Math.random()*5)+'px';
+  p.style.animationDuration=(8+Math.random()*8)+'s';
+  p.style.width=(3+Math.random()*4)+'px';
   p.style.height=p.style.width;
   particleContainer.appendChild(p);
 }
