@@ -3,318 +3,94 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gamerlog SMP</title>
+<title>Gamerlog SMP | Partners</title>
 
 <style>
 
-html{scroll-behavior:smooth;}
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial;}
-
 body{
-background:radial-gradient(circle at top,#1b0033,#000);
+margin:0;
+font-family: 'Segoe UI', sans-serif;
+background:#0b0b0b;
 color:white;
-}
-
-/* NAVBAR */
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 60px;
-background:#000;
-}
-
-.logoText{font-size:24px;font-weight:bold;}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-nav ul li a{
-color:#aaa;
-text-decoration:none;
-font-weight:600;
-}
-
-nav ul li a:hover{color:#00eaff;}
-
-.login{
-background:linear-gradient(90deg,#5f6fff,#a259ff);
-padding:8px 20px;
-border-radius:8px;
-font-weight:bold;
-}
-
-/* HERO */
-
-.hero{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px;
-}
-
-.logoBox img{
-width:420px;
-animation:float 4s infinite ease-in-out;
-}
-
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-15px)}
-100%{transform:translateY(0)}
-}
-
-.season{
-margin-top:30px;
-color:#ffd000;
-font-size:50px;
-letter-spacing:6px;
-}
-
-.coming{
-font-size:70px;
-color:#6ff9ff;
-font-weight:bold;
-margin-top:10px;
-}
-
-/* SERVER BOX */
-
-.serverBox{
-display:flex;
-gap:30px;
-flex-wrap:wrap;
-margin-top:50px;
-}
-
-.box{
-background:#0a0f18;
-padding:35px 45px;
-border-radius:14px;
-border:1px solid #142235;
-font-size:22px;
-}
-
-.box b{font-size:28px;}
-
-.copyBtn{
-margin-top:15px;
-padding:10px 22px;
-border:none;
-border-radius:8px;
-background:#00eaff;
-color:black;
-cursor:pointer;
-font-weight:bold;
-}
-
-/* SERVER STATUS */
-
-.status{margin-top:30px;font-size:22px;}
-.online{color:#00ff9d;font-weight:bold;}
-.offline{color:red;font-weight:bold;}
-
-/* CROSSPLAY */
-
-.cross{
-border:2px solid #ffd000;
-padding:12px 30px;
-border-radius:25px;
-margin-top:30px;
-font-weight:bold;
-font-size:20px;
-}
-
-/* DISCORD */
-
-.discord{
-margin-top:35px;
-display:inline-block;
-background:#5865F2;
-padding:14px 32px;
-border-radius:10px;
-font-weight:bold;
-text-decoration:none;
-color:white;
-font-size:18px;
-}
-
-/* STAFF */
-
-.staffSection{
-padding:120px 20px;
-background:#000;
 text-align:center;
 }
 
-.staffTitle{
-font-size:50px;
-color:#6dd5ff;
-margin-bottom:60px;
+h1{
+margin-top:60px;
+font-size:42px;
+letter-spacing:2px;
+background:linear-gradient(90deg,#ff003c,#7a00ff);
+-webkit-background-clip:text;
+color:transparent;
 }
 
-.staff{
+.subtitle{
+color:#bbb;
+margin-bottom:50px;
+}
+
+.partner-container{
 display:flex;
-flex-wrap:wrap;
 justify-content:center;
-gap:30px;
-}
-
-.card{
-background:#111;
+align-items:center;
+flex-wrap:wrap;
+gap:40px;
 padding:20px;
-border-radius:15px;
-width:220px;
-transition:.3s;
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 20px #00eaff;
-}
-
-.card img{
-width:120px;
-border-radius:10px;
-}
-
-.name{font-size:20px;margin-top:10px;}
-
-.owner{color:gold;}
-.head{color:#ff5c5c;}
-.dev{color:#4cc9f0;}
-.media{color:#ff9f43;}
-
-/* CREATORS */
-
-.creatorSection{
-padding:120px 20px;
-background:radial-gradient(circle,#3a0f0f,#070707);
-text-align:center;
-}
-
-.creatorTitle{
-font-size:45px;
-letter-spacing:4px;
-color:#ff4d4d;
-text-shadow:0 0 20px #ff4d4d;
-margin-bottom:60px;
-}
-
-.creatorContainer{
-display:flex;
-justify-content:center;
-gap:60px;
-flex-wrap:wrap;
-}
-
-.creatorCard{
-width:350px;
-padding:35px;
-border-radius:20px;
+.partner-card{
+width:300px;
 background:#141414;
-box-shadow:0 0 30px rgba(255,60,60,0.6);
-animation:floatCard 4s ease-in-out infinite;
-transition:0.4s;
+border-radius:18px;
+padding:30px;
+transition:0.3s;
+border:1px solid #1f1f1f;
 }
 
-@keyframes floatCard{
-0%{transform:translateY(0)}
-50%{transform:translateY(-12px)}
-100%{transform:translateY(0)}
+.partner-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px #7a00ff;
 }
 
-.creatorCard:hover{
-transform:translateY(-20px) scale(1.05);
-box-shadow:0 0 40px #ff0000;
-}
-
-.avatar{
-width:80px;
-height:80px;
-background:#ff6a6a;
-margin:auto;
+.partner-logo{
+width:90px;
+height:90px;
 border-radius:20px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
+margin-bottom:20px;
+}
+
+.partner-name{
+font-size:22px;
 font-weight:bold;
-animation:bounce 3s infinite;
+margin-bottom:8px;
 }
 
-@keyframes bounce{
-0%{transform:translateY(0)}
-50%{transform:translateY(-8px)}
-100%{transform:translateY(0)}
-}
-
-.creatorName{
-margin-top:15px;
-font-size:28px;
-font-weight:bold;
-}
-
-.creatorTag{
-margin:15px auto;
-padding:6px 16px;
-border:1px solid #ff5a5a;
-border-radius:20px;
-display:inline-block;
-font-size:13px;
-color:#ff7b7b;
-}
-
-.creatorDesc{
-margin-top:10px;
-margin-bottom:25px;
+.partner-type{
 font-size:14px;
-color:#ddd;
-line-height:1.6;
+color:#888;
+margin-bottom:18px;
 }
 
-/* SUBSCRIBE BUTTON */
-
-.creatorBtn a{
+.partner-btn{
+display:inline-block;
+padding:10px 22px;
+background:linear-gradient(90deg,#ff003c,#7a00ff);
+border-radius:8px;
 text-decoration:none;
-background:linear-gradient(90deg,#ff0000,#ff3c3c);
-padding:12px 28px;
-border-radius:10px;
 color:white;
 font-weight:bold;
-display:inline-block;
-position:relative;
-overflow:hidden;
-transition:.3s;
-box-shadow:0 0 15px #ff3c3c;
+transition:0.3s;
 }
 
-.creatorBtn a:hover{
-transform:translateY(-5px) scale(1.08);
-box-shadow:0 0 25px #ff0000,0 0 45px #ff3c3c;
+.partner-btn:hover{
+opacity:0.8;
 }
 
-.creatorBtn a::before{
-content:'';
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
-transition:.6s;
-}
-
-.creatorBtn a:hover::before{
-left:100%;
+footer{
+margin-top:80px;
+padding:25px;
+color:#777;
+border-top:1px solid #222;
 }
 
 </style>
@@ -322,176 +98,37 @@ left:100%;
 
 <body>
 
-<nav>
-<div class="logoText">GAMERLOG SMP</div>
+<h1>🤝 Gamerlog SMP Partners</h1>
+<p class="subtitle">Amazing servers & creators who support our community</p>
 
-<ul>
-<li><a href="#">HOME</a></li>
-<li><a href="#staff">STAFF</a></li>
-<li><a href="#creators">CREATORS</a></li>
-</ul>
+<div class="partner-container">
 
-<div class="login">LOGIN</div>
-</nav>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="logoBox">
-<img src="gamerlog-logo.png">
+<div class="partner-card">
+<img class="partner-logo" src="https://mc-heads.net/avatar/Steve">
+<div class="partner-name">Dragon SMP</div>
+<div class="partner-type">Minecraft Partner Server</div>
+<a class="partner-btn" href="#">Visit Server</a>
 </div>
 
-<div class="season">SEASON 3</div>
-<div class="coming">COMING SOON</div>
-
-<div class="serverBox">
-
-<div class="box">
-JAVA IP<br>
-<b>play.gamerlog.fun</b><br>
-<button class="copyBtn" onclick="copyIP()">Copy IP</button>
+<div class="partner-card">
+<img class="partner-logo" src="https://mc-heads.net/avatar/Alex">
+<div class="partner-name">Shadow Creator</div>
+<div class="partner-type">Official Content Creator</div>
+<a class="partner-btn" href="#">YouTube</a>
 </div>
 
-<div class="box">
-BEDROCK PORT<br>
-<b>25575</b><br>
-<button class="copyBtn" onclick="copyPort()">Copy Port</button>
+<div class="partner-card">
+<img class="partner-logo" src="https://mc-heads.net/avatar/Herobrine">
+<div class="partner-name">Night Network</div>
+<div class="partner-type">Gaming Community</div>
+<a class="partner-btn" href="#">Join</a>
 </div>
 
 </div>
 
-<div class="status">
-Server Status: <span id="statusText">Checking...</span>
-</div>
-
-<div class="cross">
-⚡ CROSSPLAY JAVA + BEDROCK + PE ⚡
-</div>
-
-<a class="discord" href="https://discord.gg/Zc6PkAXTgF" target="_blank">
-Join Discord
-</a>
-
-</section>
-
-<!-- STAFF -->
-
-<section id="staff" class="staffSection">
-
-<h1 class="staffTitle">THE LEGENDS BEHIND SMP</h1>
-
-<div class="staff">
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/not_aadi_og/120">
-<div class="name">Aadi</div>
-<div class="owner">Owner</div>
-</div>
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/rushi27/120">
-<div class="name">Rushi27</div>
-<div class="head">Head Mod</div>
-</div>
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/ashish_gamer07/120">
-<div class="name">ASHISH_GAMER07</div>
-<div class="dev">Developer</div>
-</div>
-
-</div>
-
-<h2 style="margin-top:70px;color:#6dd5ff;">MEDIA TEAM</h2>
-
-<div class="staff">
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/pm_xd/120">
-<div class="name">PM_xd</div>
-<div class="media">Media</div>
-</div>
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/gamer_my_loart/120">
-<div class="name">Gamer_MY_Loart</div>
-<div class="media">Media</div>
-</div>
-
-</div>
-
-</section>
-
-<!-- CREATORS -->
-
-<section id="creators" class="creatorSection">
-
-<h1 class="creatorTitle">OFFICIAL CREATORS</h1>
-
-<div class="creatorContainer">
-
-<div class="creatorCard">
-<div class="avatar">AO</div>
-<div class="creatorName">not_aadi_og</div>
-<div class="creatorTag">📹 CONTENT CREATOR</div>
-<div class="creatorDesc">
-Catch epic survival adventures, server trolling and intense gameplay on my YouTube channel.
-</div>
-<div class="creatorBtn">
-<a href="https://www.youtube.com/@not_aadi_og" target="_blank">▶ SUBSCRIBE</a>
-</div>
-</div>
-
-<div class="creatorCard">
-<div class="avatar">PM</div>
-<div class="creatorName">PM_xd</div>
-<div class="creatorTag">📹 CONTENT CREATOR</div>
-<div class="creatorDesc">
-Watch exciting Minecraft gameplay, SMP moments and awesome adventures on the channel.
-</div>
-<div class="creatorBtn">
-<a href="https://www.youtube.com/@PM_xd" target="_blank">▶ SUBSCRIBE</a>
-</div>
-</div>
-
-</div>
-
-</section>
-
-<script>
-
-function copyIP(){
-navigator.clipboard.writeText("play.gamerlog.fun");
-alert("IP Copied!");
-}
-
-function copyPort(){
-navigator.clipboard.writeText("25575");
-alert("Port Copied!");
-}
-
-async function checkServer(){
-try{
-let res=await fetch("https://api.mcsrvstat.us/2/play.gamerlog.fun");
-let data=await res.json();
-let status=document.getElementById("statusText");
-
-if(data.online){
-status.innerHTML="<span class='online'>ONLINE</span> | Players: "+data.players.online;
-}else{
-status.innerHTML="<span class='offline'>OFFLINE</span>";
-}
-
-}catch{
-document.getElementById("statusText").innerText="Status Error";
-}
-}
-
-checkServer();
-setInterval(checkServer,30000);
-
-</script>
+<footer>
+© 2026 Gamerlog SMP
+</footer>
 
 </body>
 </html>
