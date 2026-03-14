@@ -1,44 +1,57 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Gamerlog SMP</title>
 
 <style>
 
 html{scroll-behavior:smooth;}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI,Arial;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial;}
 
 body{
-background:radial-gradient(circle at top,#14002c,#000);
+background: radial-gradient(circle at top,#1b0033,#000);
 color:white;
+overflow-x:hidden;
+}
+
+/* PARTICLE BACKGROUND */
+
+.particles{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background-image:
+radial-gradient(white 1px, transparent 1px),
+radial-gradient(white 1px, transparent 1px);
+background-size:70px 70px;
+animation:particlesMove 80s linear infinite;
+opacity:0.08;
+z-index:-1;
+}
+
+@keyframes particlesMove{
+0%{background-position:0 0, 30px 30px;}
+100%{background-position:1000px 1000px, 1030px 1030px;}
 }
 
 /* NAVBAR */
 
 nav{
 display:flex;
+justify-content:space-between;
 align-items:center;
-justify-content:center;
 padding:20px 60px;
 background:#000;
 position:sticky;
 top:0;
-z-index:1000;
+z-index:10;
 }
 
-.logo{
-position:absolute;
-left:60px;
+.logoText{
 font-size:24px;
 font-weight:bold;
 color:#00eaff;
@@ -46,7 +59,7 @@ color:#00eaff;
 
 nav ul{
 display:flex;
-gap:40px;
+gap:30px;
 list-style:none;
 }
 
@@ -54,13 +67,10 @@ nav a{
 color:#aaa;
 text-decoration:none;
 font-weight:600;
-font-size:18px;
-transition:.3s;
 }
 
 nav a:hover{
 color:#00eaff;
-transform:scale(1.1);
 }
 
 /* HERO */
@@ -72,10 +82,23 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+padding:40px;
+}
+
+.logoBox img{
+width:420px;
+animation:logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+0%{transform:translateY(0)}
+50%{transform:translateY(-20px)}
+100%{transform:translateY(0)}
 }
 
 .season{
-font-size:50px;
+margin-top:30px;
+font-size:55px;
 letter-spacing:5px;
 color:#ffd000;
 }
@@ -84,7 +107,10 @@ color:#ffd000;
 font-size:70px;
 color:#6ff9ff;
 font-weight:bold;
+margin-top:10px;
 }
+
+/* SERVER BOX */
 
 .serverBox{
 display:flex;
@@ -95,43 +121,94 @@ justify-content:center;
 }
 
 .box{
-background:#0a0f18;
+background:rgba(10,15,24,0.8);
+backdrop-filter:blur(10px);
 padding:35px 45px;
 border-radius:16px;
 border:1px solid #1e3a5f;
 font-size:22px;
 text-align:center;
+transition:0.3s;
 }
+
+.box:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px #00eaff;
+}
+
+.box b{font-size:28px;}
 
 .copyBtn{
 margin-top:15px;
-padding:12px 28px;
+padding:10px 22px;
 border:none;
 border-radius:8px;
 background:#00eaff;
 color:black;
 cursor:pointer;
 font-weight:bold;
-font-size:16px;
-transition:.3s;
+transition:0.25s;
 }
 
 .copyBtn:hover{
-transform:scale(1.08);
-box-shadow:0 0 15px #00eaff;
+transform:scale(1.1);
 }
 
-.copyBtn.copied{
-background:#00ff9d;
-box-shadow:0 0 20px #00ff9d;
+/* COPY MESSAGE */
+
+.copyMsg{
+margin-top:10px;
+font-size:14px;
+color:#00ff9d;
+display:none;
 }
+
+/* STATUS */
+
+.status{
+margin-top:30px;
+font-size:22px;
+}
+
+.online{
+color:#00ff9d;
+font-weight:bold;
+}
+
+.offline{
+color:red;
+font-weight:bold;
+}
+
+/* CROSSPLAY */
 
 .cross{
-margin-top:30px;
 border:2px solid #ffd000;
 padding:12px 30px;
 border-radius:30px;
+margin-top:30px;
+font-weight:bold;
 font-size:20px;
+}
+
+/* DISCORD */
+
+.discord{
+margin-top:35px;
+display:inline-block;
+background:#5865F2;
+padding:14px 34px;
+border-radius:10px;
+font-weight:bold;
+text-decoration:none;
+color:white;
+font-size:18px;
+transition:0.3s;
+}
+
+.discord:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px #5865F2;
 }
 
 /* STAFF */
@@ -173,11 +250,15 @@ width:120px;
 border-radius:10px;
 }
 
-.name{font-size:20px;margin-top:10px;}
+.name{
+font-size:20px;
+margin-top:10px;
+}
 
 .owner{color:gold;}
 .head{color:#ff5c5c;}
 .dev{color:#4cc9f0;}
+.media{color:#ff9f43;}
 
 /* CREATORS */
 
@@ -191,6 +272,7 @@ text-align:center;
 font-size:45px;
 letter-spacing:4px;
 color:#ff4d4d;
+text-shadow:0 0 20px #ff4d4d;
 margin-bottom:60px;
 }
 
@@ -207,6 +289,13 @@ padding:35px;
 border-radius:20px;
 background:#141414;
 box-shadow:0 0 30px rgba(255,60,60,0.6);
+animation:creatorFloat 4s infinite ease-in-out;
+}
+
+@keyframes creatorFloat{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
 }
 
 .avatar{
@@ -243,150 +332,22 @@ margin-top:10px;
 margin-bottom:25px;
 font-size:14px;
 color:#ddd;
+line-height:1.6;
 }
 
-/* NEW SUBSCRIBE ANIMATION */
-
 .creatorBtn a{
-display:inline-block;
-padding:16px 42px;
-border-radius:16px;
-font-weight:700;
 text-decoration:none;
+background:linear-gradient(90deg,#ff0000,#ff3c3c);
+padding:12px 28px;
+border-radius:10px;
 color:white;
-background:linear-gradient(135deg,#ff2e2e,#ff6a6a);
-position:relative;
-overflow:hidden;
-transition:.4s;
-box-shadow:0 12px 35px rgba(255,60,60,.45);
-animation:subFloat 4s ease-in-out infinite;
+font-weight:bold;
+transition:0.3s;
 }
 
 .creatorBtn a:hover{
-transform:scale(1.08);
-box-shadow:0 20px 55px rgba(255,60,60,.8);
-}
-
-.creatorBtn a::after{
-content:"";
-position:absolute;
-top:0;
-left:-150%;
-width:120%;
-height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,.8),transparent);
-transition:.8s;
-}
-
-.creatorBtn a:hover::after{
-left:130%;
-}
-
-@keyframes subFloat{
-0%{transform:translateY(0)}
-50%{transform:translateY(-6px)}
-100%{transform:translateY(0)}
-}
-
-/* VIDEO */
-
-.videoAd{
-padding:120px 20px;
-text-align:center;
-background:radial-gradient(circle,#1a001a,#000);
-}
-
-.videoTitle{
-font-size:48px;
-margin-bottom:50px;
-color:#ff4d4d;
-}
-
-.videoBox iframe{
-border-radius:20px;
-box-shadow:0 0 40px rgba(255,0,0,.6);
-}
-
-/* PARTNERS */
-
-.partnerSection{
-padding:120px 20px;
-background:#000;
-text-align:center;
-}
-
-.partnerTitle{
-font-size:45px;
-color:#ffd000;
-margin-bottom:40px;
-}
-
-.sponsorWall{
-width:320px;
-height:200px;
-margin:auto;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:20px;
-background:#111;
-border:2px dashed #444;
-font-size:22px;
-color:#888;
-animation:glow 3s infinite;
-}
-
-@keyframes glow{
-0%{box-shadow:0 0 0px #ffd000;}
-50%{box-shadow:0 0 25px #ffd000;}
-100%{box-shadow:0 0 0px #ffd000;}
-}
-
-/* DISCORD */
-
-.discordSection{
-padding:120px 20px;
-text-align:center;
-background:radial-gradient(circle,#0f1a40,#000);
-}
-
-.discordTitle{
-font-size:50px;
-color:#6dd5ff;
-margin-bottom:20px;
-}
-
-.discordText{
-max-width:600px;
-margin:auto;
-font-size:18px;
-color:#ccc;
-margin-bottom:40px;
-}
-
-.discordJoin{
-display:inline-block;
-padding:18px 50px;
-font-size:20px;
-font-weight:bold;
-color:white;
-text-decoration:none;
-border-radius:14px;
-background:linear-gradient(135deg,#5865F2,#6dd5ff);
-box-shadow:0 0 25px rgba(88,101,242,.6);
-transition:.4s;
-}
-
-.discordJoin:hover{
 transform:scale(1.1);
-box-shadow:0 0 40px rgba(88,101,242,1);
-}
-
-footer{
-text-align:center;
-padding:40px;
-background:#000;
-color:#777;
+box-shadow:0 0 20px red;
 }
 
 </style>
@@ -394,24 +355,23 @@ color:#777;
 
 <body>
 
-<nav>
+<div class="particles"></div>
 
-<div class="logo">GAMERLOG SMP</div>
+<nav>
+<div class="logoText">GAMERLOG SMP</div>
 
 <ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#staff">Staff</a></li>
-<li><a href="#creators">Creators</a></li>
-<li><a href="#video">Video</a></li>
-<li><a href="#partners">Partners</a></li>
-<li><a href="#community">Discord</a></li>
+<li><a href="#">HOME</a></li>
+<li><a href="#staff">STAFF</a></li>
+<li><a href="#creators">CREATORS</a></li>
 </ul>
-
 </nav>
 
-<!-- HOME -->
+<section class="hero">
 
-<section id="home" class="hero">
+<div class="logoBox">
+<img src="gamerlog-logo.png">
+</div>
 
 <div class="season">SEASON 3</div>
 <div class="coming">COMING SOON</div>
@@ -421,161 +381,68 @@ color:#777;
 <div class="box">
 JAVA IP<br>
 <b>play.gamerlog.fun</b><br>
-<button class="copyBtn" onclick="copyIP(this)">Copy IP</button>
+<button class="copyBtn" onclick="copyIP()">Copy IP</button>
+<div class="copyMsg" id="ipMsg">Copied!</div>
 </div>
 
 <div class="box">
 BEDROCK PORT<br>
 <b>25575</b><br>
-<button class="copyBtn" onclick="copyPort(this)">Copy Port</button>
+<button class="copyBtn" onclick="copyPort()">Copy Port</button>
+<div class="copyMsg" id="portMsg">Copied!</div>
 </div>
 
+</div>
+
+<div class="status">
+Server Status: <span id="statusText">Checking...</span>
 </div>
 
 <div class="cross">
 ⚡ CROSSPLAY JAVA + BEDROCK + PE ⚡
 </div>
 
-</section>
-
-<!-- STAFF -->
-
-<section id="staff" class="staffSection">
-
-<h1 class="staffTitle">THE LEGENDS BEHIND SMP</h1>
-
-<div class="staff">
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/not_aadi_og/120">
-<div class="name">Aadi</div>
-<div class="owner">Owner</div>
-</div>
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/rushi27/120">
-<div class="name">Rushi27</div>
-<div class="head">Head Mod</div>
-</div>
-
-<div class="card">
-<img src="https://mc-heads.net/avatar/ashish_gamer07/120">
-<div class="name">ASHISH_GAMER07</div>
-<div class="dev">Developer</div>
-</div>
-
-</div>
-
-</section>
-
-<!-- CREATORS -->
-
-<section id="creators" class="creatorSection">
-
-<h1 class="creatorTitle">OFFICIAL CREATORS</h1>
-
-<div class="creatorContainer">
-
-<div class="creatorCard">
-<div class="avatar">AO</div>
-<div class="creatorName">not_aadi_og</div>
-<div class="creatorTag">CONTENT CREATOR</div>
-<div class="creatorDesc">Epic Minecraft survival gameplay.</div>
-<div class="creatorBtn">
-<a href="https://www.youtube.com/@not_aadi_og" target="_blank">SUBSCRIBE</a>
-</div>
-</div>
-
-<div class="creatorCard">
-<div class="avatar">PM</div>
-<div class="creatorName">PM_xd</div>
-<div class="creatorTag">CONTENT CREATOR</div>
-<div class="creatorDesc">Minecraft gameplay and SMP adventures.</div>
-<div class="creatorBtn">
-<a href="https://www.youtube.com/@PM_xd" target="_blank">SUBSCRIBE</a>
-</div>
-</div>
-
-</div>
-
-</section>
-
-<!-- VIDEO -->
-
-<section id="video" class="videoAd">
-
-<h1 class="videoTitle">Featured Video</h1>
-
-<div class="videoBox">
-
-<iframe width="900" height="500"
-src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</section>
-
-<!-- PARTNERS -->
-
-<section id="partners" class="partnerSection">
-
-<h1 class="partnerTitle">Official Sponsors</h1>
-
-<div class="sponsorWall">
-🚀 Sponsors Coming Soon
-</div>
-
-</section>
-
-<!-- DISCORD -->
-
-<section id="community" class="discordSection">
-
-<h1 class="discordTitle">Join Gamerlog Community</h1>
-
-<p class="discordText">
-Join our Discord server for updates, events and giveaways.
-</p>
-
-<a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="discordJoin">
+<a class="discord" href="https://discord.gg/Zc6PkAXTgF" target="_blank">
 Join Discord
 </a>
 
 </section>
 
-<footer>
-© Gamerlog SMP
-</footer>
-
 <script>
 
-function copyIP(button){
+function copyIP(){
 navigator.clipboard.writeText("play.gamerlog.fun");
-button.innerText="✓ Copied!";
-button.classList.add("copied");
-
-setTimeout(()=>{
-button.innerText="Copy IP";
-button.classList.remove("copied");
-},2000);
+document.getElementById("ipMsg").style.display="block";
+setTimeout(()=>{ipMsg.style.display="none"},2000);
 }
 
-function copyPort(button){
+function copyPort(){
 navigator.clipboard.writeText("25575");
-button.innerText="✓ Copied!";
-button.classList.add("copied");
-
-setTimeout(()=>{
-button.innerText="Copy Port";
-button.classList.remove("copied");
-},2000);
+document.getElementById("portMsg").style.display="block";
+setTimeout(()=>{portMsg.style.display="none"},2000);
 }
+
+async function checkServer(){
+try{
+let res=await fetch("https://api.mcsrvstat.us/2/play.gamerlog.fun");
+let data=await res.json();
+let status=document.getElementById("statusText");
+
+if(data.online){
+status.innerHTML="<span class='online'>ONLINE</span> | Players: "+data.players.online;
+}else{
+status.innerHTML="<span class='offline'>OFFLINE</span>";
+}
+
+}catch{
+document.getElementById("statusText").innerText="Status Error";
+}
+}
+
+checkServer();
+setInterval(checkServer,30000);
 
 </script>
 
 </body>
 </html>
-```
