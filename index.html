@@ -9,9 +9,40 @@
 /* ===== GENERAL STYLES ===== */
 html{scroll-behavior:smooth;}
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial;}
+
+/* ===== GALAXY BACKGROUND ===== */
 body{
-  background:radial-gradient(circle at top,#1b0033,#000);
+  background:#000;
   color:white;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:
+    radial-gradient(2px 2px at 20px 30px,#fff,transparent),
+    radial-gradient(2px 2px at 40px 70px,#fff,transparent),
+    radial-gradient(1px 1px at 90px 40px,#fff,transparent),
+    radial-gradient(1px 1px at 130px 80px,#fff,transparent),
+    radial-gradient(2px 2px at 160px 30px,#fff,transparent),
+    radial-gradient(1px 1px at 200px 90px,#fff,transparent),
+    radial-gradient(2px 2px at 250px 60px,#fff,transparent),
+    radial-gradient(1px 1px at 300px 20px,#fff,transparent),
+    radial-gradient(2px 2px at 340px 100px,#fff,transparent);
+  background-size:400px 400px;
+  animation:starsMove 80s linear infinite;
+  z-index:-1;
+  opacity:0.7;
+}
+
+@keyframes starsMove{
+  from{transform:translateY(0);}
+  to{transform:translateY(-1000px);}
 }
 
 /* ===== NAVBAR ===== */
@@ -90,7 +121,7 @@ nav ul li a:hover{color:#00eaff;}
   font-weight:bold;
 }
 
-/* ===== COPY MESSAGE ANIMATION ===== */
+/* ===== COPY MESSAGE ===== */
 .copyMsg{
   display:inline-block;
   opacity:0;
@@ -222,18 +253,8 @@ nav ul li a:hover{color:#00eaff;}
   justify-content:center;
   font-size:30px;
   font-weight:bold;
-  animation:bounce 3s infinite;
 }
-@keyframes bounce{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
-  100%{transform:translateY(0)}
-}
-.creatorName{
-  margin-top:15px;
-  font-size:28px;
-  font-weight:bold;
-}
+.creatorName{margin-top:15px;font-size:28px;font-weight:bold;}
 .creatorTag{
   margin:15px auto;
   padding:6px 16px;
@@ -257,28 +278,6 @@ nav ul li a:hover{color:#00eaff;}
   border-radius:10px;
   color:white;
   font-weight:bold;
-  display:inline-block;
-  position:relative;
-  overflow:hidden;
-  transition:.3s;
-  box-shadow:0 0 15px #ff3c3c;
-}
-.creatorBtn a:hover{
-  transform:translateY(-5px) scale(1.08);
-  box-shadow:0 0 25px #ff0000,0 0 45px #ff3c3c;
-}
-.creatorBtn a::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
-  transition:.6s;
-}
-.creatorBtn a:hover::before{
-  left:100%;
 }
 
 /* ===== PARTNERS ===== */
@@ -291,7 +290,6 @@ nav ul li a:hover{color:#00eaff;}
   font-size:3em;
   margin-bottom:40px;
   color:#FF0055;
-  text-shadow:2px 2px #8B00FF88;
 }
 .partner-card{
   display:flex;
@@ -303,12 +301,6 @@ nav ul li a:hover{color:#00eaff;}
   width:90%;
   max-width:900px;
   margin:0 auto 30px auto;
-  box-shadow:0 5px 20px rgba(255,0,85,0.3);
-  transition:transform 0.3s ease, box-shadow 0.3s ease;
-}
-.partner-card:hover{
-  transform:translateY(-5px) scale(1.03);
-  box-shadow:0 10px 25px rgba(255,0,85,0.6);
 }
 .mystery-icon{
   width:120px;
@@ -321,48 +313,54 @@ nav ul li a:hover{color:#00eaff;}
   justify-content:center;
   align-items:center;
   margin-right:30px;
-  border:2px solid #FF66AA;
-  animation:pulse 2s infinite;
-}
-@keyframes pulse{
-  0%{transform:scale(1);box-shadow:0 0 10px #FF66AA88;}
-  50%{transform:scale(1.1);box-shadow:0 0 25px #FF66AAAA;}
-  100%{transform:scale(1);box-shadow:0 0 10px #FF66AA88;}
 }
 .partner-info h2{
   margin:0;
   color:#FF66AA;
   font-size:1.8em;
 }
-.partner-info p{
-  margin:8px 0 15px;
-  font-size:1em;
-  color:#cccccc;
+
+/* ===== DISCORD COMMUNITY ===== */
+.discordEnd{
+  padding:120px 20px;
+  background:#0a0a0f;
+  text-align:center;
 }
-.partner-info a{
-  padding:10px 25px;
-  font-size:1em;
-  color:white;
-  background:#8B00FF;
-  border:none;
+.discordContainer{max-width:800px;margin:auto;}
+.discordLogo{
+  width:120px;
+  margin-bottom:25px;
+  animation:float 4s infinite ease-in-out;
+}
+.discordEnd h1{
+  font-size:48px;
+  color:#5865F2;
+  margin-bottom:20px;
+}
+.discordEnd p{
+  font-size:18px;
+  color:#ccc;
+  line-height:1.7;
+  max-width:650px;
+  margin:auto;
+}
+.discordJoin{
+  display:inline-block;
+  margin-top:30px;
+  background:#5865F2;
+  padding:14px 35px;
   border-radius:10px;
   text-decoration:none;
-  transition:0.3s;
+  color:white;
+  font-size:18px;
+  font-weight:bold;
 }
-.partner-info a:hover{
-  background:#FF0055;
-}
-.partner-note{
-  margin-top:15px;
-  font-size:0.95em;
-  color:#bbbbbb;
-}
-
 </style>
 </head>
+
 <body>
 
-<!-- ===== NAVBAR ===== -->
+<!-- NAVBAR -->
 <nav>
 <div class="logoText">GAMERLOG SMP</div>
 <ul>
@@ -374,11 +372,12 @@ nav ul li a:hover{color:#00eaff;}
 <div class="login">LOGIN</div>
 </nav>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 <section class="hero">
 <div class="logoBox">
 <img src="gamerlog-logo.png">
 </div>
+
 <div class="season">SEASON 3</div>
 <div class="coming">COMING SOON</div>
 
@@ -389,6 +388,7 @@ JAVA IP<br>
 <button class="copyBtn" onclick="copyIP(this)">Copy IP</button>
 <span class="copyMsg">IP Copied!</span>
 </div>
+
 <div class="box">
 BEDROCK PORT<br>
 <b>25575</b><br>
@@ -408,179 +408,23 @@ Server Status: <span id="statusText">Checking...</span>
 <a class="discord" href="https://discord.gg/Zc6PkAXTgF" target="_blank">Join Discord</a>
 </section>
 
-<!-- ===== STAFF ===== -->
+<!-- STAFF -->
 <section id="staff" class="staffSection">
 <h1 class="staffTitle">THE LEGENDS BEHIND SMP</h1>
-<div class="staff">
-<div class="card">
-<img src="https://mc-heads.net/avatar/not_aadi_og/120">
-<div class="name">Aadi</div>
-<div class="owner">Owner</div>
-</div>
-<div class="card">
-<img src="https://mc-heads.net/avatar/rushi27/120">
-<div class="name">Rushi27</div>
-<div class="head">Head Mod</div>
-</div>
-<div class="card">
-<img src="https://mc-heads.net/avatar/ashish_gamer07/120">
-<div class="name">ASHISH_GAMER07</div>
-<div class="dev">Developer</div>
-</div>
-</div>
-
-<h2 style="margin-top:70px;color:#6dd5ff;">MEDIA TEAM</h2>
-<div class="staff">
-<div class="card">
-<img src="https://mc-heads.net/avatar/pm_xd/120">
-<div class="name">PM_xd</div>
-<div class="media">Media</div>
-</div>
-<div class="card">
-<img src="https://mc-heads.net/avatar/gamer_my_loart/120">
-<div class="name">Gamer_MY_Loart</div>
-<div class="media">Media</div>
-</div>
-</div>
 </section>
 
-<!-- ===== CREATORS ===== -->
+<!-- CREATORS -->
 <section id="creators" class="creatorSection">
 <h1 class="creatorTitle">OFFICIAL CREATORS</h1>
-<div class="creatorContainer">
-<div class="creatorCard">
-<div class="avatar">AO</div>
-<div class="creatorName">not_aadi_og</div>
-<div class="creatorTag">📹 CONTENT CREATOR</div>
-<div class="creatorDesc">
-Catch epic survival adventures, server trolling and intense gameplay on my YouTube channel.
-</div>
-<div class="creatorBtn">
-<a href="https://www.youtube.com/@not_aadi_og" target="_blank">▶ SUBSCRIBE</a>
-</div>
-</div>
-
-<div class="creatorCard">
-<div class="avatar">PM</div>
-<div class="creatorName">PM_xd</div>
-<div class="creatorTag">📹 CONTENT CREATOR</div>
-<div class="creatorDesc">
-Watch exciting Minecraft gameplay, SMP moments and awesome adventures on the channel.
-</div>
-<div class="creatorBtn">
-<a href="https://www.youtube.com/@PM_xd" target="_blank">▶ SUBSCRIBE</a>
-</div>
-</div>
-</div>
 </section>
 
-<!-- ===== PARTNERS ===== -->
+<!-- PARTNERS -->
 <section id="partners" class="partnerSection">
 <h1>🤝 Our Partners</h1>
-<div class="partner-card">
-<div class="mystery-icon">?</div>
-<div class="partner-info">
-<h2>Mystery Partner</h2>
-<p>Click below to join our Discord and apply to become a partner!</p>
-<a href="https://discord.gg/Zc6PkAXTgF" target="_blank">Join Discord</a>
-<div class="partner-note">
-To be a partner, join our Discord and make a ticket.
-</div>
-</div>
-</div>
 </section>
 
-<script>
-function copyIP(btn){
-  navigator.clipboard.writeText("play.gamerlog.fun");
-  showCopyMsg(btn);
-}
-function copyPort(btn){
-  navigator.clipboard.writeText("25575");
-  showCopyMsg(btn);
-}
-function showCopyMsg(button){
-  const msg = button.nextElementSibling;
-  msg.classList.add("show");
-  setTimeout(()=> msg.classList.remove("show"),1500);
-}
-
-async function checkServer(){
-  try{
-    let res=await fetch("https://api.mcsrvstat.us/2/play.gamerlog.fun");
-    let data=await res.json();
-    let status=document.getElementById("statusText");
-    if(data.online){
-      status.innerHTML="<span class='online'>ONLINE</span> | Players: "+data.players.online;
-    }else{
-      status.innerHTML="<span class='offline'>OFFLINE</span>";
-    }
-  }catch{
-    document.getElementById("statusText").innerText="Status Error";
-  }
-}
-checkServer();
-setInterval(checkServer,30000);
-</script>
-
-</body>
-</html>
-
-<!-- ===== DISCORD COMMUNITY ===== -->
-
-<style>
-.discordEnd{
-  padding:120px 20px;
-  background:#0a0a0f;
-  text-align:center;
-}
-
-.discordContainer{
-  max-width:800px;
-  margin:auto;
-}
-
-.discordLogo{
-  width:120px;
-  margin-bottom:25px;
-  animation:float 4s infinite ease-in-out;
-}
-
-.discordEnd h1{
-  font-size:48px;
-  color:#5865F2;
-  margin-bottom:20px;
-}
-
-.discordEnd p{
-  font-size:18px;
-  color:#ccc;
-  line-height:1.7;
-  max-width:650px;
-  margin:auto;
-}
-
-.discordJoin{
-  display:inline-block;
-  margin-top:30px;
-  background:#5865F2;
-  padding:14px 35px;
-  border-radius:10px;
-  text-decoration:none;
-  color:white;
-  font-size:18px;
-  font-weight:bold;
-  transition:0.3s;
-}
-
-.discordJoin:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 25px #5865F2;
-}
-</style>
-
+<!-- DISCORD COMMUNITY -->
 <section class="discordEnd">
-
 <div class="discordContainer">
 
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" class="discordLogo">
@@ -589,7 +433,6 @@ setInterval(checkServer,30000);
 
 <p>
 Join our Discord to get server updates, announcements, events and connect with the Gamerlog SMP community.
-Chat with players, make friends and stay updated with everything happening on the server.
 </p>
 
 <a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="discordJoin">
@@ -597,5 +440,7 @@ Chat with players, make friends and stay updated with everything happening on th
 </a>
 
 </div>
-
 </section>
+
+</body>
+</html>
