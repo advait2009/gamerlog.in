@@ -6,363 +6,414 @@
 <title>Gamerlog SMP</title>
 
 <style>
-/* ===== GENERAL STYLES ===== */
+
+/* ===== GENERAL ===== */
+
 html{scroll-behavior:smooth;}
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial;}
+
 body{
-  background:radial-gradient(circle at top,#1b0033,#000);
-  color:white;
+background:radial-gradient(circle at top,#1b0033,#000);
+color:white;
 }
 
 /* ===== NAVBAR ===== */
+
 nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 60px;
-  background:#000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 60px;
+background:#000;
 }
+
 .logoText{font-size:24px;font-weight:bold;}
+
 nav ul{
-  display:flex;
-  gap:30px;
-  list-style:none;
+display:flex;
+gap:30px;
+list-style:none;
 }
+
 nav ul li a{
-  color:#aaa;
-  text-decoration:none;
-  font-weight:600;
+color:#aaa;
+text-decoration:none;
+font-weight:600;
 }
+
 nav ul li a:hover{color:#00eaff;}
+
 .login{
-  background:linear-gradient(90deg,#5f6fff,#a259ff);
-  padding:8px 20px;
-  border-radius:8px;
-  font-weight:bold;
+background:linear-gradient(90deg,#5f6fff,#a259ff);
+padding:8px 20px;
+border-radius:8px;
+font-weight:bold;
 }
 
 /* ===== HERO ===== */
+
 .hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:40px;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
 }
+
 .logoBox img{
-  width:420px;
-  animation:float 4s infinite ease-in-out;
+width:420px;
+animation:float 4s infinite ease-in-out;
 }
+
 @keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-15px)}
-  100%{transform:translateY(0)}
+0%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+100%{transform:translateY(0)}
 }
-.season{margin-top:30px;color:#ffd000;font-size:50px;letter-spacing:6px;}
-.coming{font-size:70px;color:#6ff9ff;font-weight:bold;margin-top:10px;}
+
+.season{
+margin-top:30px;
+color:#ffd000;
+font-size:50px;
+letter-spacing:6px;
+}
+
+.coming{
+font-size:70px;
+color:#6ff9ff;
+font-weight:bold;
+margin-top:10px;
+}
 
 /* ===== SERVER BOX ===== */
+
 .serverBox{
-  display:flex;
-  gap:30px;
-  flex-wrap:wrap;
-  margin-top:50px;
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+margin-top:50px;
 }
+
 .box{
-  background:#0a0f18;
-  padding:35px 45px;
-  border-radius:14px;
-  border:1px solid #142235;
-  font-size:22px;
-  position:relative;
+background:#0a0f18;
+padding:35px 45px;
+border-radius:14px;
+border:1px solid #142235;
+font-size:22px;
+position:relative;
 }
+
 .box b{font-size:28px;}
+
 .copyBtn{
-  margin-top:15px;
-  padding:10px 22px;
-  border:none;
-  border-radius:8px;
-  background:#00eaff;
-  color:black;
-  cursor:pointer;
-  font-weight:bold;
+margin-top:15px;
+padding:10px 22px;
+border:none;
+border-radius:8px;
+background:#00eaff;
+color:black;
+cursor:pointer;
+font-weight:bold;
 }
 
-/* ===== COPY MESSAGE ANIMATION ===== */
 .copyMsg{
-  display:inline-block;
-  opacity:0;
-  margin-left:10px;
-  color:#00eaff;
-  font-weight:bold;
-  position:absolute;
-  top:5px;
-  right:10px;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transform: translateY(-10px);
-}
-.copyMsg.show{
-  opacity:1;
-  transform: translateY(-25px);
+display:inline-block;
+opacity:0;
+margin-left:10px;
+color:#00eaff;
+font-weight:bold;
+position:absolute;
+top:5px;
+right:10px;
+transition:opacity .5s, transform .5s;
+transform:translateY(-10px);
 }
 
-/* ===== SERVER STATUS ===== */
+.copyMsg.show{
+opacity:1;
+transform:translateY(-25px);
+}
+
+/* ===== STATUS ===== */
+
 .status{margin-top:30px;font-size:22px;}
 .online{color:#00ff9d;font-weight:bold;}
 .offline{color:red;font-weight:bold;}
 
 /* ===== CROSSPLAY ===== */
+
 .cross{
-  border:2px solid #ffd000;
-  padding:12px 30px;
-  border-radius:25px;
-  margin-top:30px;
-  font-weight:bold;
-  font-size:20px;
+border:2px solid #ffd000;
+padding:12px 30px;
+border-radius:25px;
+margin-top:30px;
+font-weight:bold;
+font-size:20px;
 }
 
 /* ===== DISCORD BUTTON ===== */
+
 .discord{
-  margin-top:35px;
-  display:inline-block;
-  background:#5865F2;
-  padding:14px 32px;
-  border-radius:10px;
-  font-weight:bold;
-  text-decoration:none;
-  color:white;
-  font-size:18px;
+margin-top:35px;
+display:inline-block;
+background:#5865F2;
+padding:14px 32px;
+border-radius:10px;
+font-weight:bold;
+text-decoration:none;
+color:white;
+font-size:18px;
 }
 
 /* ===== STAFF ===== */
+
 .staffSection{
-  padding:120px 20px;
-  background:#000;
-  text-align:center;
+padding:120px 20px;
+background:#000;
+text-align:center;
 }
+
 .staffTitle{
-  font-size:50px;
-  color:#6dd5ff;
-  margin-bottom:60px;
+font-size:50px;
+color:#6dd5ff;
+margin-bottom:60px;
 }
+
 .staff{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:30px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
 }
+
 .card{
-  background:#111;
-  padding:20px;
-  border-radius:15px;
-  width:220px;
-  transition:.3s;
+background:#111;
+padding:20px;
+border-radius:15px;
+width:220px;
+transition:.3s;
 }
+
 .card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 20px #00eaff;
+transform:translateY(-10px);
+box-shadow:0 0 20px #00eaff;
 }
+
 .card img{
-  width:120px;
-  border-radius:10px;
+width:120px;
+border-radius:10px;
 }
+
 .name{font-size:20px;margin-top:10px;}
+
 .owner{color:gold;}
 .head{color:#ff5c5c;}
 .dev{color:#4cc9f0;}
 .media{color:#ff9f43;}
 
 /* ===== CREATORS ===== */
+
 .creatorSection{
-  padding:120px 20px;
-  background:radial-gradient(circle,#3a0f0f,#070707);
-  text-align:center;
+padding:120px 20px;
+background:radial-gradient(circle,#3a0f0f,#070707);
+text-align:center;
 }
+
 .creatorTitle{
-  font-size:45px;
-  letter-spacing:4px;
-  color:#ff4d4d;
-  text-shadow:0 0 20px #ff4d4d;
-  margin-bottom:60px;
+font-size:45px;
+letter-spacing:4px;
+color:#ff4d4d;
+text-shadow:0 0 20px #ff4d4d;
+margin-bottom:60px;
 }
+
 .creatorContainer{
-  display:flex;
-  justify-content:center;
-  gap:60px;
-  flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
 }
+
 .creatorCard{
-  width:350px;
-  padding:35px;
-  border-radius:20px;
-  background:#141414;
-  box-shadow:0 0 30px rgba(255,60,60,0.6);
-  animation:floatCard 4s ease-in-out infinite;
-  transition:0.4s;
+width:350px;
+padding:35px;
+border-radius:20px;
+background:#141414;
+box-shadow:0 0 30px rgba(255,60,60,0.6);
+animation:floatCard 4s infinite ease-in-out;
+transition:.4s;
 }
+
 @keyframes floatCard{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-12px)}
-  100%{transform:translateY(0)}
+0%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+100%{transform:translateY(0)}
 }
+
 .creatorCard:hover{
-  transform:translateY(-20px) scale(1.05);
-  box-shadow:0 0 40px #ff0000;
+transform:translateY(-20px) scale(1.05);
+box-shadow:0 0 40px #ff0000;
 }
+
 .avatar{
-  width:80px;
-  height:80px;
-  background:#ff6a6a;
-  margin:auto;
-  border-radius:20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:30px;
-  font-weight:bold;
-  animation:bounce 3s infinite;
+width:80px;
+height:80px;
+background:#ff6a6a;
+margin:auto;
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+font-weight:bold;
+animation:bounce 3s infinite;
 }
+
 @keyframes bounce{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
-  100%{transform:translateY(0)}
+0%{transform:translateY(0)}
+50%{transform:translateY(-8px)}
+100%{transform:translateY(0)}
 }
+
 .creatorName{
-  margin-top:15px;
-  font-size:28px;
-  font-weight:bold;
+margin-top:15px;
+font-size:28px;
+font-weight:bold;
 }
+
 .creatorTag{
-  margin:15px auto;
-  padding:6px 16px;
-  border:1px solid #ff5a5a;
-  border-radius:20px;
-  display:inline-block;
-  font-size:13px;
-  color:#ff7b7b;
+margin:15px auto;
+padding:6px 16px;
+border:1px solid #ff5a5a;
+border-radius:20px;
+display:inline-block;
+font-size:13px;
+color:#ff7b7b;
 }
+
 .creatorDesc{
-  margin-top:10px;
-  margin-bottom:25px;
-  font-size:14px;
-  color:#ddd;
-  line-height:1.6;
+margin-top:10px;
+margin-bottom:25px;
+font-size:14px;
+color:#ddd;
+line-height:1.6;
 }
+
 .creatorBtn a{
-  text-decoration:none;
-  background:linear-gradient(90deg,#ff0000,#ff3c3c);
-  padding:12px 28px;
-  border-radius:10px;
-  color:white;
-  font-weight:bold;
-  display:inline-block;
-  position:relative;
-  overflow:hidden;
-  transition:.3s;
-  box-shadow:0 0 15px #ff3c3c;
+text-decoration:none;
+background:linear-gradient(90deg,#ff0000,#ff3c3c);
+padding:12px 28px;
+border-radius:10px;
+color:white;
+font-weight:bold;
+display:inline-block;
+transition:.3s;
+box-shadow:0 0 15px #ff3c3c;
 }
+
 .creatorBtn a:hover{
-  transform:translateY(-5px) scale(1.08);
-  box-shadow:0 0 25px #ff0000,0 0 45px #ff3c3c;
+transform:translateY(-5px) scale(1.08);
+box-shadow:0 0 25px #ff0000;
 }
-.creatorBtn a::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
-  transition:.6s;
+
+/* ===== DISCORD COMMUNITY ===== */
+
+.discordCommunity{
+padding:120px 20px;
+text-align:center;
+background:linear-gradient(180deg,#0a0a15,#000);
 }
-.creatorBtn a:hover::before{
-  left:100%;
+
+.discordCommunity h1{
+font-size:46px;
+color:#5865F2;
+margin-bottom:25px;
+text-shadow:0 0 20px #5865F2;
+}
+
+.discordText{
+max-width:750px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
+color:#ddd;
+margin-bottom:35px;
+}
+
+.discordJoinBtn{
+display:inline-block;
+padding:15px 40px;
+font-size:18px;
+background:#5865F2;
+color:white;
+text-decoration:none;
+border-radius:12px;
+font-weight:bold;
+transition:.3s;
+box-shadow:0 0 20px #5865F2;
+}
+
+.discordJoinBtn:hover{
+transform:scale(1.1);
+box-shadow:0 0 40px #5865F2;
 }
 
 /* ===== PARTNERS ===== */
+
 .partnerSection{
-  padding:100px 20px;
-  text-align:center;
-  background:#0a0a0f;
+padding:100px 20px;
+text-align:center;
+background:#0a0a0f;
 }
+
 .partnerSection h1{
-  font-size:3em;
-  margin-bottom:40px;
-  color:#FF0055;
-  text-shadow:2px 2px #8B00FF88;
+font-size:3em;
+margin-bottom:40px;
+color:#FF0055;
 }
+
 .partner-card{
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-  background:#1a1a2e;
-  border-radius:15px;
-  padding:25px;
-  width:90%;
-  max-width:900px;
-  margin:0 auto 30px auto;
-  box-shadow:0 5px 20px rgba(255,0,85,0.3);
-  transition:transform 0.3s ease, box-shadow 0.3s ease;
+display:flex;
+align-items:center;
+background:#1a1a2e;
+border-radius:15px;
+padding:25px;
+max-width:900px;
+margin:auto;
+box-shadow:0 5px 20px rgba(255,0,85,0.3);
 }
-.partner-card:hover{
-  transform:translateY(-5px) scale(1.03);
-  box-shadow:0 10px 25px rgba(255,0,85,0.6);
-}
+
 .mystery-icon{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  background:#FF0055;
-  color:white;
-  font-size:4em;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-right:30px;
-  border:2px solid #FF66AA;
-  animation:pulse 2s infinite;
+width:120px;
+height:120px;
+border-radius:50%;
+background:#FF0055;
+color:white;
+font-size:4em;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-right:30px;
 }
-@keyframes pulse{
-  0%{transform:scale(1);box-shadow:0 0 10px #FF66AA88;}
-  50%{transform:scale(1.1);box-shadow:0 0 25px #FF66AAAA;}
-  100%{transform:scale(1);box-shadow:0 0 10px #FF66AA88;}
-}
-.partner-info h2{
-  margin:0;
-  color:#FF66AA;
-  font-size:1.8em;
-}
-.partner-info p{
-  margin:8px 0 15px;
-  font-size:1em;
-  color:#cccccc;
-}
+
+.partner-info h2{color:#FF66AA;}
+.partner-info p{color:#ccc;margin:10px 0;}
+
 .partner-info a{
-  padding:10px 25px;
-  font-size:1em;
-  color:white;
-  background:#8B00FF;
-  border:none;
-  border-radius:10px;
-  text-decoration:none;
-  transition:0.3s;
-}
-.partner-info a:hover{
-  background:#FF0055;
-}
-.partner-note{
-  margin-top:15px;
-  font-size:0.95em;
-  color:#bbbbbb;
+padding:10px 25px;
+background:#8B00FF;
+border-radius:10px;
+text-decoration:none;
+color:white;
 }
 
 </style>
 </head>
+
 <body>
 
-<!-- ===== NAVBAR ===== -->
 <nav>
 <div class="logoText">GAMERLOG SMP</div>
 <ul>
@@ -374,27 +425,31 @@ nav ul li a:hover{color:#00eaff;}
 <div class="login">LOGIN</div>
 </nav>
 
-<!-- ===== HERO ===== -->
 <section class="hero">
+
 <div class="logoBox">
 <img src="gamerlog-logo.png">
 </div>
+
 <div class="season">SEASON 3</div>
 <div class="coming">COMING SOON</div>
 
 <div class="serverBox">
+
 <div class="box">
 JAVA IP<br>
 <b>play.gamerlog.fun</b><br>
 <button class="copyBtn" onclick="copyIP(this)">Copy IP</button>
 <span class="copyMsg">IP Copied!</span>
 </div>
+
 <div class="box">
 BEDROCK PORT<br>
 <b>25575</b><br>
 <button class="copyBtn" onclick="copyPort(this)">Copy Port</button>
 <span class="copyMsg">Port Copied!</span>
 </div>
+
 </div>
 
 <div class="status">
@@ -406,121 +461,91 @@ Server Status: <span id="statusText">Checking...</span>
 </div>
 
 <a class="discord" href="https://discord.gg/Zc6PkAXTgF" target="_blank">Join Discord</a>
+
 </section>
 
-<!-- ===== STAFF ===== -->
 <section id="staff" class="staffSection">
 <h1 class="staffTitle">THE LEGENDS BEHIND SMP</h1>
-<div class="staff">
-<div class="card">
-<img src="https://mc-heads.net/avatar/not_aadi_og/120">
-<div class="name">Aadi</div>
-<div class="owner">Owner</div>
-</div>
-<div class="card">
-<img src="https://mc-heads.net/avatar/rushi27/120">
-<div class="name">Rushi27</div>
-<div class="head">Head Mod</div>
-</div>
-<div class="card">
-<img src="https://mc-heads.net/avatar/ashish_gamer07/120">
-<div class="name">ASHISH_GAMER07</div>
-<div class="dev">Developer</div>
-</div>
-</div>
-
-<h2 style="margin-top:70px;color:#6dd5ff;">MEDIA TEAM</h2>
-<div class="staff">
-<div class="card">
-<img src="https://mc-heads.net/avatar/pm_xd/120">
-<div class="name">PM_xd</div>
-<div class="media">Media</div>
-</div>
-<div class="card">
-<img src="https://mc-heads.net/avatar/gamer_my_loart/120">
-<div class="name">Gamer_MY_Loart</div>
-<div class="media">Media</div>
-</div>
-</div>
 </section>
 
-<!-- ===== CREATORS ===== -->
 <section id="creators" class="creatorSection">
 <h1 class="creatorTitle">OFFICIAL CREATORS</h1>
-<div class="creatorContainer">
-<div class="creatorCard">
-<div class="avatar">AO</div>
-<div class="creatorName">not_aadi_og</div>
-<div class="creatorTag">📹 CONTENT CREATOR</div>
-<div class="creatorDesc">
-Catch epic survival adventures, server trolling and intense gameplay on my YouTube channel.
-</div>
-<div class="creatorBtn">
-<a href="https://www.youtube.com/@not_aadi_og" target="_blank">▶ SUBSCRIBE</a>
-</div>
-</div>
-
-<div class="creatorCard">
-<div class="avatar">PM</div>
-<div class="creatorName">PM_xd</div>
-<div class="creatorTag">📹 CONTENT CREATOR</div>
-<div class="creatorDesc">
-Watch exciting Minecraft gameplay, SMP moments and awesome adventures on the channel.
-</div>
-<div class="creatorBtn">
-<a href="https://www.youtube.com/@PM_xd" target="_blank">▶ SUBSCRIBE</a>
-</div>
-</div>
-</div>
 </section>
 
-<!-- ===== PARTNERS ===== -->
+<section class="discordCommunity">
+<h1>💬 Join Our Discord Community</h1>
+
+<p class="discordText">
+Join our Discord community for updates, events and a friendly Minecraft community.
+You will meet new friends, talk with players and enjoy the Gamerlog SMP experience.
+</p>
+
+<a class="discordJoinBtn" href="https://discord.gg/Zc6PkAXTgF" target="_blank">
+🚀 Join Discord
+</a>
+
+</section>
+
 <section id="partners" class="partnerSection">
+
 <h1>🤝 Our Partners</h1>
+
 <div class="partner-card">
+
 <div class="mystery-icon">?</div>
+
 <div class="partner-info">
 <h2>Mystery Partner</h2>
-<p>Click below to join our Discord and apply to become a partner!</p>
-<a href="https://discord.gg/Zc6PkAXTgF" target="_blank">Join Discord</a>
-<div class="partner-note">
-To be a partner, join our Discord and make a ticket.
+<p>Join our Discord and apply to become a partner.</p>
+
+<a href="https://discord.gg/Zc6PkAXTgF" target="_blank">
+Join Discord
+</a>
+
 </div>
+
 </div>
-</div>
+
 </section>
 
 <script>
+
 function copyIP(btn){
-  navigator.clipboard.writeText("play.gamerlog.fun");
-  showCopyMsg(btn);
+navigator.clipboard.writeText("play.gamerlog.fun");
+showCopyMsg(btn);
 }
+
 function copyPort(btn){
-  navigator.clipboard.writeText("25575");
-  showCopyMsg(btn);
+navigator.clipboard.writeText("25575");
+showCopyMsg(btn);
 }
+
 function showCopyMsg(button){
-  const msg = button.nextElementSibling;
-  msg.classList.add("show");
-  setTimeout(()=> msg.classList.remove("show"),1500);
+const msg=button.nextElementSibling;
+msg.classList.add("show");
+setTimeout(()=>msg.classList.remove("show"),1500);
 }
 
 async function checkServer(){
-  try{
-    let res=await fetch("https://api.mcsrvstat.us/2/play.gamerlog.fun");
-    let data=await res.json();
-    let status=document.getElementById("statusText");
-    if(data.online){
-      status.innerHTML="<span class='online'>ONLINE</span> | Players: "+data.players.online;
-    }else{
-      status.innerHTML="<span class='offline'>OFFLINE</span>";
-    }
-  }catch{
-    document.getElementById("statusText").innerText="Status Error";
-  }
+try{
+let res=await fetch("https://api.mcsrvstat.us/2/play.gamerlog.fun");
+let data=await res.json();
+let status=document.getElementById("statusText");
+
+if(data.online){
+status.innerHTML="<span class='online'>ONLINE</span> | Players: "+data.players.online;
+}else{
+status.innerHTML="<span class='offline'>OFFLINE</span>";
 }
+
+}catch{
+document.getElementById("statusText").innerText="Status Error";
+}
+}
+
 checkServer();
 setInterval(checkServer,30000);
+
 </script>
 
 </body>
