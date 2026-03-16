@@ -30,6 +30,9 @@ nav{
   align-items:center;
   padding:18px 60px;
   background:#000;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 .logoText{font-size:24px;font-weight:bold;}
 nav ul{
@@ -97,6 +100,10 @@ nav ul li a:hover{color:#00eaff;}
   color:black;
   cursor:pointer;
   font-weight:bold;
+  transition:0.2s;
+}
+.copyBtn:active{
+  transform:scale(0.95);
 }
 
 /* ===== COPY MESSAGE ANIMATION ===== */
@@ -109,12 +116,13 @@ nav ul li a:hover{color:#00eaff;}
   position:absolute;
   top:5px;
   right:10px;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, text-shadow 0.5s;
   transform: translateY(-10px);
 }
 .copyMsg.show{
   opacity:1;
-  transform: translateY(-25px);
+  transform: translateY(-25px) scale(1.1);
+  text-shadow:0 0 15px #00eaff,0 0 25px #00f0ff;
 }
 
 /* ===== SERVER STATUS ===== */
@@ -293,23 +301,23 @@ nav ul li a:hover{color:#00eaff;}
   left:100%;
 }
 
-/* ===== PARTNERS ===== */
+/* ===== PARTNERS (separate style) ===== */
 .partnerSection{
   padding:100px 20px;
   text-align:center;
-  background:#0a0a0f;
+  background:#0b0b1f;
 }
 .partnerSection h1{
   font-size:3em;
   margin-bottom:40px;
-  color:#FF0055;
+  color:#FF55AA;
   text-shadow:2px 2px #8B00FF88;
 }
 .partner-card{
   display:flex;
   flex-direction:row;
   align-items:center;
-  background:#1a1a2e;
+  background:#1c1c33;
   border-radius:15px;
   padding:25px;
   width:90%;
@@ -326,24 +334,24 @@ nav ul li a:hover{color:#00eaff;}
   width:120px;
   height:120px;
   border-radius:50%;
-  background:#FF0055;
+  background:#FF55AA;
   color:white;
   font-size:4em;
   display:flex;
   justify-content:center;
   align-items:center;
   margin-right:30px;
-  border:2px solid #FF66AA;
+  border:2px solid #FF88CC;
   animation:pulse 2s infinite;
 }
 @keyframes pulse{
-  0%{transform:scale(1);box-shadow:0 0 10px #FF66AA88;}
-  50%{transform:scale(1.1);box-shadow:0 0 25px #FF66AAAA;}
-  100%{transform:scale(1);box-shadow:0 0 10px #FF66AA88;}
+  0%{transform:scale(1);box-shadow:0 0 10px #FF88CC88;}
+  50%{transform:scale(1.1);box-shadow:0 0 25px #FF88CCAA;}
+  100%{transform:scale(1);box-shadow:0 0 10px #FF88CC88;}
 }
 .partner-info h2{
   margin:0;
-  color:#FF66AA;
+  color:#FF88CC;
   font-size:1.8em;
 }
 .partner-info p{
@@ -362,7 +370,7 @@ nav ul li a:hover{color:#00eaff;}
   transition:0.3s;
 }
 .partner-info a:hover{
-  background:#FF0055;
+  background:#FF55AA;
 }
 .partner-note{
   margin-top:15px;
@@ -370,10 +378,10 @@ nav ul li a:hover{color:#00eaff;}
   color:#bbbbbb;
 }
 
-/* ===== DISCORD COMMUNITY ===== */
+/* ===== DISCORD COMMUNITY (separate style) ===== */
 .discordEnd{
   padding:120px 20px;
-  background:#0a0a0f;
+  background:#0b0b1f;
   text-align:center;
 }
 
@@ -431,6 +439,7 @@ nav ul li a:hover{color:#00eaff;}
 <li><a href="#staff">STAFF</a></li>
 <li><a href="#creators">CREATORS</a></li>
 <li><a href="#partners">PARTNERS</a></li>
+<li><a href="#discord">DISCORD</a></li>
 </ul>
 <div class="login">LOGIN</div>
 </nav>
@@ -551,24 +560,18 @@ To be a partner, join our Discord and make a ticket.
 </div>
 </section>
 
-<!-- ===== DISCORD COMMUNITY ===== -->
-<section class="discordEnd">
-
+<!-- ===== DISCORD ===== -->
+<section id="discord" class="discordEnd">
 <div class="discordContainer">
-
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" class="discordLogo">
-
 <h1>Join Our Discord Community</h1>
-
 <p>
 Join our Discord to get server updates, announcements, events and connect with the Gamerlog SMP community.
 Chat with players, make friends and stay updated with everything happening on the server.
 </p>
-
 <a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="discordJoin">
 🚀 Join Discord
 </a>
-
 </div>
 </section>
 
@@ -605,11 +608,8 @@ async function checkServer(){
     statusText.className = "offline";
   }
 }
-
-// Initial check
 checkServer();
-// Refresh every 60 seconds
-setInterval(checkServer, 60000);
+setInterval(checkServer,60000);
 </script>
 </body>
 </html>
