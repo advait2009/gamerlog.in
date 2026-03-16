@@ -10,13 +10,17 @@
 html{scroll-behavior:smooth;}
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial;}
 body{
-  /* ===== -style background ===== */
-body {
   background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
   background-size: 400% 400%;
   animation: hologramBG 20s ease infinite;
   color: white;
   font-family: Arial, sans-serif;
+}
+
+@keyframes hologramBG {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
 /* ===== NAVBAR ===== */
@@ -580,9 +584,4 @@ function copyPort(btn){
 function showCopyMsg(button){
   const msg = button.nextElementSibling;
   msg.classList.add("show");
-  setTimeout(()=> msg.classList.remove("show"),1500);
-}
-
-async function checkServer(){
-  try{
-    let res=await fetch("https://api.mcsrvstat.us/2
+  setTimeout(()=> msg.classList.remove("show
