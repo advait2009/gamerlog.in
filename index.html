@@ -584,4 +584,32 @@ function copyPort(btn){
 function showCopyMsg(button){
   const msg = button.nextElementSibling;
   msg.classList.add("show");
-  setTimeout(()=> msg.classList.remove("show
+  setTimeout(()=> msg.classList.remove("show"),1500);
+}
+
+async function checkServer(){
+  try{
+    let res = await fetch("https://api.mcsrvstat.us/2/play.gamerlog.fun");
+    let data = await res.json();
+    const statusText = document.getElementById("statusText");
+    if(data.online){
+      statusText.textContent = "Online";
+      statusText.className = "online";
+    } else {
+      statusText.textContent = "Offline";
+      statusText.className = "offline";
+    }
+  } catch(err){
+    const statusText = document.getElementById("statusText");
+    statusText.textContent = "Error";
+    statusText.className = "offline";
+  }
+}
+
+// Initial check
+checkServer();
+// Refresh every 60 seconds
+setInterval(checkServer, 60000);
+</script>
+</body>
+</html>
