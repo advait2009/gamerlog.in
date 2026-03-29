@@ -110,6 +110,7 @@ h1 {
   color: gold;
 }
 
+/* BUTTON */
 .buy-btn {
   background: linear-gradient(45deg, orange, gold);
   border: none;
@@ -120,11 +121,21 @@ h1 {
   font-weight: bold;
   width: 100%;
   transition: 0.3s;
+
+  /* Discord pulse animation */
+  animation: discordPulse 2s infinite;
 }
 
 .buy-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 0 25px gold;
+}
+
+/* Discord pulse */
+@keyframes discordPulse {
+  0% { box-shadow: 0 0 0 0 rgba(88, 101, 242, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(88, 101, 242, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(88, 101, 242, 0); }
 }
 </style>
 </head>
@@ -182,7 +193,13 @@ h1 {
 
 <script>
 function goDiscord() {
-  window.location.href = "https://discord.com/invite/g6vYUuujXv";
+  // Try opening Discord app
+  window.location.href = "discord://invite/g6vYUuujXv";
+
+  // Fallback to browser
+  setTimeout(function() {
+    window.location.href = "https://discord.com/invite/g6vYUuujXv";
+  }, 800);
 }
 </script>
 
