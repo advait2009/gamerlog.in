@@ -12,37 +12,6 @@ body {
   color: white;
 }
 
-/* 🔥 DISCORD BANNER */
-.discord-banner {
-  background: linear-gradient(90deg, #5865F2, #404eed);
-  padding: 15px;
-  text-align: center;
-  font-weight: bold;
-  animation: glowBanner 2s infinite alternate;
-}
-
-@keyframes glowBanner {
-  from { box-shadow: 0 0 10px #5865F2; }
-  to { box-shadow: 0 0 25px #7289da; }
-}
-
-.discord-btn {
-  margin-left: 10px;
-  padding: 8px 15px;
-  border-radius: 8px;
-  border: none;
-  background: white;
-  color: #5865F2;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.discord-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px white;
-}
-
 /* STORE */
 #store {
   padding: 60px;
@@ -79,6 +48,7 @@ h1 {
   border: 1px solid rgba(255,165,0,0.2);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 
   opacity: 0;
   transform: translateY(40px);
@@ -114,6 +84,7 @@ h1 {
   mask-composite: exclude;
 }
 
+/* hover */
 .card:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 0 40px rgba(255,165,0,0.6);
@@ -126,11 +97,6 @@ h1 {
   object-fit: cover;
   border-radius: 15px;
   margin-bottom: 15px;
-  transition: 0.3s;
-}
-
-.card:hover .rank-img {
-  transform: scale(1.05);
 }
 
 /* TEXT */
@@ -146,83 +112,55 @@ h1 {
   color: gold;
 }
 
-/* BUTTON */
+/* hidden button (optional) */
 button {
-  background: linear-gradient(45deg, orange, gold);
-  border: none;
-  padding: 12px;
-  border-radius: 12px;
-  cursor: pointer;
-  color: black;
-  font-weight: bold;
-  width: 100%;
-  transition: 0.3s;
-}
-
-button:hover {
-  box-shadow: 0 0 20px gold;
-  transform: scale(1.05);
-}
-
-button:active {
-  transform: scale(0.95);
+  display: none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🔥 DISCORD BANNER -->
-<div class="discord-banner">
-  💬 Want to buy a rank? Join our Discord!
-  <button class="discord-btn" onclick="goDiscord()">Join Now</button>
-</div>
-
 <section id="store">
 
 <h1>🔥 Classic Ranks</h1>
-<p class="subtitle">Upgrade your power with premium ranks</p>
+<p class="subtitle">Click any rank to buy via Discord</p>
 
 <div class="grid">
 
-<div class="card">
+<div class="card" onclick="goDiscord()">
   <img src="god.png" class="rank-img">
   <h2 class="rank-title">deadliest</h2>
   <p>+5000 Coins</p>
   <span class="price">₹599</span>
-  <button onclick="goDiscord()">💬 Buy via Discord</button>
 </div>
 
-<div class="card">
+<div class="card" onclick="goDiscord()">
   <img src="Supreme.png" class="rank-img">
   <h2 class="rank-title">god</h2>
   <p>+3200 Coins</p>
   <span class="price">₹299</span>
-  <button onclick="goDiscord()">💬 Buy via Discord</button>
 </div>
 
-<div class="card">
+<div class="card" onclick="goDiscord()">
   <img src="legend.png" class="rank-img">
   <h2 class="rank-title">epic</h2>
   <p>+2000 Coins</p>
   <span class="price">₹129</span>
-  <button onclick="goDiscord()">💬 Buy via Discord</button>
 </div>
 
-<div class="card">
+<div class="card" onclick="goDiscord()">
   <img src="mastermind.png" class="rank-img">
   <h2 class="rank-title">prime</h2>
   <p>+1000 Coins</p>
   <span class="price">₹59</span>
-  <button onclick="goDiscord()">💬 Buy via Discord</button>
 </div>
 
-<div class="card">
+<div class="card" onclick="goDiscord()">
   <img src="alpha.png" class="rank-img">
   <h2 class="rank-title">member</h2>
   <p>+850 Coins</p>
   <span class="price">free</span>
-  <button onclick="goDiscord()">💬 Buy via Discord</button>
 </div>
 
 </div>
