@@ -12,6 +12,7 @@ body {
   color: white;
 }
 
+/* STORE */
 #store {
   padding: 60px;
   text-align: center;
@@ -29,6 +30,7 @@ h1 {
   font-size: 18px;
 }
 
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -36,17 +38,13 @@ h1 {
   margin-top: 50px;
 }
 
-/* animations */
+/* FLOAT animation */
 @keyframes float {
   0%,100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
 
-@keyframes fadeUp {
-  from {opacity:0; transform:translateY(40px);}
-  to {opacity:1; transform:translateY(0);}
-}
-
+/* CARD */
 .card {
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
@@ -54,17 +52,24 @@ h1 {
   padding: 20px;
   position: relative;
   overflow: hidden;
+
   animation: fadeUp 0.8s ease forwards, float 4s ease-in-out infinite;
   opacity: 0;
 }
 
+/* stagger */
 .card:nth-child(1){ animation-delay: 0.1s, 0s; }
 .card:nth-child(2){ animation-delay: 0.2s, 0.2s; }
 .card:nth-child(3){ animation-delay: 0.3s, 0.4s; }
 .card:nth-child(4){ animation-delay: 0.4s, 0.6s; }
 .card:nth-child(5){ animation-delay: 0.5s, 0.8s; }
 
-/* glow border */
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(40px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* rainbow border */
 .card::before {
   content: "";
   position: absolute;
@@ -90,16 +95,21 @@ h1 {
   box-shadow: 0 0 50px gold;
 }
 
-/* image */
+/* IMAGE */
 .rank-img {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 15px;
   margin-bottom: 15px;
+  transition: 0.4s;
 }
 
-/* text */
+.card:hover .rank-img {
+  transform: scale(1.1);
+}
+
+/* TEXT */
 .rank-title {
   font-size: 22px;
   color: orange;
@@ -112,21 +122,26 @@ h1 {
   color: gold;
 }
 
-/* button as link */
+/* BUTTON */
 .buy-btn {
-  display: block;
-  text-decoration: none;
   background: linear-gradient(45deg, orange, gold);
+  border: none;
   padding: 12px;
   border-radius: 12px;
+  cursor: pointer;
   color: black;
   font-weight: bold;
+  width: 100%;
   transition: 0.3s;
 }
 
 .buy-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 0 25px gold;
+}
+
+.buy-btn:active {
+  transform: scale(0.95);
 }
 </style>
 </head>
@@ -144,7 +159,7 @@ h1 {
   <h2 class="rank-title">deadliest</h2>
   <p>+5000 Coins</p>
   <span class="price">₹599</span>
-  <a href="https://discord.gg/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
+  <button class="buy-btn" onclick="openDiscord()">🛒 Buy Now</button>
 </div>
 
 <div class="card">
@@ -152,7 +167,7 @@ h1 {
   <h2 class="rank-title">god</h2>
   <p>+3200 Coins</p>
   <span class="price">₹299</span>
-  <a href="https://discord.gg/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
+  <button class="buy-btn" onclick="openDiscord()">🛒 Buy Now</button>
 </div>
 
 <div class="card">
@@ -160,7 +175,7 @@ h1 {
   <h2 class="rank-title">epic</h2>
   <p>+2000 Coins</p>
   <span class="price">₹129</span>
-  <a href="https://discord.gg/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
+  <button class="buy-btn" onclick="openDiscord()">🛒 Buy Now</button>
 </div>
 
 <div class="card">
@@ -168,7 +183,7 @@ h1 {
   <h2 class="rank-title">prime</h2>
   <p>+1000 Coins</p>
   <span class="price">₹59</span>
-  <a href="https://discord.gg/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
+  <button class="buy-btn" onclick="openDiscord()">🛒 Buy Now</button>
 </div>
 
 <div class="card">
@@ -176,11 +191,24 @@ h1 {
   <h2 class="rank-title">member</h2>
   <p>+850 Coins</p>
   <span class="price">free</span>
-  <a href="https://discord.gg/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
+  <button class="buy-btn" onclick="openDiscord()">🛒 Buy Now</button>
 </div>
 
 </div>
 </section>
+
+<script>
+function openDiscord() {
+  // open Discord instantly
+  window.open("https://discord.gg/g6vYUuujXv", "_blank");
+
+  // smooth scroll effect
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+</script>
 
 </body>
 </html>
