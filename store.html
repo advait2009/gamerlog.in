@@ -177,7 +177,7 @@ h1 {
   <h2 class="rank-title">deadliest</h2>
   <p>+5000 Coins</p>
   <span class="price">₹599</span>
-  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
+  <button class="buy-btn" onclick="goDiscord(event)">🛒 Buy Now</button>
 </div>
 
 <div class="card">
@@ -185,7 +185,7 @@ h1 {
   <h2 class="rank-title">god</h2>
   <p>+3200 Coins</p>
   <span class="price">₹299</span>
-  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
+  <button class="buy-btn" onclick="goDiscord(event)">🛒 Buy Now</button>
 </div>
 
 <div class="card">
@@ -193,7 +193,7 @@ h1 {
   <h2 class="rank-title">epic</h2>
   <p>+2000 Coins</p>
   <span class="price">₹129</span>
-  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
+  <button class="buy-btn" onclick="goDiscord(event)">🛒 Buy Now</button>
 </div>
 
 <div class="card">
@@ -201,7 +201,7 @@ h1 {
   <h2 class="rank-title">prime</h2>
   <p>+1000 Coins</p>
   <span class="price">₹59</span>
-  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
+  <button class="buy-btn" onclick="goDiscord(event)">🛒 Buy Now</button>
 </div>
 
 <div class="card">
@@ -209,14 +209,15 @@ h1 {
   <h2 class="rank-title">member</h2>
   <p>+850 Coins</p>
   <span class="price">free</span>
-  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
+  <button class="buy-btn" onclick="goDiscord(event)">🛒 Buy Now</button>
 </div>
 
 </div>
 </section>
 
 <script>
-function goDiscord() {
+function goDiscord(e) {
+  if (e) e.stopPropagation(); // 🔥 ensures only button works
   window.open("https://discord.gg/g6vYUuujXv", "_blank");
 }
 </script>
