@@ -10,7 +10,6 @@ body {
   font-family: Arial;
   background: radial-gradient(circle at top, #1a1a2e, #0f0f1a);
   color: white;
-  overflow-x: hidden;
 }
 
 /* STORE */
@@ -53,7 +52,6 @@ h1 {
   padding: 20px;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
 
   animation: fadeUp 0.8s ease forwards, float 4s ease-in-out infinite;
   opacity: 0;
@@ -71,7 +69,7 @@ h1 {
   to {opacity:1; transform:translateY(0);}
 }
 
-/* animated rainbow glow border */
+/* rainbow border */
 .card::before {
   content: "";
   position: absolute;
@@ -87,13 +85,12 @@ h1 {
   -webkit-mask-composite: xor;
 }
 
-/* border animation */
 @keyframes borderMove {
   0% {background-position: 0%}
   100% {background-position: 300%}
 }
 
-/* shine effect */
+/* shine */
 .card::after {
   content: "";
   position: absolute;
@@ -111,9 +108,8 @@ h1 {
   left: 100%;
 }
 
-/* hover */
 .card:hover {
-  transform: scale(1.08) rotate(1deg);
+  transform: scale(1.08);
   box-shadow: 0 0 50px gold;
 }
 
@@ -128,7 +124,7 @@ h1 {
 }
 
 .card:hover .rank-img {
-  transform: scale(1.1) rotate(2deg);
+  transform: scale(1.1);
 }
 
 /* TEXT */
@@ -162,22 +158,8 @@ h1 {
   box-shadow: 0 0 25px gold;
 }
 
-/* ripple click */
-.buy-btn:active::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.3);
-  border-radius: 12px;
-  top: 0;
-  left: 0;
-  animation: ripple 0.4s ease;
-}
-
-@keyframes ripple {
-  from {opacity:1;}
-  to {opacity:0;}
+.buy-btn:active {
+  transform: scale(0.95);
 }
 </style>
 </head>
@@ -186,56 +168,55 @@ h1 {
 
 <section id="store">
 <h1>🔥 Classic Ranks</h1>
-<p class="subtitle">Click anywhere to buy via Discord</p>
+<p class="subtitle">Click Buy button to purchase via Discord</p>
 
 <div class="grid">
 
-<div class="card" onclick="goDiscord()">
+<div class="card">
   <img src="god.png" class="rank-img">
   <h2 class="rank-title">deadliest</h2>
   <p>+5000 Coins</p>
   <span class="price">₹599</span>
-  <button class="buy-btn" onclick="goDiscord(event)">🛒 Buy Now</button>
+  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
 </div>
 
-<div class="card" onclick="goDiscord()">
+<div class="card">
   <img src="Supreme.png" class="rank-img">
   <h2 class="rank-title">god</h2>
   <p>+3200 Coins</p>
   <span class="price">₹299</span>
-  <button class="buy-btn" onclick="goDiscord(event)">🛒 Buy Now</button>
+  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
 </div>
 
-<div class="card" onclick="goDiscord()">
+<div class="card">
   <img src="legend.png" class="rank-img">
   <h2 class="rank-title">epic</h2>
   <p>+2000 Coins</p>
   <span class="price">₹129</span>
-  <button class="buy-btn" onclick="goDiscord(event)">🛒 Buy Now</button>
+  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
 </div>
 
-<div class="card" onclick="goDiscord()">
+<div class="card">
   <img src="mastermind.png" class="rank-img">
   <h2 class="rank-title">prime</h2>
   <p>+1000 Coins</p>
   <span class="price">₹59</span>
-  <button class="buy-btn" onclick="goDiscord(event)">🛒 Buy Now</button>
+  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
 </div>
 
-<div class="card" onclick="goDiscord()">
+<div class="card">
   <img src="alpha.png" class="rank-img">
   <h2 class="rank-title">member</h2>
   <p>+850 Coins</p>
   <span class="price">free</span>
-  <button class="buy-btn" onclick="goDiscord(event)">🛒 Buy Now</button>
+  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
 </div>
 
 </div>
 </section>
 
 <script>
-function goDiscord(e) {
-  if (e) e.stopPropagation();
+function goDiscord() {
   window.open("https://discord.gg/g6vYUuujXv", "_blank");
 }
 </script>
