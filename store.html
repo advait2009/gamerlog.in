@@ -10,6 +10,7 @@ body {
   font-family: Arial;
   background: radial-gradient(circle at top, #1a1a2e, #0f0f1a);
   color: white;
+  overflow-x: hidden;
 }
 
 /* STORE */
@@ -38,56 +39,82 @@ h1 {
   margin-top: 50px;
 }
 
+/* FLOAT animation */
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
 /* CARD */
 .card {
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 20px;
-  transition: 0.4s;
-  border: 1px solid rgba(255,165,0,0.2);
   position: relative;
   overflow: hidden;
   cursor: pointer;
 
+  animation: fadeUp 0.8s ease forwards, float 4s ease-in-out infinite;
   opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 0.8s ease forwards;
 }
 
 /* stagger */
-.card:nth-child(1) { animation-delay: 0.1s; }
-.card:nth-child(2) { animation-delay: 0.2s; }
-.card:nth-child(3) { animation-delay: 0.3s; }
-.card:nth-child(4) { animation-delay: 0.4s; }
-.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(1){ animation-delay: 0.1s, 0s; }
+.card:nth-child(2){ animation-delay: 0.2s, 0.2s; }
+.card:nth-child(3){ animation-delay: 0.3s, 0.4s; }
+.card:nth-child(4){ animation-delay: 0.4s, 0.6s; }
+.card:nth-child(5){ animation-delay: 0.5s, 0.8s; }
 
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from {opacity:0; transform:translateY(40px);}
+  to {opacity:1; transform:translateY(0);}
 }
 
-/* glow border */
+/* animated rainbow glow border */
 .card::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 20px;
   padding: 2px;
-  background: linear-gradient(45deg, orange, gold, orange);
+  border-radius: 20px;
+  background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, red);
+  background-size: 300%;
+  animation: borderMove 6s linear infinite;
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-  mask-composite: exclude;
+}
+
+/* border animation */
+@keyframes borderMove {
+  0% {background-position: 0%}
+  100% {background-position: 300%}
+}
+
+/* shine effect */
+.card::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: rotate(25deg);
+  transition: 0.5s;
+}
+
+.card:hover::after {
+  top: 100%;
+  left: 100%;
 }
 
 /* hover */
 .card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 0 40px rgba(255,165,0,0.6);
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 0 50px gold;
 }
 
 /* IMAGE */
@@ -97,6 +124,11 @@ h1 {
   object-fit: cover;
   border-radius: 15px;
   margin-bottom: 15px;
+  transition: 0.4s;
+}
+
+.card:hover .rank-img {
+  transform: scale(1.1) rotate(2deg);
 }
 
 /* TEXT */
@@ -126,12 +158,26 @@ h1 {
 }
 
 .buy-btn:hover {
-  box-shadow: 0 0 20px gold;
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 0 25px gold;
 }
 
-.buy-btn:active {
-  transform: scale(0.95);
+/* ripple click */
+.buy-btn:active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  border-radius: 12px;
+  top: 0;
+  left: 0;
+  animation: ripple 0.4s ease;
+}
+
+@keyframes ripple {
+  from {opacity:1;}
+  to {opacity:0;}
 }
 </style>
 </head>
@@ -139,9 +185,8 @@ h1 {
 <body>
 
 <section id="store">
-
 <h1>🔥 Classic Ranks</h1>
-<p class="subtitle">Click card or button to buy via Discord</p>
+<p class="subtitle">Click anywhere to buy via Discord</p>
 
 <div class="grid">
 
@@ -190,7 +235,7 @@ h1 {
 
 <script>
 function goDiscord(e) {
-  if (e) e.stopPropagation(); // prevents double click issue
+  if (e) e.stopPropagation();
   window.open("https://discord.gg/g6vYUuujXv", "_blank");
 }
 </script>
