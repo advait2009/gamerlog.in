@@ -12,6 +12,37 @@ body {
   color: white;
 }
 
+/* 🔥 DISCORD BANNER */
+.discord-banner {
+  background: linear-gradient(90deg, #5865F2, #404eed);
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  animation: glowBanner 2s infinite alternate;
+}
+
+@keyframes glowBanner {
+  from { box-shadow: 0 0 10px #5865F2; }
+  to { box-shadow: 0 0 25px #7289da; }
+}
+
+.discord-btn {
+  margin-left: 10px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: none;
+  background: white;
+  color: #5865F2;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.discord-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px white;
+}
+
 /* STORE */
 #store {
   padding: 60px;
@@ -54,7 +85,7 @@ h1 {
   animation: fadeUp 0.8s ease forwards;
 }
 
-/* stagger animation */
+/* stagger */
 .card:nth-child(1) { animation-delay: 0.1s; }
 .card:nth-child(2) { animation-delay: 0.2s; }
 .card:nth-child(3) { animation-delay: 0.3s; }
@@ -83,7 +114,6 @@ h1 {
   mask-composite: exclude;
 }
 
-/* hover */
 .card:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 0 40px rgba(255,165,0,0.6);
@@ -142,6 +172,12 @@ button:active {
 
 <body>
 
+<!-- 🔥 DISCORD BANNER -->
+<div class="discord-banner">
+  💬 Want to buy a rank? Join our Discord!
+  <button class="discord-btn" onclick="goDiscord()">Join Now</button>
+</div>
+
 <section id="store">
 
 <h1>🔥 Classic Ranks</h1>
@@ -154,7 +190,7 @@ button:active {
   <h2 class="rank-title">deadliest</h2>
   <p>+5000 Coins</p>
   <span class="price">₹599</span>
-  <button onclick="buyRank('deadliest')">Buy Now</button>
+  <button onclick="goDiscord()">💬 Buy via Discord</button>
 </div>
 
 <div class="card">
@@ -162,7 +198,7 @@ button:active {
   <h2 class="rank-title">god</h2>
   <p>+3200 Coins</p>
   <span class="price">₹299</span>
-  <button onclick="buyRank('god')">Buy Now</button>
+  <button onclick="goDiscord()">💬 Buy via Discord</button>
 </div>
 
 <div class="card">
@@ -170,7 +206,7 @@ button:active {
   <h2 class="rank-title">epic</h2>
   <p>+2000 Coins</p>
   <span class="price">₹129</span>
-  <button onclick="buyRank('epic')">Buy Now</button>
+  <button onclick="goDiscord()">💬 Buy via Discord</button>
 </div>
 
 <div class="card">
@@ -178,7 +214,7 @@ button:active {
   <h2 class="rank-title">prime</h2>
   <p>+1000 Coins</p>
   <span class="price">₹59</span>
-  <button onclick="buyRank('prime')">Buy Now</button>
+  <button onclick="goDiscord()">💬 Buy via Discord</button>
 </div>
 
 <div class="card">
@@ -186,15 +222,15 @@ button:active {
   <h2 class="rank-title">member</h2>
   <p>+850 Coins</p>
   <span class="price">free</span>
-  <button onclick="buyRank('member')">Buy Now</button>
+  <button onclick="goDiscord()">💬 Buy via Discord</button>
 </div>
 
 </div>
 </section>
 
 <script>
-function buyRank(rank) {
-  alert("🔥 You selected: " + rank);
+function goDiscord() {
+  window.open("https://discord.gg/g6vYUuujXv", "_blank");
 }
 </script>
 
