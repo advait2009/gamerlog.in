@@ -110,19 +110,17 @@ h1 {
   color: gold;
 }
 
-/* BUTTON */
+/* BUTTON (LINK STYLE) */
 .buy-btn {
+  display: block;
+  text-decoration: none;
   background: linear-gradient(45deg, orange, gold);
-  border: none;
   padding: 12px;
   border-radius: 12px;
-  cursor: pointer;
   color: black;
   font-weight: bold;
-  width: 100%;
   transition: 0.3s;
 
-  /* Discord pulse animation */
   animation: discordPulse 2s infinite;
 }
 
@@ -153,7 +151,7 @@ h1 {
   <h2 class="rank-title">deadliest</h2>
   <p>+5000 Coins</p>
   <span class="price">₹599</span>
-  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
+  <a href="https://discord.com/invite/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -161,7 +159,7 @@ h1 {
   <h2 class="rank-title">god</h2>
   <p>+3200 Coins</p>
   <span class="price">₹299</span>
-  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
+  <a href="https://discord.com/invite/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -169,7 +167,7 @@ h1 {
   <h2 class="rank-title">epic</h2>
   <p>+2000 Coins</p>
   <span class="price">₹129</span>
-  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
+  <a href="https://discord.com/invite/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -177,7 +175,7 @@ h1 {
   <h2 class="rank-title">prime</h2>
   <p>+1000 Coins</p>
   <span class="price">₹59</span>
-  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
+  <a href="https://discord.com/invite/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -185,23 +183,11 @@ h1 {
   <h2 class="rank-title">member</h2>
   <p>+850 Coins</p>
   <span class="price">free</span>
-  <button class="buy-btn" onclick="goDiscord()">🛒 Buy Now</button>
+  <a href="https://discord.com/invite/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 </div>
 </section>
-
-<script>
-function goDiscord() {
-  // Try opening Discord app
-  window.location.href = "discord://invite/g6vYUuujXv";
-
-  // Fallback to browser
-  setTimeout(function() {
-    window.location.href = "https://discord.com/invite/g6vYUuujXv";
-  }, 800);
-}
-</script>
 
 </body>
 </html>
