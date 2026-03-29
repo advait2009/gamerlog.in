@@ -1,58 +1,56 @@
-<section id="store" style="padding:50px; text-align:center; background:#0f0f1a;">
+<section id="store" style="padding:60px; text-align:center; background: radial-gradient(circle at top, #1a1a2e, #0f0f1a);">
 
-<h1 style="color:orange; font-size:42px;">🔥 Classic Ranks</h1>
-<p style="color:#bbb;">Buy awesome ranks for your server</p>
+<h1 style="font-size:48px; background: linear-gradient(90deg, orange, gold); -webkit-background-clip: text; color: transparent;">
+🔥 Classic Ranks
+</h1>
+<p style="color:#aaa; font-size:18px;">Upgrade your power with premium ranks</p>
 
 <div style="
 display:grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap:25px;
-margin-top:40px;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap:30px;
+margin-top:50px;
 ">
 
-<!-- GOD -->
+<!-- CARD -->
 <div class="card">
   <img src="god.png" class="rank-img">
-  <h2>GOD</h2>
+  <h2 class="rank-title">GOD</h2>
   <p>+5000 Coins</p>
   <span class="price">$25.00</span>
-  <button onclick="buyRank('God')">Add to Cart</button>
+  <button onclick="buyRank('God')">Buy Now</button>
 </div>
 
-<!-- SUPREME -->
 <div class="card">
-  <img src="supreme.png" class="rank-img">
-  <h2>SUPREME</h2>
+  <img src="Supreme.png" class="rank-img">
+  <h2 class="rank-title">SUPREME</h2>
   <p>+3200 Coins</p>
   <span class="price">$22.00</span>
-  <button onclick="buyRank('Supreme')">Add to Cart</button>
+  <button onclick="buyRank('Supreme')">Buy Now</button>
 </div>
 
-<!-- LEGEND -->
 <div class="card">
   <img src="legend.png" class="rank-img">
-  <h2>LEGEND</h2>
+  <h2 class="rank-title">LEGEND</h2>
   <p>+2000 Coins</p>
   <span class="price">$11.00</span>
-  <button onclick="buyRank('Legend')">Add to Cart</button>
+  <button onclick="buyRank('Legend')">Buy Now</button>
 </div>
 
-<!-- MASTERMIND -->
 <div class="card">
   <img src="mastermind.png" class="rank-img">
-  <h2>MASTERMIND</h2>
+  <h2 class="rank-title">MASTERMIND</h2>
   <p>+1000 Coins</p>
   <span class="price">$6.70</span>
-  <button onclick="buyRank('Mastermind')">Add to Cart</button>
+  <button onclick="buyRank('Mastermind')">Buy Now</button>
 </div>
 
-<!-- ALPHA -->
 <div class="card">
   <img src="alpha.png" class="rank-img">
-  <h2>ALPHA</h2>
+  <h2 class="rank-title">ALPHA</h2>
   <p>+850 Coins</p>
   <span class="price">$4.40</span>
-  <button onclick="buyRank('Alpha')">Add to Cart</button>
+  <button onclick="buyRank('Alpha')">Buy Now</button>
 </div>
 
 </div>
@@ -60,52 +58,78 @@ margin-top:40px;
 
 <style>
 .card {
-  background: linear-gradient(145deg, #1c1c2b, #141420);
-  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
   padding: 20px;
-  transition: 0.3s;
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  transition: 0.4s;
+  border: 1px solid rgba(255,165,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* glowing border effect */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(45deg, orange, gold, orange);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
 .card:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 35px orange;
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 40px rgba(255,165,0,0.6);
 }
 
 .rank-img {
   width: 100%;
-  aspect-ratio: 1 / 1;   /* 🔥 PERFECT SQUARE */
-  object-fit: cover;     /* clean fill */
-  border-radius: 12px;
-  margin-bottom: 12px;
-  background: #111;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.rank-title {
+  font-size: 22px;
+  color: orange;
+  letter-spacing: 1px;
 }
 
 .price {
   display: block;
   margin: 10px 0;
-  color: orange;
-  font-size: 18px;
+  font-size: 20px;
+  color: gold;
 }
 
+/* insane glowing button */
 button {
-  background: orange;
+  background: linear-gradient(45deg, orange, gold);
   border: none;
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   color: black;
   font-weight: bold;
   width: 100%;
+  transition: 0.3s;
 }
 
 button:hover {
-  background: gold;
+  box-shadow: 0 0 20px gold;
+  transform: scale(1.05);
 }
 </style>
 
 <script>
 function buyRank(rank) {
-  alert("You selected: " + rank);
+  alert("🔥 You selected: " + rank);
 }
 </script>
