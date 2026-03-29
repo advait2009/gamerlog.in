@@ -1,62 +1,44 @@
-<section id="store" style="padding:60px; text-align:center; background: radial-gradient(circle at top, #1a1a2e, #0f0f1a);">
-
-<h1 style="font-size:48px; background: linear-gradient(90deg, orange, gold); -webkit-background-clip: text; color: transparent;">
-🔥 Classic Ranks
-</h1>
-<p style="color:#aaa; font-size:18px;">Upgrade your power with premium ranks</p>
-
-<div style="
-display:grid;
-grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-gap:30px;
-margin-top:50px;
-">
-
-<!-- CARD -->
-<div class="card">
-  <img src="god.png" class="rank-img">
-  <h2 class="rank-title">deadliest</h2>
-  <p>+5000 Coins</p>
-  <span class="price">₹599</span>
-  <button onclick="buyRank('God')">Buy Now</button>
-</div>
-
-<div class="card">
-  <img src="Supreme.png" class="rank-img">
-  <h2 class="rank-title">god</h2>
-  <p>+3200 Coins</p>
-  <span class="price">₹299</span>
-  <button onclick="buyRank('Supreme')">Buy Now</button>
-</div>
-
-<div class="card">
-  <img src="legend.png" class="rank-img">
-  <h2 class="rank-title">epic</h2>
-  <p>+2000 Coins</p>
-  <span class="price">₹129</span>
-  <button onclick="buyRank('Legend')">Buy Now</button>
-</div>
-
-<div class="card">
-  <img src="mastermind.png" class="rank-img">
-  <h2 class="rank-title">prime</h2>
-  <p>+1000 Coins</p>
-  <span class="price">₹59</span>
-  <button onclick="buyRank('Mastermind')">Buy Now</button>
-</div>
-
-<div class="card">
-  <img src="alpha.png" class="rank-img">
-  <h2 class="rank-title">member</h2>
-  <p>+850 Coins</p>
-  <span class="price">free</span>
-  <button onclick="buyRank('Alpha')">Buy Now</button>
-</div>
-
-</div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Store</title>
 
 <style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: radial-gradient(circle at top, #1a1a2e, #0f0f1a);
+  color: white;
+}
+
+/* STORE */
+#store {
+  padding: 60px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+  background: linear-gradient(90deg, orange, gold);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  color: #aaa;
+  font-size: 18px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+/* CARD */
 .card {
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
@@ -66,9 +48,27 @@ margin-top:50px;
   border: 1px solid rgba(255,165,0,0.2);
   position: relative;
   overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
 }
 
-/* glowing border effect */
+/* stagger animation */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* glow border */
 .card::before {
   content: "";
   position: absolute;
@@ -83,23 +83,30 @@ margin-top:50px;
   mask-composite: exclude;
 }
 
+/* hover */
 .card:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 0 40px rgba(255,165,0,0.6);
 }
 
+/* IMAGE */
 .rank-img {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 15px;
   margin-bottom: 15px;
+  transition: 0.3s;
 }
 
+.card:hover .rank-img {
+  transform: scale(1.05);
+}
+
+/* TEXT */
 .rank-title {
   font-size: 22px;
   color: orange;
-  letter-spacing: 1px;
 }
 
 .price {
@@ -109,7 +116,7 @@ margin-top:50px;
   color: gold;
 }
 
-/* insane glowing button */
+/* BUTTON */
 button {
   background: linear-gradient(45deg, orange, gold);
   border: none;
@@ -126,10 +133,70 @@ button:hover {
   box-shadow: 0 0 20px gold;
   transform: scale(1.05);
 }
+
+button:active {
+  transform: scale(0.95);
+}
 </style>
+</head>
+
+<body>
+
+<section id="store">
+
+<h1>🔥 Classic Ranks</h1>
+<p class="subtitle">Upgrade your power with premium ranks</p>
+
+<div class="grid">
+
+<div class="card">
+  <img src="god.png" class="rank-img">
+  <h2 class="rank-title">deadliest</h2>
+  <p>+5000 Coins</p>
+  <span class="price">₹599</span>
+  <button onclick="buyRank('deadliest')">Buy Now</button>
+</div>
+
+<div class="card">
+  <img src="Supreme.png" class="rank-img">
+  <h2 class="rank-title">god</h2>
+  <p>+3200 Coins</p>
+  <span class="price">₹299</span>
+  <button onclick="buyRank('god')">Buy Now</button>
+</div>
+
+<div class="card">
+  <img src="legend.png" class="rank-img">
+  <h2 class="rank-title">epic</h2>
+  <p>+2000 Coins</p>
+  <span class="price">₹129</span>
+  <button onclick="buyRank('epic')">Buy Now</button>
+</div>
+
+<div class="card">
+  <img src="mastermind.png" class="rank-img">
+  <h2 class="rank-title">prime</h2>
+  <p>+1000 Coins</p>
+  <span class="price">₹59</span>
+  <button onclick="buyRank('prime')">Buy Now</button>
+</div>
+
+<div class="card">
+  <img src="alpha.png" class="rank-img">
+  <h2 class="rank-title">member</h2>
+  <p>+850 Coins</p>
+  <span class="price">free</span>
+  <button onclick="buyRank('member')">Buy Now</button>
+</div>
+
+</div>
+</section>
 
 <script>
 function buyRank(rank) {
   alert("🔥 You selected: " + rank);
 }
 </script>
+
+</body>
+</html>
