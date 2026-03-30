@@ -219,7 +219,13 @@ h1 {
 
 <script>
 function openDiscord() {
-  window.open("https://discord.gg/g6vYUuujXv", "_blank");
+  // Try Discord app
+  window.location.href = "discord://invite/g6vYUuujXv";
+
+  // Fallback to browser
+  setTimeout(function() {
+    window.location.href = "https://discord.gg/g6vYUuujXv";
+  }, 800);
 }
 </script>
 
