@@ -29,36 +29,46 @@ h1 {
   font-size: 18px;
 }
 
-/* 🔥 MAIN LAYOUT (EQUAL SPACING) */
+/* 🔥 MAIN CONTAINER (FIXES SIDE DISTANCE) */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto; /* equal left-right spacing */
+}
+
+/* 🔥 GRID */
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px; /* SAME GAP EVERYWHERE */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px; /* equal gap everywhere */
   margin-top: 50px;
 }
 
-/* force layout: 3 top, 4 bottom */
+/* 🔥 TOP 3 CENTERED PERFECTLY */
+.card:nth-child(1) {
+  grid-column: 2;
+}
+.card:nth-child(2) {
+  grid-column: 3;
+}
+.card:nth-child(3) {
+  grid-column: 2 / span 2;
+  justify-self: center;
+  max-width: 260px;
+}
+
+/* 🔥 BOTTOM 4 NORMAL */
+.card:nth-child(4),
+.card:nth-child(5),
+.card:nth-child(6),
+.card:nth-child(7) {
+  grid-column: auto;
+}
+
+/* CARD */
 .card {
-  width: 260px;
-}
-
-/* break line after 3 cards */
-.card:nth-child(4) {
-  margin-left: calc(50% - (260px * 2) - 45px);
-}
-
-@keyframes float {
-  0%,100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes fadeUp {
-  from {opacity:0; transform:translateY(40px);}
-  to {opacity:1; transform:translateY(0);}
-}
-
-.card {
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
   border-radius: 20px;
@@ -69,7 +79,18 @@ h1 {
   opacity: 0;
 }
 
-/* animation delays */
+/* animations */
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(40px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* delays */
 .card:nth-child(1){ animation-delay: 0.1s, 0s; }
 .card:nth-child(2){ animation-delay: 0.2s, 0.2s; }
 .card:nth-child(3){ animation-delay: 0.3s, 0.4s; }
@@ -154,8 +175,10 @@ h1 {
 <h1>🔥 Classic Ranks</h1>
 <p class="subtitle">Click Buy button to purchase via Discord</p>
 
+<div class="wrapper">
 <div class="grid">
 
+<!-- TOP 3 -->
 <div class="card">
   <img src="god.png" class="rank-img">
   <h2 class="rank-title">deadliest</h2>
@@ -180,6 +203,7 @@ h1 {
   <a href="https://discord.com/invite/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
 </div>
 
+<!-- BOTTOM 4 -->
 <div class="card">
   <img src="mastermind.png" class="rank-img">
   <h2 class="rank-title">prime</h2>
@@ -213,6 +237,8 @@ h1 {
 </div>
 
 </div>
+</div>
+
 </section>
 
 </body>
