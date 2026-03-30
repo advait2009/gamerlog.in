@@ -29,7 +29,6 @@ h1 {
   font-size: 18px;
 }
 
-/* 👇 FIXED GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -37,16 +36,16 @@ h1 {
   margin-top: 50px;
 }
 
-/* first row center (3 cards) */
-.card:nth-child(1) { grid-column: 2; }
-.card:nth-child(2) { grid-column: 3; }
-.card:nth-child(3) { grid-column: 4; }
+/* TOP 3 CENTERED */
+.card:nth-child(1) { grid-column: 1; grid-row: 1; margin-left: auto; }
+.card:nth-child(2) { grid-column: 2; grid-row: 1; }
+.card:nth-child(3) { grid-column: 3; grid-row: 1; margin-right: auto; }
 
-/* second row (4 cards normal) */
-.card:nth-child(4) { grid-column: 1; }
-.card:nth-child(5) { grid-column: 2; }
-.card:nth-child(6) { grid-column: 3; }
-.card:nth-child(7) { grid-column: 4; }
+/* BOTTOM 4 */
+.card:nth-child(4) { grid-column: 1; grid-row: 2; }
+.card:nth-child(5) { grid-column: 2; grid-row: 2; }
+.card:nth-child(6) { grid-column: 3; grid-row: 2; }
+.card:nth-child(7) { grid-column: 4; grid-row: 2; }
 
 @keyframes float {
   0%,100% { transform: translateY(0px); }
@@ -161,7 +160,7 @@ h1 {
   <h2 class="rank-title">deadliest</h2>
   <p>+5000 Coins</p>
   <span class="price">₹599</span>
-  <a href="https://discord.com/invite/g6vYUuujXv" class="buy-btn">🛒 Buy Now</a>
+  <a href="https://discord.com/invite/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -169,7 +168,7 @@ h1 {
   <h2 class="rank-title">god</h2>
   <p>+3200 Coins</p>
   <span class="price">₹299</span>
-  <a href="https://discord.com/invite/g6vYUuujXv" class="buy-btn">🛒 Buy Now</a>
+  <a href="https://discord.com/invite/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -177,7 +176,7 @@ h1 {
   <h2 class="rank-title">epic</h2>
   <p>+2000 Coins</p>
   <span class="price">₹129</span>
-  <a href="https://discord.com/invite/g6vYUuujXv" class="buy-btn">🛒 Buy Now</a>
+  <a href="https://discord.com/invite/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -185,7 +184,7 @@ h1 {
   <h2 class="rank-title">prime</h2>
   <p>+1000 Coins</p>
   <span class="price">₹59</span>
-  <a href="https://discord.com/invite/g6vYUuujXv" class="buy-btn">🛒 Buy Now</a>
+  <a href="https://discord.com/invite/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -193,7 +192,7 @@ h1 {
   <h2 class="rank-title">member</h2>
   <p>+850 Coins</p>
   <span class="price">free</span>
-  <a href="https://discord.com/invite/g6vYUuujXv" class="buy-btn">🛒 Buy Now</a>
+  <a href="https://discord.com/invite/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -201,7 +200,7 @@ h1 {
   <h2 class="rank-title">star</h2>
   <p>+1500 Coins</p>
   <span class="price">₹149</span>
-  <a href="https://discord.com/invite/g6vYUuujXv" class="buy-btn">🛒 Buy Now</a>
+  <a href="https://discord.com/invite/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -209,7 +208,7 @@ h1 {
   <h2 class="rank-title">alpha</h2>
   <p>+2500 Coins</p>
   <span class="price">₹249</span>
-  <a href="https://discord.com/invite/g6vYUuujXv" class="buy-btn">🛒 Buy Now</a>
+  <a href="https://discord.com/invite/g6vYUuujXv" target="_blank" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 </div>
