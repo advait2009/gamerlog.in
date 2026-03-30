@@ -29,21 +29,20 @@ h1 {
   font-size: 18px;
 }
 
-/* 🔥 MAIN CONTAINER */
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* 🔥 TOP ROW (3 CENTERED) */
+/* TOP ROW */
 .top-row {
   display: flex;
   justify-content: center;
-  gap: 30px; /* equal spacing */
+  gap: 30px;
   margin-top: 50px;
 }
 
-/* 🔥 BOTTOM ROW (4 EQUAL) */
+/* BOTTOM ROW (FIXED) */
 .bottom-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -51,8 +50,10 @@ h1 {
   margin-top: 30px;
 }
 
+/* REMOVE FIXED WIDTH ❌ */
 .card {
-  width: 260px;
+  width: 100%;
+  max-width: 260px;
   margin: 0 auto;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
@@ -163,7 +164,7 @@ h1 {
 
 <div class="wrapper">
 
-<!-- 🔥 TOP 3 -->
+<!-- TOP 3 -->
 <div class="top-row">
 
 <div class="card">
@@ -192,7 +193,7 @@ h1 {
 
 </div>
 
-<!-- 🔥 BOTTOM 4 -->
+<!-- BOTTOM 4 -->
 <div class="bottom-row">
 
 <div class="card">
