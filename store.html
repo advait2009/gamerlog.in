@@ -34,7 +34,6 @@ h1 {
   margin: 0 auto;
 }
 
-/* SAME SPACING */
 .row {
   display: flex;
   justify-content: center;
@@ -64,7 +63,6 @@ h1 {
   to {opacity:1; transform:translateY(0);}
 }
 
-/* animation delays */
 .top .card:nth-child(1){ animation-delay: 0.1s, 0s; }
 .top .card:nth-child(2){ animation-delay: 0.2s, 0.2s; }
 .top .card:nth-child(3){ animation-delay: 0.3s, 0.4s; }
@@ -152,7 +150,6 @@ h1 {
 
 <div class="wrapper">
 
-<!-- TOP 3 -->
 <div class="row top">
 
 <div class="card">
@@ -160,7 +157,7 @@ h1 {
   <h2 class="rank-title">deadliest</h2>
   <p>+5000 Coins</p>
   <span class="price">₹599</span>
-  <a href="https://discord.gg/g6vYUuujXv" onclick="openDiscord('deadliest')" target="_blank" class="buy-btn">🛒 Buy Now</a>
+  <a href="#" onclick="openDiscord()" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -168,7 +165,7 @@ h1 {
   <h2 class="rank-title">god</h2>
   <p>+3200 Coins</p>
   <span class="price">₹299</span>
-  <a href="https://discord.gg/g6vYUuujXv" onclick="openDiscord('god')" target="_blank" class="buy-btn">🛒 Buy Now</a>
+  <a href="#" onclick="openDiscord()" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -176,12 +173,11 @@ h1 {
   <h2 class="rank-title">epic</h2>
   <p>+2000 Coins</p>
   <span class="price">₹129</span>
-  <a href="https://discord.gg/g6vYUuujXv" onclick="openDiscord('epic')" target="_blank" class="buy-btn">🛒 Buy Now</a>
+  <a href="#" onclick="openDiscord()" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 </div>
 
-<!-- BOTTOM 4 -->
 <div class="row bottom">
 
 <div class="card">
@@ -189,7 +185,7 @@ h1 {
   <h2 class="rank-title">prime</h2>
   <p>+1000 Coins</p>
   <span class="price">₹59</span>
-  <a href="https://discord.gg/g6vYUuujXv" onclick="openDiscord('prime')" target="_blank" class="buy-btn">🛒 Buy Now</a>
+  <a href="#" onclick="openDiscord()" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -197,7 +193,7 @@ h1 {
   <h2 class="rank-title">member</h2>
   <p>+850 Coins</p>
   <span class="price">free</span>
-  <a href="https://discord.gg/g6vYUuujXv" onclick="openDiscord('member')" target="_blank" class="buy-btn">🛒 Buy Now</a>
+  <a href="#" onclick="openDiscord()" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -205,7 +201,7 @@ h1 {
   <h2 class="rank-title">star</h2>
   <p>+1500 Coins</p>
   <span class="price">₹149</span>
-  <a href="https://discord.gg/g6vYUuujXv" onclick="openDiscord('star')" target="_blank" class="buy-btn">🛒 Buy Now</a>
+  <a href="#" onclick="openDiscord()" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 <div class="card">
@@ -213,7 +209,7 @@ h1 {
   <h2 class="rank-title">alpha</h2>
   <p>+2500 Coins</p>
   <span class="price">₹249</span>
-  <a href="https://discord.gg/g6vYUuujXv" onclick="openDiscord('alpha')" target="_blank" class="buy-btn">🛒 Buy Now</a>
+  <a href="#" onclick="openDiscord()" class="buy-btn">🛒 Buy Now</a>
 </div>
 
 </div>
@@ -222,22 +218,8 @@ h1 {
 </section>
 
 <script>
-function openDiscord(rank) {
-  const invite = "https://discord.gg/g6vYUuujXv";
-
-  // Save rank
-  localStorage.setItem("selectedRank", rank);
-
-  // Try Discord app
-  const iframe = document.createElement("iframe");
-  iframe.style.display = "none";
-  iframe.src = "discord://invite/g6vYUuujXv";
-  document.body.appendChild(iframe);
-
-  // Fallback (always works)
-  setTimeout(() => {
-    window.open(invite, "_blank");
-  }, 800);
+function openDiscord() {
+  window.open("https://discord.gg/g6vYUuujXv", "_blank");
 }
 </script>
 
