@@ -526,94 +526,45 @@ setInterval(checkServer,30000);
 </body>
 </html>
 
-<section class="discord-full">
-  
-  <div class="discord-container">
+<!-- ===== DISCORD ===== -->
+<section id="discord" class="discordSection">
+  <section class="discord-section fade">
+  <h2>Join Our Discord Community 🎮</h2>
 
-    <!-- LEFT CONTENT -->
-    <div class="discord-text fade">
-      <h2>Join Our Community</h2>
-      <p>
-        Become part of our active Minecraft community!  
-        Get support, updates, exclusive offers, and connect with other players.
-      </p>
+  <p>
+    Connect with other players, get instant support, track your orders, 
+    and be part of our growing Minecraft community!
+  </p>
 
-      <ul>
-        <li>✔ Instant Support</li>
-        <li>✔ Order Updates</li>
-        <li>✔ Giveaways & Events</li>
-        <li>✔ Active Players</li>
-      </ul>
+  <a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="discord-btn">
+    
+    <!-- 🔵 Discord Logo SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20.317 4.369A19.791 19.791 0 0 0 16.885 3c-.151.27-.326.63-.446.915a18.27 18.27 0 0 0-5.878 0c-.12-.285-.295-.645-.447-.915a19.736 19.736 0 0 0-3.432 1.369C3.053 9.046 2.32 13.58 2.692 18.057a19.9 19.9 0 0 0 5.993 3.046c.483-.663.913-1.363 1.282-2.092-.705-.266-1.378-.59-2.02-.96.169-.123.335-.252.495-.385 3.89 1.814 8.11 1.814 11.955 0 .16.133.326.262.495.385-.642.37-1.315.694-2.02.96.369.729.799 1.429 1.282 2.092a19.87 19.87 0 0 0 5.993-3.046c.441-5.177-.752-9.667-3.636-13.688zM9.545 15.4c-1.183 0-2.157-1.085-2.157-2.419 0-1.334.954-2.419 2.157-2.419 1.212 0 2.166 1.094 2.157 2.419 0 1.334-.945 2.419-2.157 2.419zm4.91 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.334.954-2.419 2.157-2.419 1.212 0 2.166 1.094 2.157 2.419 0 1.334-.945 2.419-2.157 2.419z"/>
+    </svg>
 
-      <a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="discord-btn">
-        <!-- Discord Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.317 4.369A19.791 19.791 0 0 0 16.885 3c-.151.27-.326.63-.446.915a18.27 18.27 0 0 0-5.878 0c-.12-.285-.295-.645-.447-.915a19.736 19.736 0 0 0-3.432 1.369C3.053 9.046 2.32 13.58 2.692 18.057a19.9 19.9 0 0 0 5.993 3.046c.483-.663.913-1.363 1.282-2.092-.705-.266-1.378-.59-2.02-.96.169-.123.335-.252.495-.385 3.89 1.814 8.11 1.814 11.955 0 .16.133.326.262.495.385-.642.37-1.315.694-2.02.96.369.729.799 1.429 1.282 2.092a19.87 19.87 0 0 0 5.993-3.046c.441-5.177-.752-9.667-3.636-13.688z"/>
-        </svg>
-        Join Discord
-      </a>
-    </div>
-
-    <!-- RIGHT CARD -->
-    <div class="discord-card fade">
-      <h3>🎮 Not_aadi Community</h3>
-      <p>Click below to join instantly</p>
-
-      <a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="join-box">
-        🚀 Join Now
-      </a>
-    </div>
-
-  </div>
+    Join Discord Server
+  </a>
 </section>
 
 <style>
-
-/* SECTION */
-.discord-full{
-  padding:100px 20px;
-  background:#0f172a;
+.discord-section{
+  text-align:center;
+  padding:80px 20px;
+  animation: float 3s ease-in-out infinite;
 }
 
-/* CONTAINER */
-.discord-container{
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  flex-wrap:wrap;
-  gap:40px;
-  align-items:center;
-  justify-content:space-between;
-}
-
-/* TEXT SIDE */
-.discord-text{
-  flex:1;
-  min-width:300px;
-}
-
-.discord-text h2{
+.discord-section h2{
   font-family:'Press Start 2P';
   margin-bottom:20px;
 }
 
-.discord-text p{
+.discord-section p{
   color:#aaa;
-  margin-bottom:20px;
+  max-width:600px;
+  margin:0 auto 20px;
 }
 
-.discord-text ul{
-  list-style:none;
-  padding:0;
-  margin-bottom:20px;
-}
-
-.discord-text li{
-  margin:8px 0;
-  color:#ddd;
-}
-
-/* BUTTON */
 .discord-btn{
   display:inline-flex;
   align-items:center;
@@ -622,52 +573,21 @@ setInterval(checkServer,30000);
   background:#5865F2;
   color:white;
   text-decoration:none;
+  font-weight:bold;
   border-radius:8px;
   transition:0.3s;
 }
 
+/* 🔥 Hover Glow */
 .discord-btn:hover{
   transform:scale(1.1);
   box-shadow:0 0 25px rgba(88,101,242,0.8);
 }
 
-/* CARD */
-.discord-card{
-  flex:1;
-  min-width:280px;
-  background:#111827;
-  padding:30px;
-  border-radius:12px;
-  text-align:center;
-  transition:0.3s;
+/* ✨ Floating */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
-
-.discord-card:hover{
-  transform:translateY(-10px);
-}
-
-/* JOIN BOX */
-.join-box{
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 20px;
-  background:#2ecc71;
-  color:black;
-  text-decoration:none;
-  border-radius:6px;
-  transition:0.3s;
-}
-
-.join-box:hover{
-  background:#22c55e;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .discord-container{
-    flex-direction:column;
-    text-align:center;
-  }
-}
-
 </style>
