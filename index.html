@@ -528,13 +528,20 @@ setInterval(checkServer,30000);
 
 <section class="discord-section fade">
   <h2>Join Our Discord Community 🎮</h2>
+
   <p>
     Connect with other players, get instant support, track your orders, 
     and be part of our growing Minecraft community!
   </p>
 
   <a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="discord-btn">
-    🚀 Join Discord Server
+    
+    <!-- 🔵 Discord Logo SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20.317 4.369A19.791 19.791 0 0 0 16.885 3c-.151.27-.326.63-.446.915a18.27 18.27 0 0 0-5.878 0c-.12-.285-.295-.645-.447-.915a19.736 19.736 0 0 0-3.432 1.369C3.053 9.046 2.32 13.58 2.692 18.057a19.9 19.9 0 0 0 5.993 3.046c.483-.663.913-1.363 1.282-2.092-.705-.266-1.378-.59-2.02-.96.169-.123.335-.252.495-.385 3.89 1.814 8.11 1.814 11.955 0 .16.133.326.262.495.385-.642.37-1.315.694-2.02.96.369.729.799 1.429 1.282 2.092a19.87 19.87 0 0 0 5.993-3.046c.441-5.177-.752-9.667-3.636-13.688zM9.545 15.4c-1.183 0-2.157-1.085-2.157-2.419 0-1.334.954-2.419 2.157-2.419 1.212 0 2.166 1.094 2.157 2.419 0 1.334-.945 2.419-2.157 2.419zm4.91 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.334.954-2.419 2.157-2.419 1.212 0 2.166 1.094 2.157 2.419 0 1.334-.945 2.419-2.157 2.419z"/>
+    </svg>
+
+    Join Discord Server
   </a>
 </section>
 
@@ -557,7 +564,9 @@ setInterval(checkServer,30000);
 }
 
 .discord-btn{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
   padding:15px 25px;
   background:#5865F2;
   color:white;
@@ -570,10 +579,10 @@ setInterval(checkServer,30000);
 /* 🔥 Hover Glow */
 .discord-btn:hover{
   transform:scale(1.1);
-  box-shadow:0 0 20px rgba(88,101,242,0.7);
+  box-shadow:0 0 25px rgba(88,101,242,0.8);
 }
 
-/* ✨ Floating animation */
+/* ✨ Floating */
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
