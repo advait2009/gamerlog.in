@@ -1,1 +1,293 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prestige Setups — Minecraft Server Configurations</title>
+  <meta name="description" content="Professional Minecraft server setup packages. Survival, Bedwars, PvP, BungeeCord, and custom configurations. Affordable pricing in INR and USD." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0f0d; --bg-card: #0f1a14; --border: #1e3027;
+      --primary: #2ecc71; --secondary: #52bcdd;
+      --text: #e8f5ee; --muted: #6b8f79;
+      --font-display: 'Press Start 2P', monospace;
+      --font-body: 'Inter', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--bg); color: var(--text); font-family: var(--font-body); overflow-x: hidden; line-height: 1.6; }
+    .hero { position: relative; width: 100%; padding: 10rem 1.5rem 6rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+    .hero-grid { position: absolute; inset: 0; opacity: 0.15; pointer-events: none; background-image: linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px); background-size: 40px 40px; }
+    .hero-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(46,204,113,0.18) 0%, transparent 70%); pointer-events: none; border-radius: 50%; }
+    .hero-inner { position: relative; z-index: 1; max-width: 900px; display: flex; flex-direction: column; align-items: center; }
+    .badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9999px; background: rgba(46,204,113,0.1); border: 1px solid rgba(46,204,113,0.25); color: var(--primary); font-family: var(--font-display); font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 2rem; }
+    h1 { font-family: var(--font-display); font-size: clamp(1.6rem, 5vw, 3.5rem); text-transform: uppercase; line-height: 1.3; margin-bottom: 1.5rem; text-shadow: 4px 4px 0 rgba(0,0,0,0.5); }
+    h1 .accent { color: var(--primary); display: block; margin-top: 0.5rem; }
+    .hero p { color: var(--muted); font-size: clamp(1rem, 2.5vw, 1.2rem); max-width: 640px; margin-bottom: 2.5rem; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; width: 100%; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; font-family: var(--font-display); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0 2rem; height: 3.5rem; border: none; cursor: pointer; text-decoration: none; transition: opacity 0.2s, transform 0.1s; }
+    .btn:hover { opacity: 0.88; } .btn:active { transform: translateY(1px); }
+    .btn-primary { background: var(--primary); color: #0a0f0d; border-bottom: 4px solid rgba(0,0,0,0.25); border-right: 4px solid rgba(0,0,0,0.25); }
+    .btn-outline { background: transparent; color: var(--secondary); border: 2px solid var(--secondary); }
+    .btn-whatsapp { background: #25D366; color: #fff; height: 4rem; }
+    .btn-instagram { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: #fff; height: 4rem; }
+    .btn-gmail { background: #EA4335; color: #fff; height: 4rem; }
+    section { padding: 6rem 1.5rem; }
+    .section-title { text-align: center; margin-bottom: 1rem; }
+    .section-title h2 { font-family: var(--font-display); font-size: clamp(1rem, 3vw, 1.8rem); text-transform: uppercase; margin-bottom: 1rem; }
+    .divider { width: 6rem; height: 4px; margin: 0 auto 2rem; }
+    .divider-green { background: var(--primary); } .divider-blue { background: var(--secondary); }
+    .currency-toggle-wrap { text-align: center; margin-bottom: 3rem; }
+    .currency-toggle { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--bg); border: 1px solid var(--border); padding: 0.25rem; }
+    .currency-toggle svg { margin-left: 0.5rem; flex-shrink: 0; }
+    .cur-btn { padding: 0.5rem 1.25rem; font-family: var(--font-display); font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.06em; background: none; border: none; cursor: pointer; color: var(--muted); transition: background 0.2s, color 0.2s; }
+    .cur-btn.active-inr { background: var(--primary); color: #0a0f0d; }
+    .cur-btn.active-usd { background: var(--secondary); color: #0a0f0d; }
+    .packages-section { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+    .card { display: flex; flex-direction: column; background: var(--bg); border: 2px solid var(--border); position: relative; transition: transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px -10px rgba(46,204,113,0.25); }
+    .card.premium { border-color: var(--primary); background: rgba(46,204,113,0.04); }
+    .card-badge { position: absolute; top: 1rem; right: 1rem; background: var(--primary); color: #0a0f0d; padding: 0.2rem 0.7rem; font-family: var(--font-display); font-size: 0.5rem; text-transform: uppercase; font-weight: 700; }
+    .card-header { padding: 1.5rem 1.5rem 0.75rem; }
+    .card-name { font-family: var(--font-display); font-size: 0.7rem; line-height: 1.8; margin-bottom: 0.75rem; padding-right: 3rem; }
+    .card-price { font-size: 1.8rem; font-weight: 700; color: var(--text); min-height: 2.4rem; transition: opacity 0.15s ease; }
+    .card-price.fade { opacity: 0; }
+    .card-desc { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; }
+    .card-body { padding: 0 1.5rem 1.5rem; flex: 1; }
+    .feature-list { list-style: none; margin-top: 1rem; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.4rem 0; font-size: 0.9rem; color: rgba(232,245,238,0.8); }
+    .check-icon { flex-shrink: 0; margin-top: 2px; }
+    .check-green { color: var(--primary); } .check-blue { color: var(--secondary); }
+    .card-footer { padding: 0 1.5rem 1.5rem; }
+    .card-footer a { display: block; width: 100%; }
+    .btn-card { width: 100%; height: 3rem; font-family: var(--font-display); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; border: none; cursor: pointer; text-decoration: none; display: flex; align-items: center; justify-content: center; transition: opacity 0.2s; }
+    .btn-card:hover { opacity: 0.85; }
+    .btn-card-primary { background: var(--primary); color: #0a0f0d; }
+    .btn-card-secondary { background: var(--secondary); color: #0a0f0d; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 3rem; max-width: 1000px; margin: 0 auto; text-align: center; }
+    .feature-item { display: flex; flex-direction: column; align-items: center; }
+    .feature-icon-box { width: 5rem; height: 5rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; border: 1px solid; }
+    .feature-icon-box.blue  { background: rgba(82,188,221,0.1); border-color: rgba(82,188,221,0.3); transform: rotate(3deg); }
+    .feature-icon-box.green { background: rgba(46,204,113,0.1); border-color: rgba(46,204,113,0.3); transform: rotate(-3deg); }
+    .feature-icon-box.dim   { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); transform: rotate(3deg); }
+    .feature-item h3 { font-family: var(--font-display); font-size: 0.7rem; margin-bottom: 0.75rem; line-height: 1.8; }
+    .feature-item p { color: var(--muted); font-size: 0.95rem; }
+    .contact-section { background: var(--bg-card); border-top: 1px solid var(--border); }
+    .contact-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .contact-inner h2 { font-family: var(--font-display); font-size: clamp(0.9rem, 2.5vw, 1.5rem); text-transform: uppercase; margin-bottom: 1.5rem; }
+    .contact-inner .lead { color: var(--muted); font-size: 1.1rem; margin-bottom: 0.75rem; }
+    .contact-inner .sub  { color: var(--muted); font-size: 0.85rem; margin-bottom: 2.5rem; }
+    .contact-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.25rem; margin-bottom: 2rem; }
+    .contact-details { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.25rem; color: var(--muted); font-family: monospace; font-size: 0.85rem; }
+    .contact-details span { display: flex; align-items: center; gap: 0.4rem; }
+    .sep { display: none; }
+    @media (min-width: 640px) { .sep { display: inline; color: var(--border); } }
+    footer { padding: 2rem 1.5rem; background: var(--bg); border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-family: monospace; font-size: 0.8rem; }
+    svg { display: inline-block; vertical-align: middle; }
+    @media (max-width: 640px) {
+      .hero { padding: 7rem 1rem 4rem; }
+      .btn { font-size: 0.55rem; padding: 0 1.25rem; }
+      .hero-btns .btn, .contact-btns .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="badge">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      Professional Server Configurations
+    </div>
+    <h1>Build Your <span class="accent">Dream Server</span></h1>
+    <p>Prestige Minecraft server setups configured for performance, engagement, and scalability. Stop wasting time with config files and start building your community.</p>
+    <div class="hero-btns">
+      <a href="#packages" class="btn btn-primary">View Packages</a>
+      <a href="#contact" class="btn btn-outline">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="packages-section" id="packages">
+  <div class="section-title">
+    <h2>Server Packages</h2>
+    <div class="divider divider-green"></div>
+  </div>
+  <div class="currency-toggle-wrap">
+    <div class="currency-toggle">
+      <svg width="16" height="16" fill="none" stroke="#6b8f79" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <button class="cur-btn active-inr" id="btn-inr" onclick="setCurrency('INR')">INR (India)</button>
+      <button class="cur-btn" id="btn-usd" onclick="setCurrency('USD')">USD (Global)</button>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-name">Normal Survival + Lifesteal</div>
+        <div class="card-price" data-inr="₹699" data-usd="$8.49">₹699</div>
+        <div class="card-desc">Classic survival gameplay with lifesteal mechanics</div>
+      </div>
+      <div class="card-body"><ul class="feature-list">
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Custom Lifesteal Core</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Economy &amp; Shops</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Anti-Cheat Config</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Ranks &amp; Permissions</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Optimized Performance</li>
+      </ul></div>
+      <div class="card-footer"><a href="#contact" class="btn-card btn-card-secondary">Order Now</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-name">Bunjeecord + Velocity</div>
+        <div class="card-price" data-inr="₹999" data-usd="$11.99">₹999</div>
+        <div class="card-desc">Proxy server setup for network routing</div>
+      </div>
+      <div class="card-body"><ul class="feature-list">
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Seamless Server Switching</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Anti-Bot Protection</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Global Chat &amp; Ranks</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Optimized Routing</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>MOTD Configuration</li>
+      </ul></div>
+      <div class="card-footer"><a href="#contact" class="btn-card btn-card-secondary">Order Now</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-name">Bedwars Setup</div>
+        <div class="card-price" data-inr="₹599" data-usd="$7.29">₹599</div>
+        <div class="card-desc">Full Bedwars mini-game server configuration</div>
+      </div>
+      <div class="card-body"><ul class="feature-list">
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Custom Maps &amp; Arenas</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Item Generators</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Shop &amp; Upgrades</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Leaderboards</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Lobby Setup</li>
+      </ul></div>
+      <div class="card-footer"><a href="#contact" class="btn-card btn-card-secondary">Order Now</a></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-name">PvP Setup</div>
+        <div class="card-price" data-inr="₹1,299" data-usd="$15.79">₹1,299</div>
+        <div class="card-desc">Competitive PvP arena server setup</div>
+      </div>
+      <div class="card-body"><ul class="feature-list">
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>KitPvP &amp; Duels</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Ranked Matchmaking</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Custom Kits</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Knockback Tweaks</li>
+        <li><svg class="check-icon check-blue" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Tournament System</li>
+      </ul></div>
+      <div class="card-footer"><a href="#contact" class="btn-card btn-card-secondary">Order Now</a></div>
+    </div>
+    <div class="card premium">
+      <div class="card-badge">Premium</div>
+      <div class="card-header">
+        <div class="card-name">All Server Setup</div>
+        <div class="card-price" data-inr="₹2,999" data-usd="$35.99">₹2,999</div>
+        <div class="card-desc">Complete package — all setups included</div>
+      </div>
+      <div class="card-body"><ul class="feature-list">
+        <li><svg class="check-icon check-green" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Survival, Bedwars, PvP</li>
+        <li><svg class="check-icon check-green" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Proxy Network (Velocity)</li>
+        <li><svg class="check-icon check-green" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Cross-Server Economy</li>
+        <li><svg class="check-icon check-green" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Premium Support</li>
+        <li><svg class="check-icon check-green" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Custom Branding</li>
+      </ul></div>
+      <div class="card-footer"><a href="#contact" class="btn-card btn-card-primary">Order Now</a></div>
+    </div>
+    <div class="card premium">
+      <div class="card-badge">Premium</div>
+      <div class="card-header">
+        <div class="card-name">Custom Server Setup</div>
+        <div class="card-price" data-inr="Custom Price" data-usd="Custom Price">Custom Price</div>
+        <div class="card-desc">Tailored to your exact requirements</div>
+      </div>
+      <div class="card-body"><ul class="feature-list">
+        <li><svg class="check-icon check-green" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Any Gamemode</li>
+        <li><svg class="check-icon check-green" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Custom Plugin Config</li>
+        <li><svg class="check-icon check-green" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Discord Integration</li>
+        <li><svg class="check-icon check-green" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Dedicated Setup Time</li>
+        <li><svg class="check-icon check-green" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Priority 1-on-1 Support</li>
+      </ul></div>
+      <div class="card-footer"><a href="#contact" class="btn-card btn-card-primary">Contact for Price</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Why Choose Us</h2>
+    <div class="divider divider-blue"></div>
+  </div>
+  <div class="features-grid">
+    <div class="feature-item">
+      <div class="feature-icon-box blue"><svg width="36" height="36" fill="none" stroke="#52bcdd" stroke-width="2" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <h3>Optimized Performance</h3>
+      <p>Server jars, arguments, and plugins are fine-tuned for high TPS and lag-free gameplay even with high player counts.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon-box green"><svg width="36" height="36" fill="none" stroke="#2ecc71" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3>Secure &amp; Protected</h3>
+      <p>Configured with modern anti-cheats, anti-bot protection, and robust permissions to keep your server safe.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon-box dim"><svg width="36" height="36" fill="none" stroke="#e8f5ee" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <h3>Ready to Play</h3>
+      <p>Plug and play configurations. Upload to your host, start the server, and invite your community immediately.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <h2>Ready to Order?</h2>
+    <p class="lead">DM me directly with your requirements and I will get your server setup started right away.</p>
+    <p class="sub">Tell me which package you want, your server host details, and any custom preferences.</p>
+    <div class="contact-btns">
+      <a href="https://wa.me/918528692967?text=Hi%20Ashish%2C%20I%20want%20to%20order%20a%20Minecraft%20server%20setup!" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.62 1.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://instagram.com/ashish.ixe7_" target="_blank" rel="noopener noreferrer" class="btn btn-instagram">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
+      <a href="mailto:ashishgupta852869@gmail.com?subject=Minecraft Server Setup Order" class="btn btn-gmail">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Gmail
+      </a>
+    </div>
+    <div class="contact-details">
+      <span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.62 1.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+91 85286 92967</span>
+      <span class="sep">|</span>
+      <span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@ashish.ixe7_</span>
+      <span class="sep">|</span>
+      <span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>ashishgupta852869@gmail.com</span>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; <span id="year"></span> PRESTIGE SETUPS. Not affiliated with Mojang AB.</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  function setCurrency(c) {
+    document.getElementById('btn-inr').className = 'cur-btn' + (c==='INR' ? ' active-inr' : '');
+    document.getElementById('btn-usd').className = 'cur-btn' + (c==='USD' ? ' active-usd' : '');
+    document.querySelectorAll('.card-price').forEach(function(el) {
+      el.classList.add('fade');
+      setTimeout(function() { el.textContent = c==='INR' ? el.dataset.inr : el.dataset.usd; el.classList.remove('fade'); }, 150);
+    });
+  }
+</script>
+</body>
+</html>
