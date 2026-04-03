@@ -563,6 +563,20 @@ Join our official Discord server to chat with players, updates, events.
 </section>
 
 <script>
+function copyIP(btn){
+  navigator.clipboard.writeText("play.gamerlog.fun");
+  showCopyMsg(btn);
+}
+function copyPort(btn){
+  navigator.clipboard.writeText("25575");
+  showCopyMsg(btn);
+}
+function showCopyMsg(button){
+  const msg = button.nextElementSibling;
+  msg.classList.add("show");
+  setTimeout(()=> msg.classList.remove("show"),1500);
+}
+</script>
 
 </body>
 </html>
