@@ -474,58 +474,6 @@ Watch exciting Minecraft gameplay, SMP moments and awesome adventures on the cha
 </div>
 </section>
 
-<!-- ===== PARTNERS ===== -->
-<section id="partners" class="partnerSection">
-<h1>🤝 Our Partners</h1>
-<div class="partner-card">
-<div class="mystery-icon">?</div>
-<div class="partner-info">
-<h2>Mystery Partner</h2>
-<p>Click below to join our Discord and apply to become a partner!</p>
-<a href="https://discord.gg/Zc6PkAXTgF" target="_blank">Join Discord</a>
-<div class="partner-note">
-To be a partner, join our Discord and make a ticket.
-</div>
-</div>
-</div>
-</section>
-
-<script>
-function copyIP(btn){
-  navigator.clipboard.writeText("play.gamerlog.fun");
-  showCopyMsg(btn);
-}
-function copyPort(btn){
-  navigator.clipboard.writeText("25575");
-  showCopyMsg(btn);
-}
-function showCopyMsg(button){
-  const msg = button.nextElementSibling;
-  msg.classList.add("show");
-  setTimeout(()=> msg.classList.remove("show"),1500);
-}
-
-async function checkServer(){
-  try{
-    let res=await fetch("https://api.mcsrvstat.us/2/play.gamerlog.fun");
-    let data=await res.json();
-    let status=document.getElementById("statusText");
-    if(data.online){
-      status.innerHTML="<span class='online'>ONLINE</span> | Players: "+data.players.online;
-    }else{
-      status.innerHTML="<span class='offline'>OFFLINE</span>";
-    }
-  }catch{
-    document.getElementById("statusText").innerText="Status Error";
-  }
-}
-checkServer();
-setInterval(checkServer,30000);
-</script>
-
-</body>
-</html>
-
 <!-- ===== DISCORD ===== -->
 <section id="discord" class="staffSection">
 <h1 class="staffTitle">JOIN OUR COMMUNITY</h1>
