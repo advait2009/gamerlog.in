@@ -1,4 +1,4 @@
-<!-- ===== CLEAN FONT ===== -->
+<!-- ===== FONT ===== -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <section id="rank-info">
@@ -6,9 +6,9 @@
   <div class="particles"></div>
 
   <div class="rank-card">
-    
-    <!-- GLOW LINE -->
-    <div class="glow-line"></div>
+
+    <!-- TOP GLOW LINE -->
+    <div class="glow-line top"></div>
 
     <h2 class="rank-title">Important Information</h2>
 
@@ -31,6 +31,10 @@
     </a>
 
     <p class="thanks">Thank you for supporting our server ❤️</p>
+
+    <!-- BOTTOM GLOW LINE -->
+    <div class="glow-line bottom"></div>
+
   </div>
 
 </section>
@@ -45,7 +49,7 @@ body{margin:0;}
   display:flex;
   justify-content:center;
   align-items:center;
-  background:#020617;
+  background: radial-gradient(circle at top, #020617, #000);
   overflow:hidden;
   font-family:'Poppins', sans-serif;
 }
@@ -53,12 +57,12 @@ body{margin:0;}
 /* ===== PARTICLES ===== */
 .particles span{
   position:absolute;
-  width:6px;
-  height:6px;
+  width:5px;
+  height:5px;
   background:#38bdf8;
   border-radius:50%;
-  animation: float 10s linear infinite;
-  opacity:0.6;
+  animation: float 12s linear infinite;
+  opacity:0.5;
 }
 
 @keyframes float{
@@ -75,28 +79,49 @@ body{margin:0;}
 /* ===== CARD ===== */
 .rank-card{
   position:relative;
-  background:rgba(15,23,42,0.9);
+  background:rgba(15,23,42,0.85);
   padding:60px;
   border-radius:20px;
   max-width:800px;
   width:100%;
   text-align:center;
   color:#fff;
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
   box-shadow:0 0 40px rgba(0,0,0,0.6);
+  overflow:hidden;
 }
 
-/* ===== GLOW LINE ===== */
+/* LIGHT SWEEP EFFECT */
+.rank-card::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.08),transparent);
+  transform:skewX(-20deg);
+  animation: sweep 6s infinite;
+}
+
+@keyframes sweep{
+  0%{left:-100%;}
+  100%{left:150%;}
+}
+
+/* ===== GLOW LINES ===== */
 .glow-line{
+  position:absolute;
   width:100%;
   height:3px;
-  border-radius:10px;
-  margin-bottom:25px;
   background:linear-gradient(90deg,#38bdf8,#6366f1,#38bdf8);
-  background-size:200% 100%;
+  background-size:200%;
   animation: glowMove 3s linear infinite;
-  box-shadow:0 0 10px #38bdf8, 0 0 20px #6366f1;
+  box-shadow:0 0 10px #38bdf8,0 0 20px #6366f1;
 }
+
+.glow-line.top{top:0;}
+.glow-line.bottom{bottom:0;}
 
 @keyframes glowMove{
   0%{background-position:0%;}
@@ -105,9 +130,10 @@ body{margin:0;}
 
 /* ===== TEXT ===== */
 .rank-title{
-  font-size:36px;
+  font-size:38px;
   font-weight:700;
   margin-bottom:15px;
+  color:#38bdf8;
 }
 
 .rank-desc{
@@ -158,7 +184,7 @@ body{margin:0;}
   transition:0.3s;
 }
 
-/* GLOW HOVER */
+/* HOVER GLOW */
 .discord-btn:hover{
   transform:scale(1.08);
   box-shadow:0 0 20px #5865F2, 0 0 40px #5865F2;
@@ -191,42 +217,16 @@ body{margin:0;}
 <script>
 // PARTICLES
 const p = document.querySelector('.particles');
-for(let i=0;i<50;i++){
+for(let i=0;i<40;i++){
   let s = document.createElement('span');
   s.style.left = Math.random()*100 + "%";
   s.style.animationDuration = (6 + Math.random()*6) + "s";
   p.appendChild(s);
 }
 
-// CLICK SOUND + CONFETTI
+// CLICK EFFECT
 function playEffect(e){
   let audio = new Audio("https://www.myinstants.com/media/sounds/minecraft_click.mp3");
   audio.play();
-
-  for(let i=0;i<20;i++){
-    let conf = document.createElement("div");
-    conf.style.position="fixed";
-    conf.style.width="6px";
-    conf.style.height="6px";
-    conf.style.background="hsl(" + Math.random()*360 + ",100%,50%)";
-    conf.style.top=e.clientY+"px";
-    conf.style.left=e.clientX+"px";
-    conf.style.zIndex="9999";
-    conf.style.borderRadius="50%";
-    document.body.appendChild(conf);
-
-    let x = (Math.random()-0.5)*200;
-    let y = (Math.random()-0.5)*200;
-
-    conf.animate([
-      {transform:"translate(0,0)",opacity:1},
-      {transform:`translate(${x}px,${y}px)`,opacity:0}
-    ],{
-      duration:800,
-      easing:"ease-out"
-    });
-
-    setTimeout(()=>conf.remove(),800);
-  }
 }
 </script>
