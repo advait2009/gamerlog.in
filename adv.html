@@ -1,24 +1,117 @@
-<section id="info">
-  <div class="info-box">
+<!-- ===== FINAL INFO (ADD AT END) ===== -->
+<section id="final-info">
 
-    <div class="line"></div>
+  <div class="info-container">
 
-    <h2>Important Information</h2>
+    <!-- TOP GLOW LINE -->
+    <div class="glow-line"></div>
 
-    <ul>
-      <li>⚠️ All ranks are valid for <span class="highlight">1 month only</span></li>
-      <li>⚠️ Rank will be <span class="highlight">automatically removed</span> after 1 month</li>
-      <li>⚠️ Delivery may take a few minutes</li>
-      <li>⚠️ Enter correct Minecraft username</li>
-      <li>⚠️ All purchases are <span class="highlight">non-refundable</span></li>
+    <h2 class="info-title">⚠️ Important Rank Information</h2>
+
+    <ul class="info-list">
+      <li>All ranks are valid for <span class="danger">1 month only</span> from purchase date.</li>
+      <li>Your rank will be <span class="danger">automatically removed</span> after 1 month.</li>
+      <li>Rank delivery may take a few minutes after purchase.</li>
+      <li>Please enter your correct Minecraft username.</li>
+      <li>All purchases are <span class="danger">non-refundable</span>.</li>
     </ul>
 
+    <a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="support-btn">
+      💬 Need Help? Join Discord
+    </a>
+
+    <!-- BOTTOM GLOW LINE -->
+    <div class="glow-line"></div>
+
   </div>
+
 </section>
 
 <style>
-/* ===== RED GLOW TEXT ===== */
-.highlight{
+/* ===== FINAL INFO SECTION ===== */
+#final-info{
+  padding:120px 20px;
+  display:flex;
+  justify-content:center;
+  background:#020617;
+}
+
+/* CONTAINER */
+.info-container{
+  max-width:800px;
+  width:100%;
+  background:rgba(15,23,42,0.9);
+  padding:60px;
+  border-radius:20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 0 50px rgba(0,0,0,0.6);
+}
+
+/* LIGHT SWEEP */
+.info-container::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:40%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.08),transparent);
+  transform:skewX(-20deg);
+  animation:sweep 6s infinite;
+}
+
+@keyframes sweep{
+  0%{left:-100%;}
+  100%{left:150%;}
+}
+
+/* GLOW LINE */
+.glow-line{
+  height:3px;
+  margin:20px 0;
+  background:linear-gradient(90deg,#38bdf8,#6366f1,#38bdf8);
+  background-size:200%;
+  animation:lineMove 3s linear infinite;
+  box-shadow:0 0 10px #38bdf8,0 0 20px #6366f1;
+}
+
+@keyframes lineMove{
+  0%{background-position:0%;}
+  100%{background-position:200%;}
+}
+
+/* TITLE */
+.info-title{
+  font-size:34px;
+  margin-bottom:25px;
+  background:linear-gradient(90deg,#38bdf8,#6366f1);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* LIST */
+.info-list{
+  list-style:none;
+  padding:0;
+  text-align:left;
+  line-height:2;
+  font-size:16px;
+}
+
+.info-list li{
+  margin-bottom:12px;
+  transition:0.3s;
+}
+
+.info-list li:hover{
+  transform:translateX(10px);
+  color:#38bdf8;
+}
+
+/* 🔴 IMPORTANT GLOW TEXT */
+.danger{
   color:#ff3b3b;
   font-weight:600;
   text-shadow:
@@ -26,23 +119,29 @@
     0 0 10px #ff3b3b,
     0 0 20px #ff0000,
     0 0 40px #ff0000;
-  animation: glowPulse 1.5s infinite alternate;
+  animation:dangerGlow 1.5s infinite alternate;
 }
 
-/* PULSE ANIMATION */
-@keyframes glowPulse{
-  from{
-    text-shadow:
-      0 0 5px #ff3b3b,
-      0 0 10px #ff3b3b,
-      0 0 20px #ff0000;
-  }
-  to{
-    text-shadow:
-      0 0 10px #ff0000,
-      0 0 20px #ff0000,
-      0 0 40px #ff0000,
-      0 0 60px #ff0000;
-  }
+@keyframes dangerGlow{
+  from{ text-shadow:0 0 5px #ff3b3b; }
+  to{ text-shadow:0 0 25px #ff0000,0 0 50px #ff0000; }
+}
+
+/* BUTTON */
+.support-btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:15px 35px;
+  background:#5865F2;
+  color:#fff;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.support-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px #5865F2,0 0 50px #5865F2;
 }
 </style>
