@@ -1,147 +1,128 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<section id="store">
+<section id="rank-info">
 
-  <h1 class="store-title">Server Store</h1>
+  <div class="rank-box">
 
-  <div class="rank-container">
+    <!-- TOP GLOW LINE -->
+    <div class="glow-line"></div>
 
-    <!-- BASIC -->
-    <div class="rank-card">
-      <h2>Basic</h2>
-      <p class="price">₹99</p>
-      <ul>
-        <li>✔ Basic Kit</li>
-        <li>✔ Chat Color</li>
-        <li>✔ 1 Home</li>
-      </ul>
-      <button>Buy Now</button>
-    </div>
+    <h2 class="title">Important Information</h2>
 
-    <!-- PRO (MOST POPULAR) -->
-    <div class="rank-card popular">
-      <div class="badge">MOST POPULAR</div>
-      <h2>Pro</h2>
-      <p class="price">₹199</p>
-      <ul>
-        <li>✔ All Basic Perks</li>
-        <li>✔ Fly Access</li>
-        <li>✔ 3 Homes</li>
-      </ul>
-      <button>Buy Now</button>
-    </div>
+    <p class="desc">
+      Please read the following details before purchasing any rank from our store.
+    </p>
 
-    <!-- ELITE -->
-    <div class="rank-card">
-      <h2>Elite</h2>
-      <p class="price">₹299</p>
-      <ul>
-        <li>✔ All Pro Perks</li>
-        <li>✔ VIP Area</li>
-        <li>✔ Unlimited Homes</li>
-      </ul>
-      <button>Buy Now</button>
-    </div>
+    <ul class="info-list">
+      <li>⚠️ All ranks are valid for <b>1 month only</b> from purchase date.</li>
+      <li>⚠️ Ranks will be <b>automatically removed</b> after 1 month.</li>
+      <li>⚠️ Rank delivery may take a few minutes.</li>
+      <li>⚠️ Enter your correct Minecraft username while purchasing.</li>
+      <li>⚠️ All purchases are <b>final and non-refundable</b>.</li>
+    </ul>
+
+    <a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="discord-btn">
+      🚀 Join Discord for Support
+    </a>
 
   </div>
 
 </section>
 
 <style>
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
+body{margin:0; font-family:'Poppins',sans-serif;}
+
+/* SECTION */
+#rank-info{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:120px 20px;
   background:#020617;
-  color:#fff;
+}
+
+/* BOX */
+.rank-box{
+  width:100%;
+  max-width:750px;
+  background:rgba(15,23,42,0.9);
+  padding:50px;
+  border-radius:20px;
+  text-align:center;
+  position:relative;
+  box-shadow:0 0 40px rgba(0,0,0,0.6);
+  overflow:hidden;
+}
+
+/* GLOW LINE */
+.glow-line{
+  width:100%;
+  height:3px;
+  margin-bottom:25px;
+  border-radius:10px;
+  background:linear-gradient(90deg,#38bdf8,#6366f1,#38bdf8);
+  background-size:200%;
+  animation:moveLine 3s linear infinite;
+  box-shadow:0 0 10px #38bdf8,0 0 20px #6366f1;
+}
+
+@keyframes moveLine{
+  0%{background-position:0%;}
+  100%{background-position:200%;}
 }
 
 /* TITLE */
-.store-title{
-  text-align:center;
-  font-size:42px;
-  margin:50px 0;
+.title{
+  font-size:36px;
+  font-weight:700;
+  margin-bottom:15px;
   background:linear-gradient(90deg,#38bdf8,#6366f1);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
-/* CONTAINER */
-.rank-container{
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  flex-wrap:wrap;
-  padding:20px;
-}
-
-/* CARD */
-.rank-card{
-  background:#0f172a;
-  padding:30px;
-  border-radius:20px;
-  width:260px;
-  text-align:center;
-  position:relative;
-  transition:0.3s;
-  box-shadow:0 0 20px rgba(0,0,0,0.5);
-}
-
-/* HOVER */
-.rank-card:hover{
-  transform:translateY(-10px) scale(1.03);
-  box-shadow:0 0 30px #38bdf8;
-}
-
-/* POPULAR */
-.popular{
-  border:2px solid #6366f1;
-}
-
-.badge{
-  position:absolute;
-  top:-10px;
-  left:50%;
-  transform:translateX(-50%);
-  background:#6366f1;
-  padding:5px 10px;
-  font-size:12px;
-  border-radius:10px;
-  animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(99,102,241,0.7);}
-  70%{box-shadow:0 0 0 15px rgba(99,102,241,0);}
-}
-
-/* PRICE */
-.price{
-  font-size:28px;
-  margin:10px 0;
-  color:#38bdf8;
+/* DESC */
+.desc{
+  font-size:16px;
+  color:#cbd5f5;
+  margin-bottom:25px;
 }
 
 /* LIST */
-.rank-card ul{
-  list-style:none;
-  padding:0;
-  margin:20px 0;
+.info-list{
+  text-align:left;
+  font-size:15px;
   line-height:2;
+  padding:0;
+  list-style:none;
 }
 
-/* BUTTON */
-.rank-card button{
-  padding:12px 25px;
-  border:none;
-  background:#5865F2;
-  color:#fff;
-  border-radius:8px;
-  cursor:pointer;
+.info-list li{
+  margin-bottom:10px;
   transition:0.3s;
 }
 
-.rank-card button:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 20px #5865F2;
+.info-list li:hover{
+  transform:translateX(8px);
+  color:#38bdf8;
+}
+
+/* BUTTON */
+.discord-btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 30px;
+  background:#5865F2;
+  color:#fff;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+/* HOVER */
+.discord-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 20px #5865F2,0 0 40px #5865F2;
 }
 </style>
