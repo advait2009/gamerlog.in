@@ -1,195 +1,48 @@
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<section id="info">
+  <div class="info-box">
 
-<section id="rank-info">
+    <div class="line"></div>
 
-  <!-- BACKGROUND GLOW -->
-  <div class="bg-glow"></div>
+    <h2>Important Information</h2>
 
-  <div class="rank-box">
-
-    <!-- ANIMATED TOP LINE -->
-    <div class="line top"></div>
-
-    <h2 class="title">Important Information</h2>
-
-    <p class="desc">
-      Please read all the details carefully before purchasing any rank from our store.
-    </p>
-
-    <ul class="info-list">
-      <li>⚠️ All ranks are valid for <b>1 month only</b> from purchase date.</li>
-      <li>⚠️ Ranks will be <b>automatically removed</b> after 1 month.</li>
-      <li>⚠️ Delivery may take a few minutes after purchase.</li>
-      <li>⚠️ Enter your correct Minecraft username while buying.</li>
-      <li>⚠️ All purchases are <b>final and non-refundable</b>.</li>
+    <ul>
+      <li>⚠️ All ranks are valid for <span class="highlight">1 month only</span></li>
+      <li>⚠️ Rank will be <span class="highlight">automatically removed</span> after 1 month</li>
+      <li>⚠️ Delivery may take a few minutes</li>
+      <li>⚠️ Enter correct Minecraft username</li>
+      <li>⚠️ All purchases are <span class="highlight">non-refundable</span></li>
     </ul>
 
-    <a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="discord-btn">
-      <span>🚀 Join Discord Support</span>
-    </a>
-
-    <!-- ANIMATED BOTTOM LINE -->
-    <div class="line bottom"></div>
-
   </div>
-
 </section>
 
 <style>
-body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:#020617;
-}
-
-/* SECTION */
-#rank-info{
-  position:relative;
-  padding:120px 20px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
-}
-
-/* BACKGROUND GLOW */
-.bg-glow{
-  position:absolute;
-  width:500px;
-  height:500px;
-  background:radial-gradient(circle,#6366f1,transparent 70%);
-  filter:blur(120px);
-  animation:moveGlow 8s infinite alternate ease-in-out;
-}
-
-@keyframes moveGlow{
-  from{transform:translate(-200px,-100px);}
-  to{transform:translate(200px,100px);}
-}
-
-/* BOX */
-.rank-box{
-  position:relative;
-  max-width:750px;
-  width:100%;
-  background:rgba(15,23,42,0.85);
-  padding:60px;
-  border-radius:20px;
-  backdrop-filter:blur(12px);
-  box-shadow:0 0 60px rgba(0,0,0,0.6);
-  text-align:center;
-  overflow:hidden;
-}
-
-/* LIGHT SWEEP */
-.rank-box::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:40%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.08),transparent);
-  transform:skewX(-20deg);
-  animation:sweep 6s infinite;
-}
-
-@keyframes sweep{
-  0%{left:-100%;}
-  100%{left:150%;}
-}
-
-/* GLOW LINES */
-.line{
-  position:absolute;
-  width:100%;
-  height:3px;
-  background:linear-gradient(90deg,#38bdf8,#6366f1,#38bdf8);
-  background-size:200%;
-  animation:lineMove 3s linear infinite;
-  box-shadow:0 0 10px #38bdf8,0 0 20px #6366f1;
-}
-
-.line.top{top:0;}
-.line.bottom{bottom:0;}
-
-@keyframes lineMove{
-  0%{background-position:0%;}
-  100%{background-position:200%;}
-}
-
-/* TITLE */
-.title{
-  font-size:38px;
-  font-weight:700;
-  margin-bottom:15px;
-  background:linear-gradient(90deg,#38bdf8,#6366f1);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-/* DESC */
-.desc{
-  font-size:16px;
-  color:#cbd5f5;
-  margin-bottom:30px;
-}
-
-/* LIST */
-.info-list{
-  list-style:none;
-  padding:0;
-  text-align:left;
-  font-size:15px;
-  line-height:2;
-}
-
-.info-list li{
-  margin-bottom:12px;
-  transition:0.3s;
-  position:relative;
-  padding-left:10px;
-}
-
-.info-list li:hover{
-  color:#38bdf8;
-  transform:translateX(10px);
-}
-
-/* BUTTON */
-.discord-btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:16px 35px;
-  background:#5865F2;
-  color:#fff;
-  text-decoration:none;
-  border-radius:12px;
+/* ===== RED GLOW TEXT ===== */
+.highlight{
+  color:#ff3b3b;
   font-weight:600;
-  position:relative;
-  overflow:hidden;
-  transition:0.3s;
+  text-shadow:
+    0 0 5px #ff3b3b,
+    0 0 10px #ff3b3b,
+    0 0 20px #ff0000,
+    0 0 40px #ff0000;
+  animation: glowPulse 1.5s infinite alternate;
 }
 
-/* BUTTON GLOW */
-.discord-btn:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 25px #5865F2,0 0 50px #5865F2;
-}
-
-/* SHINE */
-.discord-btn::before{
-  content:"";
-  position:absolute;
-  left:-100%;
-  top:0;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);
-}
-
-.discord-btn:hover::before{
-  left:100%;
-  transition:0.5s;
+/* PULSE ANIMATION */
+@keyframes glowPulse{
+  from{
+    text-shadow:
+      0 0 5px #ff3b3b,
+      0 0 10px #ff3b3b,
+      0 0 20px #ff0000;
+  }
+  to{
+    text-shadow:
+      0 0 10px #ff0000,
+      0 0 20px #ff0000,
+      0 0 40px #ff0000,
+      0 0 60px #ff0000;
+  }
 }
 </style>
