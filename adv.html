@@ -1,21 +1,28 @@
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <section id="final-info">
 
   <div class="info-container">
 
+    <!-- SOFT GLOW LINE -->
     <div class="glow-line"></div>
 
-    <h2 class="info-title">⚠️ Important Rank Information</h2>
+    <h2 class="info-title">Important Rank Information</h2>
+
+    <p class="info-sub">
+      Please review the following details before purchasing any rank.
+    </p>
 
     <ul class="info-list">
-      <li>All ranks are valid for <span class="danger">1 month only</span> from purchase date.</li>
-      <li>Your rank will be <span class="danger">automatically removed</span> after 1 month.</li>
-      <li>Rank delivery may take a few minutes after purchase.</li>
-      <li>Please enter your correct Minecraft username.</li>
+      <li>All ranks are valid for <span class="danger">1 month only</span> from purchase.</li>
+      <li>Your rank will be <span class="danger">automatically removed</span> after expiry.</li>
+      <li>Delivery may take a few minutes.</li>
+      <li>Ensure your Minecraft username is correct.</li>
       <li>All purchases are <span class="danger">non-refundable</span>.</li>
     </ul>
 
     <a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="support-btn">
-      💬 Need Help? Join Discord
+      Contact Support →
     </a>
 
     <div class="glow-line"></div>
@@ -25,39 +32,47 @@
 </section>
 
 <style>
-/* ===== WHITE SECTION ===== */
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+}
+
+/* ===== SECTION ===== */
 #final-info{
   padding:120px 20px;
   display:flex;
   justify-content:center;
-  background:#ffffff; /* WHITE BACKGROUND */
+  background:linear-gradient(180deg,#ffffff,#f8fafc);
 }
 
-/* CONTAINER */
+/* ===== CONTAINER ===== */
 .info-container{
-  max-width:800px;
+  max-width:750px;
   width:100%;
-  background:#ffffff;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(20px);
   padding:60px;
-  border-radius:20px;
+  border-radius:24px;
   text-align:center;
   position:relative;
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  border:1px solid rgba(255,255,255,0.5);
   overflow:hidden;
-  box-shadow:0 0 40px rgba(0,0,0,0.1);
-  border:1px solid #e5e7eb;
 }
 
-/* LIGHT SWEEP */
+/* LIGHT REFLECTION */
 .info-container::after{
   content:"";
   position:absolute;
   top:0;
   left:-100%;
-  width:40%;
+  width:50%;
   height:100%;
-  background:linear-gradient(120deg,transparent,rgba(0,0,0,0.05),transparent);
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
   transform:skewX(-20deg);
-  animation:sweep 6s infinite;
+  animation:sweep 8s infinite;
 }
 
 @keyframes sweep{
@@ -67,12 +82,13 @@
 
 /* GLOW LINE */
 .glow-line{
-  height:3px;
-  margin:20px 0;
-  background:linear-gradient(90deg,#38bdf8,#6366f1,#38bdf8);
+  height:2px;
+  margin:25px 0;
+  border-radius:10px;
+  background:linear-gradient(90deg,#60a5fa,#a78bfa,#60a5fa);
   background-size:200%;
-  animation:lineMove 3s linear infinite;
-  box-shadow:0 0 10px #38bdf8,0 0 20px #6366f1;
+  animation:lineMove 6s linear infinite;
+  opacity:0.7;
 }
 
 @keyframes lineMove{
@@ -82,9 +98,17 @@
 
 /* TITLE */
 .info-title{
-  font-size:34px;
-  margin-bottom:25px;
-  color:#111827; /* DARK TEXT */
+  font-size:32px;
+  font-weight:600;
+  color:#111827;
+  margin-bottom:10px;
+}
+
+/* SUBTEXT */
+.info-sub{
+  font-size:15px;
+  color:#6b7280;
+  margin-bottom:30px;
 }
 
 /* LIST */
@@ -92,52 +116,53 @@
   list-style:none;
   padding:0;
   text-align:left;
+  font-size:15px;
   line-height:2;
-  font-size:16px;
-  color:#374151; /* DARK GREY TEXT */
+  color:#374151;
 }
 
 .info-list li{
-  margin-bottom:12px;
+  margin-bottom:10px;
   transition:0.3s;
 }
 
 .info-list li:hover{
-  transform:translateX(10px);
-  color:#2563eb;
+  transform:translateX(6px);
+  color:#111827;
 }
 
-/* 🔴 IMPORTANT GLOW TEXT */
+/* 🔴 SOFT RED GLOW */
 .danger{
-  color:#ff3b3b;
-  font-weight:600;
+  color:#ef4444;
+  font-weight:500;
   text-shadow:
-    0 0 5px #ff3b3b,
-    0 0 10px #ff3b3b,
-    0 0 20px #ff0000;
-  animation:dangerGlow 1.5s infinite alternate;
+    0 0 5px rgba(239,68,68,0.4),
+    0 0 10px rgba(239,68,68,0.3);
+  animation:softGlow 2s infinite alternate;
 }
 
-@keyframes dangerGlow{
-  from{ text-shadow:0 0 5px #ff3b3b; }
-  to{ text-shadow:0 0 20px #ff0000,0 0 40px #ff0000; }
+@keyframes softGlow{
+  from{opacity:0.8;}
+  to{opacity:1;}
 }
 
 /* BUTTON */
 .support-btn{
   display:inline-block;
-  margin-top:30px;
-  padding:15px 35px;
-  background:#5865F2;
+  margin-top:35px;
+  padding:14px 28px;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);
   color:#fff;
   text-decoration:none;
-  border-radius:10px;
-  font-weight:600;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:500;
   transition:0.3s;
 }
 
+/* BUTTON HOVER */
 .support-btn:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 20px #5865F2,0 0 40px #5865F2;
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(99,102,241,0.3);
 }
 </style>
