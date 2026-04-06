@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minecraft Store</title>
+<title>Gamerlog SMP Store</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -13,6 +13,7 @@ body{
   font-family:'Inter',sans-serif;
   background:#020617;
   color:#fff;
+  overflow-x:hidden;
 }
 
 /* ===== NAVBAR ===== */
@@ -20,46 +21,47 @@ nav{
   display:flex;
   justify-content:space-between;
   padding:20px 50px;
-  background:#020617;
 }
-
 nav h1{color:#38bdf8;}
-
-nav a{
-  color:#cbd5f5;
-  margin-left:20px;
-  text-decoration:none;
-}
+nav a{color:#cbd5f5; margin-left:20px; text-decoration:none;}
 
 /* ===== HERO ===== */
 .hero{
   text-align:center;
   padding:120px 20px;
 }
-
 .hero h2{
   font-size:50px;
   background:linear-gradient(90deg,#38bdf8,#6366f1);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+  animation: glowText 4s infinite linear;
 }
-
-.hero p{
-  color:#cbd5f5;
+@keyframes glowText{
+  0%{filter:hue-rotate(0deg);}
+  100%{filter:hue-rotate(360deg);}
 }
-
 .hero button{
   margin-top:20px;
   padding:15px 30px;
-  border:none;
   background:#5865F2;
-  color:#fff;
+  border:none;
   border-radius:10px;
-  cursor:pointer;
+  color:#fff;
 }
 
-.hero button:hover{
-  box-shadow:0 0 20px #5865F2;
+/* ===== PARTICLES ===== */
+.particles span{
+  position:absolute;
+  width:5px;
+  height:5px;
+  background:#38bdf8;
+  border-radius:50%;
+  animation: float 10s linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-10vh);}
 }
 
 /* ===== RANKS ===== */
@@ -67,10 +69,9 @@ nav a{
   display:flex;
   justify-content:center;
   gap:30px;
-  flex-wrap:wrap;
   padding:50px;
+  flex-wrap:wrap;
 }
-
 .rank{
   background:#0f172a;
   padding:30px;
@@ -79,46 +80,108 @@ nav a{
   text-align:center;
   transition:0.3s;
 }
-
 .rank:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 20px #38bdf8;
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 0 30px #38bdf8;
 }
 
 /* ===== INFO SECTION ===== */
 #info{
   display:flex;
   justify-content:center;
-  padding:100px 20px;
-}
-
-.info-box{
-  max-width:700px;
-  background:rgba(15,23,42,0.9);
-  padding:50px;
-  border-radius:20px;
+  padding:120px 20px;
   position:relative;
 }
 
-/* glow line */
-.line{
-  height:3px;
-  background:linear-gradient(90deg,#38bdf8,#6366f1);
-  margin-bottom:20px;
-  animation:move 3s infinite linear;
+/* BACKGROUND GLOW */
+#info::before{
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:radial-gradient(circle,#6366f1,transparent);
+  filter:blur(120px);
+  animation:moveGlow 8s infinite alternate;
+}
+@keyframes moveGlow{
+  from{transform:translate(-200px,-100px);}
+  to{transform:translate(200px,100px);}
 }
 
-@keyframes move{
+/* BOX */
+.info-box{
+  position:relative;
+  max-width:750px;
+  width:100%;
+  background:rgba(15,23,42,0.85);
+  padding:60px;
+  border-radius:20px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 0 60px rgba(0,0,0,0.6);
+}
+
+/* LIGHT SWEEP */
+.info-box::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:40%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.08),transparent);
+  transform:skewX(-20deg);
+  animation:sweep 6s infinite;
+}
+@keyframes sweep{
+  0%{left:-100%;}
+  100%{left:150%;}
+}
+
+/* GLOW LINE */
+.line{
+  height:3px;
+  background:linear-gradient(90deg,#38bdf8,#6366f1,#38bdf8);
+  background-size:200%;
+  animation:lineMove 3s infinite linear;
+  margin-bottom:20px;
+}
+@keyframes lineMove{
   0%{background-position:0%;}
   100%{background-position:200%;}
 }
 
+/* TITLE */
 .info-box h2{
-  font-size:32px;
+  font-size:36px;
+  background:linear-gradient(90deg,#38bdf8,#6366f1);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
+/* LIST */
 .info-box ul{
   line-height:2;
+}
+
+/* ===== RED GLOW IMPORTANT TEXT ===== */
+.highlight{
+  color:#ff3b3b;
+  font-weight:600;
+  text-shadow:
+    0 0 5px #ff3b3b,
+    0 0 10px #ff3b3b,
+    0 0 20px #ff0000,
+    0 0 40px #ff0000;
+  animation: glowPulse 1.5s infinite alternate;
+}
+
+@keyframes glowPulse{
+  from{
+    text-shadow:0 0 5px #ff3b3b,0 0 10px #ff3b3b;
+  }
+  to{
+    text-shadow:0 0 20px #ff0000,0 0 40px #ff0000;
+  }
 }
 
 /* ===== DISCORD ===== */
@@ -126,7 +189,6 @@ nav a{
   text-align:center;
   padding:80px;
 }
-
 .discord a{
   padding:15px 30px;
   background:#5865F2;
@@ -134,23 +196,16 @@ nav a{
   color:#fff;
   text-decoration:none;
 }
-
 .discord a:hover{
-  box-shadow:0 0 20px #5865F2;
-}
-
-/* ===== FOOTER ===== */
-footer{
-  text-align:center;
-  padding:20px;
-  color:#888;
+  box-shadow:0 0 30px #5865F2;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<div class="particles"></div>
+
 <nav>
   <h1>Gamerlog SMP</h1>
   <div>
@@ -160,32 +215,17 @@ footer{
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <h2>Upgrade Your Minecraft Experience</h2>
-  <p>Buy ranks and unlock powerful perks</p>
-  <button onclick="scrollToRanks()">View Ranks</button>
+  <button onclick="scrollToInfo()">Learn More</button>
 </section>
 
-<!-- RANKS -->
-<section class="ranks" id="ranks">
-  <div class="rank">
-    <h3>Basic</h3>
-    <p>₹99</p>
-  </div>
-
-  <div class="rank">
-    <h3>Pro</h3>
-    <p>₹199</p>
-  </div>
-
-  <div class="rank">
-    <h3>Elite</h3>
-    <p>₹299</p>
-  </div>
+<section class="ranks">
+  <div class="rank"><h3>Basic</h3><p>₹99</p></div>
+  <div class="rank"><h3>Pro</h3><p>₹199</p></div>
+  <div class="rank"><h3>Elite</h3><p>₹299</p></div>
 </section>
 
-<!-- INFO -->
 <section id="info">
   <div class="info-box">
 
@@ -194,30 +234,34 @@ footer{
     <h2>Important Information</h2>
 
     <ul>
-      <li>⚠️ Rank valid for 1 month only</li>
-      <li>⚠️ Automatically removed after 1 month</li>
+      <li>⚠️ All ranks are valid for <span class="highlight">1 month only</span></li>
+      <li>⚠️ Rank will be <span class="highlight">automatically removed</span> after 1 month</li>
       <li>⚠️ Delivery may take a few minutes</li>
       <li>⚠️ Enter correct Minecraft username</li>
-      <li>⚠️ No refunds</li>
+      <li>⚠️ All purchases are <span class="highlight">non-refundable</span></li>
     </ul>
 
   </div>
 </section>
 
-<!-- DISCORD -->
 <section class="discord">
   <h2>Need Help?</h2>
   <a href="https://discord.gg/Zc6PkAXTgF" target="_blank">Join Discord</a>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  © 2026 Gamerlog SMP. All rights reserved.
-</footer>
-
 <script>
-function scrollToRanks(){
-  document.getElementById("ranks").scrollIntoView({behavior:"smooth"});
+// particles
+const p=document.querySelector('.particles');
+for(let i=0;i<50;i++){
+ let s=document.createElement('span');
+ s.style.left=Math.random()*100+"%";
+ s.style.animationDuration=(5+Math.random()*5)+"s";
+ p.appendChild(s);
+}
+
+// scroll
+function scrollToInfo(){
+ document.getElementById("info").scrollIntoView({behavior:"smooth"});
 }
 </script>
 
