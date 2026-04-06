@@ -5,7 +5,7 @@
 
   <div class="particles"></div>
 
-  <div class="rank-card">
+  <div class="rank-card reveal">
 
     <!-- TOP GLOW LINE -->
     <div class="glow-line top"></div>
@@ -27,7 +27,7 @@
     <p class="help-text">Need Help?</p>
 
     <a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="discord-btn" onclick="playEffect(event)">
-      Join Discord Support
+      <span>🚀 Join Discord Support</span>
     </a>
 
     <p class="thanks">Thank you for supporting our server ❤️</p>
@@ -89,9 +89,18 @@ body{margin:0;}
   backdrop-filter:blur(12px);
   box-shadow:0 0 40px rgba(0,0,0,0.6);
   overflow:hidden;
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s ease;
 }
 
-/* LIGHT SWEEP EFFECT */
+/* REVEAL */
+.rank-card.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* LIGHT SWEEP */
 .rank-card::after{
   content:"";
   position:absolute;
@@ -101,7 +110,7 @@ body{margin:0;}
   height:100%;
   background:linear-gradient(120deg,transparent,rgba(255,255,255,0.08),transparent);
   transform:skewX(-20deg);
-  animation: sweep 6s infinite;
+  animation:sweep 6s infinite;
 }
 
 @keyframes sweep{
@@ -116,7 +125,7 @@ body{margin:0;}
   height:3px;
   background:linear-gradient(90deg,#38bdf8,#6366f1,#38bdf8);
   background-size:200%;
-  animation: glowMove 3s linear infinite;
+  animation:glowMove 3s linear infinite;
   box-shadow:0 0 10px #38bdf8,0 0 20px #6366f1;
 }
 
@@ -128,12 +137,21 @@ body{margin:0;}
   100%{background-position:200%;}
 }
 
-/* ===== TEXT ===== */
+/* ===== TITLE GRADIENT ===== */
 .rank-title{
-  font-size:38px;
+  font-size:40px;
   font-weight:700;
   margin-bottom:15px;
-  color:#38bdf8;
+  background:linear-gradient(90deg,#38bdf8,#6366f1,#38bdf8);
+  background-size:200%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:textMove 4s linear infinite;
+}
+
+@keyframes textMove{
+  0%{background-position:0%;}
+  100%{background-position:200%;}
 }
 
 .rank-desc{
@@ -184,6 +202,16 @@ body{margin:0;}
   transition:0.3s;
 }
 
+/* ICON BOUNCE */
+.discord-btn span{
+  display:inline-block;
+  transition:0.3s;
+}
+
+.discord-btn:hover span{
+  transform:translateY(-3px);
+}
+
 /* HOVER GLOW */
 .discord-btn:hover{
   transform:scale(1.08);
@@ -224,7 +252,17 @@ for(let i=0;i<40;i++){
   p.appendChild(s);
 }
 
-// CLICK EFFECT
+// SCROLL REVEAL
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+    }
+  });
+});
+observer.observe(document.querySelector('.reveal'));
+
+// CLICK SOUND
 function playEffect(e){
   let audio = new Audio("https://www.myinstants.com/media/sounds/minecraft_click.mp3");
   audio.play();
