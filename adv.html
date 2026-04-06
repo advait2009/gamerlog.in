@@ -1,270 +1,147 @@
-<!-- ===== FONT ===== -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<section id="rank-info">
+<section id="store">
 
-  <div class="particles"></div>
+  <h1 class="store-title">Server Store</h1>
 
-  <div class="rank-card reveal">
+  <div class="rank-container">
 
-    <!-- TOP GLOW LINE -->
-    <div class="glow-line top"></div>
+    <!-- BASIC -->
+    <div class="rank-card">
+      <h2>Basic</h2>
+      <p class="price">₹99</p>
+      <ul>
+        <li>✔ Basic Kit</li>
+        <li>✔ Chat Color</li>
+        <li>✔ 1 Home</li>
+      </ul>
+      <button>Buy Now</button>
+    </div>
 
-    <h2 class="rank-title">Important Information</h2>
+    <!-- PRO (MOST POPULAR) -->
+    <div class="rank-card popular">
+      <div class="badge">MOST POPULAR</div>
+      <h2>Pro</h2>
+      <p class="price">₹199</p>
+      <ul>
+        <li>✔ All Basic Perks</li>
+        <li>✔ Fly Access</li>
+        <li>✔ 3 Homes</li>
+      </ul>
+      <button>Buy Now</button>
+    </div>
 
-    <p class="rank-desc">
-      All ranks are designed to enhance your gameplay with exclusive perks and premium features.
-    </p>
-
-    <ul class="rank-list">
-      <li>⚠️ Rank valid for <b>1 month only</b></li>
-      <li>⚠️ Automatically removed after 1 month</li>
-      <li>⚠️ Delivery may take a few minutes</li>
-      <li>⚠️ Enter correct Minecraft username</li>
-      <li>⚠️ No refunds on purchases</li>
-    </ul>
-
-    <p class="help-text">Need Help?</p>
-
-    <a href="https://discord.gg/Zc6PkAXTgF" target="_blank" class="discord-btn" onclick="playEffect(event)">
-      <span>🚀 Join Discord Support</span>
-    </a>
-
-    <p class="thanks">Thank you for supporting our server ❤️</p>
-
-    <!-- BOTTOM GLOW LINE -->
-    <div class="glow-line bottom"></div>
+    <!-- ELITE -->
+    <div class="rank-card">
+      <h2>Elite</h2>
+      <p class="price">₹299</p>
+      <ul>
+        <li>✔ All Pro Perks</li>
+        <li>✔ VIP Area</li>
+        <li>✔ Unlimited Homes</li>
+      </ul>
+      <button>Buy Now</button>
+    </div>
 
   </div>
 
 </section>
 
 <style>
-body{margin:0;}
-
-/* ===== BACKGROUND ===== */
-#rank-info{
-  position:relative;
-  padding:120px 20px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background: radial-gradient(circle at top, #020617, #000);
-  overflow:hidden;
-  font-family:'Poppins', sans-serif;
-}
-
-/* ===== PARTICLES ===== */
-.particles span{
-  position:absolute;
-  width:5px;
-  height:5px;
-  background:#38bdf8;
-  border-radius:50%;
-  animation: float 12s linear infinite;
-  opacity:0.5;
-}
-
-@keyframes float{
-  from{transform:translateY(100vh);}
-  to{transform:translateY(-10vh);}
-}
-
-.particles{
-  position:absolute;
-  width:100%;
-  height:100%;
-}
-
-/* ===== CARD ===== */
-.rank-card{
-  position:relative;
-  background:rgba(15,23,42,0.85);
-  padding:60px;
-  border-radius:20px;
-  max-width:800px;
-  width:100%;
-  text-align:center;
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#020617;
   color:#fff;
-  backdrop-filter:blur(12px);
-  box-shadow:0 0 40px rgba(0,0,0,0.6);
-  overflow:hidden;
-  opacity:0;
-  transform:translateY(60px);
-  transition:1s ease;
 }
 
-/* REVEAL */
-.rank-card.active{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* LIGHT SWEEP */
-.rank-card::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:50%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.08),transparent);
-  transform:skewX(-20deg);
-  animation:sweep 6s infinite;
-}
-
-@keyframes sweep{
-  0%{left:-100%;}
-  100%{left:150%;}
-}
-
-/* ===== GLOW LINES ===== */
-.glow-line{
-  position:absolute;
-  width:100%;
-  height:3px;
-  background:linear-gradient(90deg,#38bdf8,#6366f1,#38bdf8);
-  background-size:200%;
-  animation:glowMove 3s linear infinite;
-  box-shadow:0 0 10px #38bdf8,0 0 20px #6366f1;
-}
-
-.glow-line.top{top:0;}
-.glow-line.bottom{bottom:0;}
-
-@keyframes glowMove{
-  0%{background-position:0%;}
-  100%{background-position:200%;}
-}
-
-/* ===== TITLE GRADIENT ===== */
-.rank-title{
-  font-size:40px;
-  font-weight:700;
-  margin-bottom:15px;
-  background:linear-gradient(90deg,#38bdf8,#6366f1,#38bdf8);
-  background-size:200%;
+/* TITLE */
+.store-title{
+  text-align:center;
+  font-size:42px;
+  margin:50px 0;
+  background:linear-gradient(90deg,#38bdf8,#6366f1);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  animation:textMove 4s linear infinite;
 }
 
-@keyframes textMove{
-  0%{background-position:0%;}
-  100%{background-position:200%;}
+/* CONTAINER */
+.rank-container{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+  padding:20px;
 }
 
-.rank-desc{
-  font-size:17px;
-  color:#cbd5f5;
-  margin-bottom:25px;
+/* CARD */
+.rank-card{
+  background:#0f172a;
+  padding:30px;
+  border-radius:20px;
+  width:260px;
+  text-align:center;
+  position:relative;
+  transition:0.3s;
+  box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+/* HOVER */
+.rank-card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 0 30px #38bdf8;
+}
+
+/* POPULAR */
+.popular{
+  border:2px solid #6366f1;
+}
+
+.badge{
+  position:absolute;
+  top:-10px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#6366f1;
+  padding:5px 10px;
+  font-size:12px;
+  border-radius:10px;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(99,102,241,0.7);}
+  70%{box-shadow:0 0 0 15px rgba(99,102,241,0);}
+}
+
+/* PRICE */
+.price{
+  font-size:28px;
+  margin:10px 0;
+  color:#38bdf8;
 }
 
 /* LIST */
-.rank-list{
+.rank-card ul{
   list-style:none;
   padding:0;
-  margin:25px 0;
-  text-align:left;
-  font-size:16px;
+  margin:20px 0;
   line-height:2;
 }
 
-.rank-list li{
-  margin-bottom:10px;
-  transition:0.3s;
-}
-
-.rank-list li:hover{
-  color:#38bdf8;
-  transform:translateX(8px);
-}
-
-/* HELP */
-.help-text{
-  font-size:16px;
-  color:#94a3b8;
-}
-
-/* ===== BUTTON ===== */
-.discord-btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:16px 35px;
-  font-size:15px;
+/* BUTTON */
+.rank-card button{
+  padding:12px 25px;
+  border:none;
   background:#5865F2;
   color:#fff;
-  text-decoration:none;
-  border-radius:10px;
-  font-weight:600;
-  position:relative;
-  overflow:hidden;
+  border-radius:8px;
+  cursor:pointer;
   transition:0.3s;
 }
 
-/* ICON BOUNCE */
-.discord-btn span{
-  display:inline-block;
-  transition:0.3s;
-}
-
-.discord-btn:hover span{
-  transform:translateY(-3px);
-}
-
-/* HOVER GLOW */
-.discord-btn:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 20px #5865F2, 0 0 40px #5865F2;
-}
-
-/* SHINE */
-.discord-btn::before{
-  content:"";
-  position:absolute;
-  left:-100%;
-  top:0;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);
-}
-
-.discord-btn:hover::before{
-  left:100%;
-  transition:0.5s;
-}
-
-/* FOOTER */
-.thanks{
-  margin-top:25px;
-  font-size:14px;
-  color:#888;
+.rank-card button:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px #5865F2;
 }
 </style>
-
-<script>
-// PARTICLES
-const p = document.querySelector('.particles');
-for(let i=0;i<40;i++){
-  let s = document.createElement('span');
-  s.style.left = Math.random()*100 + "%";
-  s.style.animationDuration = (6 + Math.random()*6) + "s";
-  p.appendChild(s);
-}
-
-// SCROLL REVEAL
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('active');
-    }
-  });
-});
-observer.observe(document.querySelector('.reveal'));
-
-// CLICK SOUND
-function playEffect(e){
-  let audio = new Audio("https://www.myinstants.com/media/sounds/minecraft_click.mp3");
-  audio.play();
-}
-</script>
