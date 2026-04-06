@@ -3,207 +3,222 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gamerlog SMP</title>
+<title>Minecraft Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-html{scroll-behavior:smooth;}
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial;}
 body{
-  background:radial-gradient(circle at top,#1b0033,#000);
-  color:white;
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#020617;
+  color:#fff;
 }
 
-/* NAVBAR */
+/* ===== NAVBAR ===== */
 nav{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  padding:18px 60px;
-  background:#000;
-}
-.logoText{font-size:24px;font-weight:bold;}
-nav ul{display:flex;gap:30px;list-style:none;}
-nav ul li a{color:#aaa;text-decoration:none;font-weight:600;}
-nav ul li a:hover{color:#00eaff;}
-.login{
-  background:linear-gradient(90deg,#5f6fff,#a259ff);
-  padding:8px 20px;
-  border-radius:8px;
-  font-weight:bold;
+  padding:20px 50px;
+  background:#020617;
 }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:40px;
-}
-.logoBox img{width:420px;animation:float 4s infinite;}
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-15px)}
-  100%{transform:translateY(0)}
-}
-.season{margin-top:30px;color:#ffd000;font-size:50px;}
-.coming{font-size:70px;color:#6ff9ff;font-weight:bold;margin-top:10px;}
+nav h1{color:#38bdf8;}
 
-/* SERVER */
-.serverBox{display:flex;gap:30px;flex-wrap:wrap;margin-top:50px;}
-.box{
-  background:#0a0f18;
-  padding:35px 45px;
-  border-radius:14px;
-  border:1px solid #142235;
-  position:relative;
-}
-.copyBtn{
-  margin-top:15px;
-  padding:10px 22px;
-  border:none;
-  border-radius:8px;
-  background:#00eaff;
-  cursor:pointer;
-}
-.copyMsg{
-  opacity:0;
-  position:absolute;
-  top:5px;
-  right:10px;
-  transition:.5s;
-}
-.copyMsg.show{opacity:1;transform:translateY(-15px);}
-
-/* STATUS */
-.status{margin-top:30px;}
-.online{color:#00ff9d;}
-.offline{color:red;}
-
-/* CROSS */
-.cross{
-  border:2px solid #ffd000;
-  padding:12px 30px;
-  border-radius:25px;
-  margin-top:30px;
-}
-
-/* DISCORD BTN */
-.discord{
-  margin-top:35px;
-  background:#5865F2;
-  padding:14px 32px;
-  border-radius:10px;
-  color:white;
+nav a{
+  color:#cbd5f5;
+  margin-left:20px;
   text-decoration:none;
 }
 
-/* DISCORD PRO */
-.discordSection{padding:120px;text-align:center;background:#0b1020;}
-.discordTitle{font-size:50px;color:#5865F2;text-shadow:0 0 20px #5865F2;}
-.discordBox{
-  max-width:600px;margin:auto;background:#111;padding:40px;
-  border-radius:15px;box-shadow:0 0 20px rgba(88,101,242,0.5);
-  transition:.4s;
-}
-.discordBox:hover{transform:translateY(-10px);}
-.discordBtn{
-  padding:14px 30px;background:#5865F2;color:white;
-  border-radius:10px;text-decoration:none;
+/* ===== HERO ===== */
+.hero{
+  text-align:center;
+  padding:120px 20px;
 }
 
-/* POPUP */
-#dcPopup{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#111;
-padding:20px;
-border-radius:15px;
-box-shadow:0 0 25px #5865F2;
-display:none;
-z-index:9999;
+.hero h2{
+  font-size:50px;
+  background:linear-gradient(90deg,#38bdf8,#6366f1);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-/* PARTICLES */
-#particles{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
+.hero p{
+  color:#cbd5f5;
+}
+
+.hero button{
+  margin-top:20px;
+  padding:15px 30px;
+  border:none;
+  background:#5865F2;
+  color:#fff;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.hero button:hover{
+  box-shadow:0 0 20px #5865F2;
+}
+
+/* ===== RANKS ===== */
+.ranks{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+  padding:50px;
+}
+
+.rank{
+  background:#0f172a;
+  padding:30px;
+  border-radius:15px;
+  width:220px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.rank:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 20px #38bdf8;
+}
+
+/* ===== INFO SECTION ===== */
+#info{
+  display:flex;
+  justify-content:center;
+  padding:100px 20px;
+}
+
+.info-box{
+  max-width:700px;
+  background:rgba(15,23,42,0.9);
+  padding:50px;
+  border-radius:20px;
+  position:relative;
+}
+
+/* glow line */
+.line{
+  height:3px;
+  background:linear-gradient(90deg,#38bdf8,#6366f1);
+  margin-bottom:20px;
+  animation:move 3s infinite linear;
+}
+
+@keyframes move{
+  0%{background-position:0%;}
+  100%{background-position:200%;}
+}
+
+.info-box h2{
+  font-size:32px;
+}
+
+.info-box ul{
+  line-height:2;
+}
+
+/* ===== DISCORD ===== */
+.discord{
+  text-align:center;
+  padding:80px;
+}
+
+.discord a{
+  padding:15px 30px;
+  background:#5865F2;
+  border-radius:10px;
+  color:#fff;
+  text-decoration:none;
+}
+
+.discord a:hover{
+  box-shadow:0 0 20px #5865F2;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:20px;
+  color:#888;
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="particles"></canvas>
-
-<!-- NAV -->
+<!-- NAVBAR -->
 <nav>
-<div class="logoText">GAMERLOG SMP</div>
-<ul>
-<li><a href="#">HOME</a></li>
-<li><a href="#discord">DISCORD</a></li>
-</ul>
+  <h1>Gamerlog SMP</h1>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Ranks</a>
+    <a href="#">Support</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-<h1>COMING SOON</h1>
-<a class="discord" href="https://discord.gg/Zc6PkAXTgF" onclick="playSound()">Join Discord</a>
+  <h2>Upgrade Your Minecraft Experience</h2>
+  <p>Buy ranks and unlock powerful perks</p>
+  <button onclick="scrollToRanks()">View Ranks</button>
 </section>
 
-<!-- DISCORD SECTION -->
-<section id="discord" class="discordSection">
-<h1 class="discordTitle">JOIN DISCORD</h1>
-<div class="discordBox">
-<a href="https://discord.gg/Zc6PkAXTgF" onclick="playSound()" class="discordBtn">JOIN NOW</a>
-</div>
+<!-- RANKS -->
+<section class="ranks" id="ranks">
+  <div class="rank">
+    <h3>Basic</h3>
+    <p>₹99</p>
+  </div>
+
+  <div class="rank">
+    <h3>Pro</h3>
+    <p>₹199</p>
+  </div>
+
+  <div class="rank">
+    <h3>Elite</h3>
+    <p>₹299</p>
+  </div>
 </section>
 
-<!-- POPUP -->
-<div id="dcPopup">
-<p>Join our Discord!</p>
-<a href="https://discord.gg/Zc6PkAXTgF" onclick="playSound()">JOIN</a>
-</div>
+<!-- INFO -->
+<section id="info">
+  <div class="info-box">
+
+    <div class="line"></div>
+
+    <h2>Important Information</h2>
+
+    <ul>
+      <li>⚠️ Rank valid for 1 month only</li>
+      <li>⚠️ Automatically removed after 1 month</li>
+      <li>⚠️ Delivery may take a few minutes</li>
+      <li>⚠️ Enter correct Minecraft username</li>
+      <li>⚠️ No refunds</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- DISCORD -->
+<section class="discord">
+  <h2>Need Help?</h2>
+  <a href="https://discord.gg/Zc6PkAXTgF" target="_blank">Join Discord</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Gamerlog SMP. All rights reserved.
+</footer>
 
 <script>
-function playSound(){
- new Audio("https://www.soundjay.com/buttons/sounds/button-3.mp3").play();
+function scrollToRanks(){
+  document.getElementById("ranks").scrollIntoView({behavior:"smooth"});
 }
-
-/* popup */
-setTimeout(()=>{
- document.getElementById("dcPopup").style.display="block";
-},5000);
-
-/* particles */
-const canvas=document.getElementById("particles");
-const ctx=canvas.getContext("2d");
-canvas.width=innerWidth;
-canvas.height=innerHeight;
-
-let p=[];
-for(let i=0;i<50;i++){
- p.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height});
-}
-
-function anim(){
- ctx.clearRect(0,0,canvas.width,canvas.height);
- p.forEach(a=>{
-  a.y+=0.5;
-  if(a.y>canvas.height)a.y=0;
-  ctx.fillStyle="#5865F2";
-  ctx.fillRect(a.x,a.y,2,2);
- });
- requestAnimationFrame(anim);
-}
-anim();
 </script>
 
 </body>
